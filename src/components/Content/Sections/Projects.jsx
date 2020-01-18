@@ -5,12 +5,12 @@ export default () => {
   return (
     <div className="projects section__body">
       <div className="projects__grid">
+        {/* <Card />
         <Card />
         <Card />
         <Card />
         <Card />
-        <Card />
-        <Card />
+        <Card /> */}
       </div>
     </div>
   );
