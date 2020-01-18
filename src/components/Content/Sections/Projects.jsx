@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 
 export default () => {
   return (
-    <div className="projects section__content">
+    <div className="projects section__body">
       <div className="projects__grid">
         <Card />
         <Card />

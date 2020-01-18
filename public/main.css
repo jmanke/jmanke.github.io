@@ -17,7 +17,6 @@
 body {
   background-color: white;
   font-family: "Ubuntu", sans-serif;
-  overflow-x: hidden;
 }
 
 .app {
@@ -374,6 +373,7 @@ p {
   left: 0;
   z-index: -1;
   background-color: #1E1E1E;
+  overflow-x: auto;
 }
 
 .landing-page__container {
@@ -432,8 +432,9 @@ p {
 }
 
 .content {
-  position: relative;
-  margin-left: 4rem;
+  position: absolute;
+  top: 0;
+  left: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -441,27 +442,32 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 @media screen and (max-width: 800px) {
   .content {
     margin-top: 4rem;
-    margin-left: 0;
+    left: 0;
   }
 }
 
 .content .section {
-  position: relative;
-  max-width: 70rem;
-  width: 100%;
   padding-bottom: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.content .section__content {
+.content .section .section-container {
   margin: 5rem 5rem;
+  max-width: 70rem;
 }
 
 .content .section .experience {
@@ -510,25 +516,6 @@ p {
   }
 }
 
-.line-numbers {
-  position: absolute;
-  line-height: 1.5rem;
-  height: 100%;
-  top: -5rem;
-  left: 0.5rem;
-  color: white;
-  text-align: right;
-  opacity: 0.15;
-  overflow-y: hidden;
-  z-index: -10;
-}
-
-@media screen and (max-width: 800px) {
-  .line-numbers {
-    display: none;
-  }
-}
-
 .text-img-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -556,6 +543,9 @@ p {
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
             flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 

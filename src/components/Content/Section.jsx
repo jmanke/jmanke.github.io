@@ -41,7 +41,6 @@ export default (props) => {
 
   return (
     <section className={"section " + props.bgColor} ref={ref}>
-      <div className="section__background" />
       <div className="link-id" id={props.title} />
       <Heading title={props.title} />
       {props.children}

@@ -170,6 +170,7 @@ class CanvasInfo {
 }
 
 export default () => {
+  const canvasContainerRef = useRef(null);
   const canvasRef = useRef(null);
   const [canvasInfo, setCanvasInfo] = useState(new CanvasInfo());
   let particles = canvasInfo.particles;
@@ -180,8 +181,8 @@ export default () => {
   // TODO: Convert this into a shared utils method
   function updateMousePos(mouseInfo) {
     let [posX, posY] = [mouseInfo.clientX, mouseInfo.clientY];
+    const rect = canvasRef.current.getBoundingClientRect();
     // could use mouse event instead
-    let rect = canvasRef.current.getBoundingClientRect();
 
     mousePos.x = posX - rect.x;
     mousePos.y = posY - rect.y;
@@ -285,12 +286,20 @@ export default () => {
   }
 
   window.requestAnimationFrame(updateCanvas);
+  
+  let [rectX, rectY] = [0, 0];
+
+  if (canvasContainerRef.current) {
+    let boundingRect = canvasContainerRef.current.getBoundingClientRect();
+    rectX = boundingRect.width;
+    rectY = boundingRect.height;
+  }
 
   return (
-    <div className="canvas-container" onMouseMove={onMouseMove} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick}>
+    <div className="canvas-container" onMouseMove={onMouseMove} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} onClick={onClick} ref={canvasContainerRef}>
       <canvas className="landing-page__canvas"
-        width={window.innerWidth}
-        height={window.innerHeight}
+        width={rectX}
+        height={rectY}
         ref={canvasRef}
       />
     </div>

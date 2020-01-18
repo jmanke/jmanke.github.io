@@ -3,7 +3,7 @@ import jeffImg from "../../../images/jeff.jpg";
 
 export default () => {
   return (
-    <div className="section__content about">
+    <div className="about section-container">
       <div className="text-img-box">
         <p>
           Hello, my name is Jeff Manke and I am a Software Developer currently living in Victoria, BC.
