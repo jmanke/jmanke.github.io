@@ -456,9 +456,7 @@ p {
 }
 
 .content {
-  position: absolute;
-  top: 0;
-  left: 4rem;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -487,6 +485,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: auto;
 }
 
 .content .section .section-container {
