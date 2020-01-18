@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/jmanke/jmanke.github.io/static/js/main.13bbdce4.chunk.js",
-    "main.js.map": "/jmanke/jmanke.github.io/static/js/main.13bbdce4.chunk.js.map",
-    "runtime-main.js": "/jmanke/jmanke.github.io/static/js/runtime-main.7679f71b.js",
-    "runtime-main.js.map": "/jmanke/jmanke.github.io/static/js/runtime-main.7679f71b.js.map",
-    "static/js/2.29e955fd.chunk.js": "/jmanke/jmanke.github.io/static/js/2.29e955fd.chunk.js",
-    "static/js/2.29e955fd.chunk.js.map": "/jmanke/jmanke.github.io/static/js/2.29e955fd.chunk.js.map",
-    "index.html": "/jmanke/jmanke.github.io/index.html",
-    "precache-manifest.e8cdb611b134ebf616bcde13a3313af0.js": "/jmanke/jmanke.github.io/precache-manifest.e8cdb611b134ebf616bcde13a3313af0.js",
-    "service-worker.js": "/jmanke/jmanke.github.io/service-worker.js",
-    "static/js/2.29e955fd.chunk.js.LICENSE": "/jmanke/jmanke.github.io/static/js/2.29e955fd.chunk.js.LICENSE",
-    "static/media/logo.png": "/jmanke/jmanke.github.io/static/media/logo.f83b4400.png",
-    "static/media/tft.png": "/jmanke/jmanke.github.io/static/media/tft.ba6397f1.png"
+    "main.js": "/static/js/main.13bbdce4.chunk.js",
+    "main.js.map": "/static/js/main.13bbdce4.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ebe23bff.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ebe23bff.js.map",
+    "static/js/2.29e955fd.chunk.js": "/static/js/2.29e955fd.chunk.js",
+    "static/js/2.29e955fd.chunk.js.map": "/static/js/2.29e955fd.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7fad9f32a54b11dbaefba6a590eb4095.js": "/precache-manifest.7fad9f32a54b11dbaefba6a590eb4095.js",
+    "service-worker.js": "/service-worker.js",
+    "static/js/2.29e955fd.chunk.js.LICENSE": "/static/js/2.29e955fd.chunk.js.LICENSE",
+    "static/media/logo.png": "/static/media/logo.f83b4400.png",
+    "static/media/tft.png": "/static/media/tft.ba6397f1.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7679f71b.js",
+    "static/js/runtime-main.ebe23bff.js",
     "static/js/2.29e955fd.chunk.js",
     "static/js/main.13bbdce4.chunk.js"
   ]
