@@ -28,7 +28,9 @@ body {
 }
 
 p {
-  color: #CCCCCC;
+  font-size: 1.2rem;
+  color: #1E1E1E;
+  line-height: 2rem;
 }
 
 .logo {
@@ -134,7 +136,7 @@ p {
   text-align: center;
   top: 16%;
   left: 4.8rem;
-  color: #CCCCCC;
+  color: #1E1E1E;
   pointer-events: none;
   font-size: 0.8rem;
   border-radius: 0.5rem;
@@ -418,14 +420,14 @@ p {
   padding-top: 1rem;
   padding-left: 2rem;
   text-align: left;
-  color: #CCCCCC;
+  color: #1E1E1E;
 }
 
 .project-card__description-text {
   position: relative;
   height: 7rem;
   padding: 1rem 2rem;
-  color: #CCCCCC;
+  color: #1E1E1E;
   overflow-y: hidden;
 }
 
@@ -486,7 +488,7 @@ p {
 
 .heading {
   position: relative;
-  color: #535353;
+  color: #3b3b3b;
   text-align: center;
   font-size: 3rem;
   padding: 5rem 0;
@@ -524,6 +526,23 @@ p {
   .line-numbers {
     display: none;
   }
+}
+
+.paragraph-img {
+  border-radius: 100%;
+  width: 20rem;
+  height: 100%;
+  padding: 2rem;
+}
+
+.text-img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .fade-in {
