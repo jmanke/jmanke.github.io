@@ -442,6 +442,7 @@ p {
   .section {
     //TODO: REMOVE
     padding-bottom: 2000px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -449,11 +450,36 @@ p {
     .section-container {
       margin: $margin-vertical $margin-horizontal;
       max-width: 70em;
-      // display: flex;
-      // flex-direction: column;
+      display: flex;
+      flex-direction: column;
 
       @media screen and (max-width: $mobile-width) { 
         margin: $margin-vertical-mobile $margin-horizontal-mobile;
+      }
+    }
+
+    .text-img-box {
+      display: flex;
+      flex-direction: row;
+    
+      @media screen and (max-width: $medium-width) {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+    
+      .paragraph-img {
+        border-radius: 100%;
+        max-width:100%;
+        padding: 2rem 2rem;
+        align-self: flex-start;
+
+        @media screen and (max-width: $medium-width) {
+          align-self: initial;
+        }
+      }
+    
+      p {
+        padding: 2rem 2rem;
       }
     }
   
@@ -504,32 +530,6 @@ p {
 
   @media screen and (max-width: $mobile-width) {
     display: initial;
-  }
-}
-
-.text-img-box {
-  display: flex;
-  flex-direction: row;
-
-  @media screen and (max-width: $medium-width) {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .paragraph-img {
-    border-radius: 100%;
-    width: 20rem;
-    height: 100%;
-    padding: 1rem 1rem;
-
-    @media screen and (max-width: $mobile-width) {
-      width: 15rem;
-      height: 100%;
-    }
-  }
-
-  p {
-    padding: 2rem 0;
   }
 }
 
