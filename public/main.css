@@ -123,6 +123,8 @@ p {
 
 .nav__item__active-bar.hidden {
   height: 0;
+  -webkit-transition: all 75ms linear;
+  transition: all 75ms linear;
 }
 
 .nav__item__active-bar.show {
@@ -169,9 +171,9 @@ p {
   color: white;
   padding-left: 2rem;
   display: none;
-  cursor: pointer;
   font-size: 1.5rem;
   margin: auto;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 700px) {
@@ -456,7 +458,9 @@ p {
 }
 
 .content {
-  position: relative;
+  position: absolute;
+  left: 4rem;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,7 +472,6 @@ p {
 
 @media screen and (max-width: 700px) {
   .content {
-    margin-top: 4rem;
     left: 0;
   }
 }
@@ -485,18 +488,74 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: auto;
+}
+
+.content .section hr {
+  border-style: dotted;
+  border-width: 1rem;
+  border-top: 1rem;
+  width: 5rem;
+  color: #dfdfdf;
 }
 
 .content .section .section-container {
   margin: 5rem 5rem;
   max-width: 70em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (max-width: 700px) {
   .content .section .section-container {
     margin: 2rem 2rem;
   }
+}
+
+.content .section .text-img-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (max-width: 1000px) {
+  .content .section .text-img-box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.content .section .text-img-box .paragraph-img {
+  border-radius: 100%;
+  max-width: 100%;
+  padding: 2rem 2rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+@media screen and (max-width: 1000px) {
+  .content .section .text-img-box .paragraph-img {
+    -ms-flex-item-align: initial;
+        -ms-grid-row-align: initial;
+        align-self: initial;
+  }
+}
+
+.content .section .text-img-box p {
+  padding: 2rem 2rem;
 }
 
 .content .section .experience {
@@ -545,46 +604,6 @@ p {
   }
 }
 
-.text-img-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-@media screen and (max-width: 1000px) {
-  .text-img-box {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-.text-img-box .paragraph-img {
-  border-radius: 100%;
-  width: 20rem;
-  height: 100%;
-  padding: 1rem 1rem;
-}
-
-@media screen and (max-width: 700px) {
-  .text-img-box .paragraph-img {
-    width: 15rem;
-    height: 100%;
-  }
-}
-
-.text-img-box p {
-  padding: 2rem 0;
-}
-
 .fade-in {
   visibility: visible;
   opacity: 1;
@@ -626,6 +645,6 @@ p {
 }
 
 .bg-secondary {
-  background-color: #f0f0f0;
+  background-color: #f3f3f3;
 }
 /*# sourceMappingURL=main.css.map */

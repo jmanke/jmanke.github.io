@@ -280,6 +280,7 @@ export default () => {
 
     // remove expired pings
     let goodPings = pings.filter( ping => ping.currTick < ping.endTick);
+    // create a new canvasIndo object so the hook re-render this component
     let newCanvasInfo = new CanvasInfo(mousePos, goodParticles, mouseInCanvas, goodPings);
 
     setCanvasInfo(newCanvasInfo);

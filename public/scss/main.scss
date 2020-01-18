@@ -131,6 +131,7 @@ p {
 
       &.hidden {
         height: 0;
+        transition: all 75ms linear;
       }
 
       &.show {
@@ -176,9 +177,9 @@ p {
     color: lighten($accent-color, $amount: 80%);
     padding-left: $margin-top / 2;
     display: none;
-    cursor: pointer;
     font-size: 1.5rem;
     margin: auto;
+    cursor: pointer;
 
     @media screen and (max-width: $mobile-width) {
       display: initial;
@@ -429,33 +430,65 @@ p {
 }
 
 .content {
-  position: relative;
-  // left: $margin-left;
-  // right: $margin-left;
+  position: absolute;
+  left: $margin-left;
+  right: 0;
   display: flex;
   flex-direction: column;
 
   @media screen and (max-width: $mobile-width) {
-    margin-top: $margin-top;
     left: 0;
   }
 
   .section {
     //TODO: REMOVE
     padding-bottom: 2000px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
+
+    hr {
+      border-style: dotted;
+      border-width: 1rem;
+      border-top: 1rem;
+      width: 5rem;
+      color: #dfdfdf;
+    }
 
     .section-container {
       margin: $margin-vertical $margin-horizontal;
       max-width: 70em;
-      // display: flex;
-      // flex-direction: column;
+      display: flex;
+      flex-direction: column;
 
       @media screen and (max-width: $mobile-width) { 
         margin: $margin-vertical-mobile $margin-horizontal-mobile;
+      }
+    }
+
+    .text-img-box {
+      display: flex;
+      flex-direction: row;
+    
+      @media screen and (max-width: $medium-width) {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+    
+      .paragraph-img {
+        border-radius: 100%;
+        max-width:100%;
+        padding: 2rem 2rem;
+        align-self: flex-start;
+
+        @media screen and (max-width: $medium-width) {
+          align-self: initial;
+        }
+      }
+    
+      p {
+        padding: 2rem 2rem;
       }
     }
   
@@ -509,32 +542,6 @@ p {
   }
 }
 
-.text-img-box {
-  display: flex;
-  flex-direction: row;
-
-  @media screen and (max-width: $medium-width) {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-
-  .paragraph-img {
-    border-radius: 100%;
-    width: 20rem;
-    height: 100%;
-    padding: 1rem 1rem;
-
-    @media screen and (max-width: $mobile-width) {
-      width: 15rem;
-      height: 100%;
-    }
-  }
-
-  p {
-    padding: 2rem 0;
-  }
-}
-
 // move this to inline styling? Maybe using variable here in react would be better
 // TODO: REFACTOR
 
@@ -575,5 +582,5 @@ p {
 }
 
 .bg-secondary {
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(243, 243, 243);
 }
