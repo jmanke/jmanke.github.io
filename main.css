@@ -457,8 +457,8 @@ p {
 
 .content {
   position: absolute;
-  top: 0;
   left: 4rem;
+  right: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -470,7 +470,6 @@ p {
 
 @media screen and (max-width: 700px) {
   .content {
-    margin-top: 4rem;
     left: 0;
   }
 }
