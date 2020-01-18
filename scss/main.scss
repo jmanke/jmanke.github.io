@@ -43,7 +43,7 @@
 body {
   background-color: $primary-color;
   font-family: $heading-font;
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 .app {
@@ -347,6 +347,7 @@ p {
     left: 0;
     z-index: -1;
     background-color: $primary-color-dark;
+    overflow-x: auto;
   }
 
   &__container {
@@ -405,31 +406,33 @@ p {
 }
 
 .content {
-  position: relative;
-  margin-left: $margin-left;
+  position: absolute;
+  top: 0;
+  left: $margin-left;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 
   @media screen and (max-width: $mobile-width) {
     margin-top: $margin-top;
-    margin-left: 0;
+    left: 0;
   }
 
   .section {
-    position: relative;
-    width: 100%;
     //TODO: REMOVE
     padding-bottom: 2000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    &__content {
+    .section-container {
       margin: $margin-vertical $margin-horizontal;
+      max-width: 70rem;
       // display: flex;
       // flex-direction: column;
     }
   
     .about {
-      
+
     }
 
     .experience {
@@ -463,10 +466,6 @@ p {
   text-align: center;
   font-size: 3rem;
   padding: 5rem 0;
-
-  // &__tag {
-  //   color: $text-color;
-  // }
 }
 
 .shadow-screen {
@@ -482,33 +481,25 @@ p {
   }
 }
 
-.line-numbers {
-  position: absolute;
-  line-height: 1.5rem;
-  height: 100%;
-  top: -$margin-vertical;
-  left: 0.5rem;
-  color: white;
-  text-align: right;
-  opacity: 0.15;
-  overflow-y: hidden;
-  z-index: -10;
-
-  @media screen and (max-width: $mobile-width) {
-    display: none;
-  }
-}
-
-.paragraph-img {
-  border-radius: 100%;
-  width: 20rem;
-  height: 100%;
-  padding: 2rem;
-}
-
 .text-img-box {
   display: flex;
   flex-direction: row;
+
+  .paragraph-img {
+    border-radius: 100%;
+    width: 20rem;
+    height: 100%;
+    padding: 2rem;
+  }
+
+  p {
+    padding: 2rem 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 }
 
 // move this to inline styling? Maybe using variable here in react would be better
