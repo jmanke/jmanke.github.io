@@ -14,10 +14,10 @@ const maxRadius = 5;
 const maxLineDist = Math.pow(150, 2);
 const maxLineWidth = 1;
 const margin = 0.1;
-const refreshRate = 15;
-const mousePushDist = 100;
-const mousePushStr = 20;
-const pingPushStr = 5;
+const mouseConnectDist = Math.pow(200, 2);
+// const mousePushDist = 100;
+// const mousePushStr = 20;
+const pingPushStr = 10;
 const pingRadius = 150;
 const pingTimeout = 100;
 const pingSpeed = 3;
@@ -62,6 +62,7 @@ function createParticle(canvas, createOnBorder) {
     velocity: velocity,
     radius: radius,
     color: particleColor,
+    pushedThisFrame: false
   };
 
   return particle;
@@ -99,16 +100,18 @@ function drawLines(ctx, particle, particles) {
   }
 }
 
-function pushParticleMouse(particle, ci) {
-  if (!ci.mouseInCanvas) return;
+function connectParticleMouse(ctx, particle, canvasInfo) {
+  if (!canvasInfo.mouseInCanvas) return;
 
-  let dist = ci.mousePos.distance(particle.position);
+  let sqrDist = canvasInfo.mousePos.sqrDistance(particle.position);
 
-  if (dist < mousePushDist) {
-    let dir = particle.position.subtractVec(ci.mousePos);
-    dir.normalize();
-    let pushStr = Math.pow(1 - (dist / mousePushDist), 2) * mousePushStr;
-    particle.position = particle.position.addVec(dir.multiply(pushStr));
+  if (sqrDist < mouseConnectDist) {
+    ctx.beginPath();
+    ctx.strokeStyle = particle.color;
+    ctx.lineWidth = 1 - (maxLineWidth * (sqrDist / mouseConnectDist));
+    ctx.moveTo(particle.position.x, particle.position.y);
+    ctx.lineTo(canvasInfo.mousePos.x, canvasInfo.mousePos.y);
+    ctx.stroke();
   }
 }
 
@@ -149,14 +152,15 @@ function pushParticlePings(particle, pings) {
     let distToRadius = currPingRadius - dist;
 
     if (distToRadius < 20 && distToRadius > 0) {
+      particle.pushedThisFrame = true;
       let dir = particle.position.subtractVec(pings[i].position);
       dir.normalize();
-      particle.position = particle.position.addVec(dir.multiply((pings[i].currTick / pings[i].endTick) * pingPushStr));
+      particle.position = particle.position.addVec(dir.multiply((1 - (pings[i].currTick / pings[i].endTick)) * pingPushStr));
     }
   }
 }
 
-class canvasInfo {
+class CanvasInfo {
   constructor(mousePos, particles, mouseInCavnas, pings) {
     this.mousePos = mousePos || new Vector2(0, 0);
     this.particles = particles || [];
@@ -167,11 +171,11 @@ class canvasInfo {
 
 export default () => {
   const canvasRef = useRef(null);
-  const [ci, setCi] = useState(new canvasInfo());
-  let particles = ci.particles;
-  const mousePos = ci.mousePos;
-  const pings = ci.pings;
-  let mouseInCanvas = ci.mouseInCanvas;
+  const [canvasInfo, setCanvasInfo] = useState(new CanvasInfo());
+  let particles = canvasInfo.particles;
+  const mousePos = canvasInfo.mousePos;
+  const pings = canvasInfo.pings;
+  let mouseInCanvas = canvasInfo.mouseInCanvas;
 
   // TODO: Convert this into a shared utils method
   function updateMousePos(mouseInfo) {
@@ -211,7 +215,7 @@ export default () => {
     // don't continue rendering if the canvas isn't visible. Better performance if this was tied to 
     // an intersection observer event, but this is fine for now.
     if (Math.abs(canvasRef.current.getBoundingClientRect().y) > height) {
-      setCi(new canvasInfo(ci.position, ci.particles, ci.mouseInCanvas, ci.pings));
+      setCanvasInfo(new CanvasInfo(canvasInfo.position, canvasInfo.particles, canvasInfo.mouseInCanvas, canvasInfo.pings));
       return;
     }
 
@@ -239,11 +243,16 @@ export default () => {
 
     for (let i = 0; i < particles.length; i++) {
       // push particle with mouse
-      pushParticleMouse(particles[i], ci);
+      connectParticleMouse(ctx, particles[i], canvasInfo);
       // push particle with pings
       pushParticlePings(particles[i], pings);
       // move particles
-      particles[i].position = particles[i].position.addVec(particles[i].velocity);
+      if (particles[i].pushedThisFrame) {
+        particles[i].pushedThisFrame = false;
+      }
+      else {
+        particles[i].position = particles[i].position.addVec(particles[i].velocity);
+      }
       // draw particles
       drawParticle(ctx, particles[i]);
       // draw lines
@@ -270,9 +279,9 @@ export default () => {
 
     // remove expired pings
     let goodPings = pings.filter( ping => ping.currTick < ping.endTick);
-    let newCanvasInfo = new canvasInfo(mousePos, goodParticles, mouseInCanvas, goodPings);
+    let newCanvasInfo = new CanvasInfo(mousePos, goodParticles, mouseInCanvas, goodPings);
 
-    setCi(newCanvasInfo);
+    setCanvasInfo(newCanvasInfo);
   }
 
   window.requestAnimationFrame(updateCanvas);

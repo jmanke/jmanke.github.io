@@ -52,7 +52,9 @@ body {
 }
 
 p {
+  font-size: 1.2rem;
   color: $text-color;
+  line-height: 2rem;
 }
 
 .logo {
@@ -416,6 +418,7 @@ p {
 
   .section {
     position: relative;
+    max-width: 70rem;
     width: 100%;
     //TODO: REMOVE
     padding-bottom: 2000px;
@@ -494,6 +497,26 @@ p {
 
   @media screen and (max-width: $mobile-width) {
     display: none;
+  }
+}
+
+.text-img-box {
+  display: flex;
+  flex-direction: row;
+
+  .paragraph-img {
+    border-radius: 100%;
+    width: 20rem;
+    height: 100%;
+    padding: 2rem;
+  }
+
+  p {
+    padding: 2rem 0;
+  }
+
+  @media screen and (max-width: $mobile-width) {
+    flex-direction: column-reverse;
   }
 }
 
