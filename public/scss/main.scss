@@ -471,7 +471,7 @@ p {
       display: flex;
       flex-direction: row;
     
-      @media screen and (max-width: $medium-width) {
+      @media screen and (max-width: $tablet-width) {
         flex-direction: column-reverse;
         align-items: center;
       }
@@ -482,7 +482,7 @@ p {
         padding: 2rem 2rem;
         align-self: flex-start;
 
-        @media screen and (max-width: $medium-width) {
+        @media screen and (max-width: $tablet-width) {
           align-self: initial;
         }
       }
