@@ -391,70 +391,69 @@ p {
 }
 
 .landing-page__container {
+  position: relative;
   margin-top: auto;
-  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25rem;
+  height: 25rem;
   font-size: 1rem;
+  background-size: cover;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 700px) {
   .landing-page__container {
     font-size: 0.7rem;
-  }
-}
-
-.landing-page__container__logo {
-  width: 20rem;
-}
-
-@media screen and (max-width: 700px) {
-  .landing-page__container__logo {
-    width: 13rem;
+    width: 17rem;
+    height: 17rem;
   }
 }
 
 .landing-page__container__title {
   font-size: 3em;
   color: whitesmoke;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  margin-top: 9rem;
+  margin-left: -1rem;
+}
+
+@media screen and (max-width: 700px) {
+  .landing-page__container__title {
+    margin-top: 5rem;
+    margin-left: -0.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .landing-page__container__subtitle {
   color: #6a9955;
-  margin-bottom: auto;
+  margin-left: -1rem;
+  padding-top: 1rem;
 }
 
-.project-card {
+@media screen and (max-width: 700px) {
+  .landing-page__container__subtitle {
+    margin-left: -0.5rem;
+    padding-top: initial;
+  }
+}
+
+.landing-page__logo {
+  border-radius: 100%;
   position: relative;
-  width: 18.75rem;
-  height: 28.125rem;
-  min-width: 18.75rem;
-  min-height: 28.125rem;
-  background-color: #333333;
-  margin: 1rem;
-  -webkit-box-shadow: 1rem;
-          box-shadow: 1rem;
+  bottom: -5rem;
+  width: 10rem;
+  height: 10rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.project-card__img-display {
-  position: relative;
-  margin: auto;
-  width: 100%;
-  height: 14.375rem;
-}
-
-.project-card__heading {
-  padding: 2rem 1 rem;
-  text-align: left;
-  color: #1E1E1E;
-}
-
-.project-card__description-text {
-  position: relative;
-  height: 7rem;
-  padding: 1rem 2rem;
-  color: #1E1E1E;
-  overflow-y: hidden;
+@media screen and (max-width: 700px) {
+  .landing-page__logo {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .content {
@@ -558,8 +557,8 @@ p {
   padding: 2rem 2rem;
 }
 
-.content .section .experience {
-  background-color: red;
+.content .section .about {
+  padding-top: 5rem;
 }
 
 .content .section .projects {
@@ -579,6 +578,15 @@ p {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.content .section .projects__grid .project-card {
+  width: 18rem;
+  height: 28rem;
+  margin: 2rem;
+  border-style: solid;
+  border-color: #1E1E1E;
+  border-width: 1px;
 }
 
 .heading {
