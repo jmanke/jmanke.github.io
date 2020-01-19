@@ -392,9 +392,7 @@ p {
 
 .landing-page__container {
   position: relative;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 25rem;
   height: 25rem;
   font-size: 1rem;
@@ -610,6 +608,25 @@ p {
   .shadow-screen {
     display: initial;
   }
+}
+
+.fade-in-section {
+  opacity: 0;
+  -webkit-transform: translateY(20vh);
+          transform: translateY(20vh);
+  visibility: hidden;
+  -webkit-transition: opacity 0.6s ease-out, -webkit-transform 1.2s ease-out;
+  transition: opacity 0.6s ease-out, -webkit-transform 1.2s ease-out;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out, -webkit-transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+  visibility: visible;
 }
 
 .fade-in {

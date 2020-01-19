@@ -365,9 +365,7 @@ p {
 
   &__container {
     position: relative;
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     width: 25rem;
     height: 25rem;
     font-size: 1rem;
@@ -536,6 +534,20 @@ p {
   @media screen and (max-width: $mobile-width) {
     display: initial;
   }
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1.2s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
 }
 
 // move this to inline styling? Maybe using variable here in react would be better
