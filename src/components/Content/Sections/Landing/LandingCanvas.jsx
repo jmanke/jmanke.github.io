@@ -166,6 +166,7 @@ class CanvasInfo {
     this.particles = particles || [];
     this.mouseInCanvas = mouseInCavnas || false;
     this.pings = pings || [];
+    this.shouldRender = true;
   }
 }
 
@@ -281,12 +282,15 @@ export default () => {
     // remove expired pings
     let goodPings = pings.filter( ping => ping.currTick < ping.endTick);
     // create a new canvasIndo object so the hook re-render this component
-    let newCanvasInfo = new CanvasInfo(mousePos, goodParticles, mouseInCanvas, goodPings);
+    let newCanvasInfo = new CanvasInfo(mousePos, goodParticles, mouseInCanvas, goodPings, true);
 
     setCanvasInfo(newCanvasInfo);
   }
 
-  window.requestAnimationFrame(updateCanvas);
+  if (canvasInfo.shouldRender) {
+    canvasInfo.shouldRender = false;
+    window.requestAnimationFrame(updateCanvas);
+  }
   
   let [rectX, rectY] = [0, 0];
 

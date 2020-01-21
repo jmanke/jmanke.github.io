@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { EventEmitter } from "../Shared/Events";
 import Heading from "./Heading";
 
@@ -17,15 +17,10 @@ function buildThresholdList() {
 
 export default (props) => {
   // reference to the section
-  const ref = useCallback(sectionNode => {
-    if (sectionNode !== null) {
-      createObserver(sectionNode);
-    }
-  }, []);
+  const sectionRef = React.useRef();
 
-  // observer that checks intersection of section wih viewport
-  function createObserver(node) {
-    let observer;
+  React.useEffect( () => {
+    const effectSectionRef = sectionRef.current;
 
     let options = {
       root: null,
@@ -33,14 +28,15 @@ export default (props) => {
       threshold: buildThresholdList()
     }
 
-    observer = new IntersectionObserver((info) => {
-      EventEmitter.dispatch("section_update", [props.title, info[0].intersectionRect.height]);
+    const observer = new IntersectionObserver( entries => {
+      EventEmitter.dispatch("section_update", [props.title, entries[0].intersectionRect.height]);
     }, options);
-    observer.observe(node);
-  }
+    observer.observe(sectionRef.current);
+    return () => observer.unobserve(effectSectionRef);
+  }, [props.title]);
 
   return (
-    <section className={"section " + props.bgColor} ref={ref}>
+    <section className={"section " + props.bgColor} ref={sectionRef}>
       <div className="link-id" id={props.title} />
       <Heading title={props.title} />
       <hr />
