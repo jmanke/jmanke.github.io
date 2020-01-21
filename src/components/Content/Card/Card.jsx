@@ -1,30 +1,33 @@
 import React from "react";
-import Img from "../../../images/tft.png";
+import Img from "../../../images/MineLife-VR.jpg";
 
-export default () => {
-  const [secondPageActive, setSecondPageActive] = React.useState("");
+export default (props) => {
+  const [firstPageActive, setFirstPageActive] = React.useState(true);
 
-  function onReadMore() {
-    setSecondPageActive(" page-visible");
-  }
+  const firstPageVisible = firstPageActive ? " is-visible" : "";
+  const secondPageVisible = firstPageActive ? "" : " is-visible";
 
   return (
     <div className="project-card">
-      <div className="project-card__page primary">
-        <img src={Img} alt="Test" className="card-img" />
-        <h3 className="card-title">Card Title</h3>
+      <div className={"project-card__page primary"}>
+        <img src={props.image} alt="Test" className="card-img" />
+        <h3 className="card-title">{props.title}</h3>
+        <hr className="card-hr" />
         <p className="card-text">
-        This is some test text for a card.
-        This is some test text for a card.
-        This is some test text for a card.
-        This is some test text for a card.
-        This is some test text for a card.
-        This is some test text for a card.
+          {props.cardText}
         </p>
-        <button className="card-readmore" onClick={onReadMore}>Read More</button>
       </div>
-      <div className={"project-card__page secondary" + secondPageActive}>
-        <p>TEST</p>
+      <div className={"project-card__page secondary " + secondPageVisible}>
+        <h3 className="card-title">Overview</h3>
+        <hr className="card-hr" />
+        <ul className="card-list">
+          {props.overviewItems ? props.overviewItems.map(item => <li>{item}</li>) : null}
+        </ul>
+      </div>
+      <div className="card-learnmore" onClick={() => setFirstPageActive(!firstPageVisible)}>
+        {firstPageVisible ?
+          <h4 className="card-learnmore__text">Learn More</h4> :
+          <i className="fas fa-chevron-down card-learnmore__text" />}
       </div>
     </div>
   );

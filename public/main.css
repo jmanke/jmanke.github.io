@@ -43,6 +43,11 @@ p {
   }
 }
 
+ul {
+  list-style: disc;
+  color: #1E1E1E;
+}
+
 .logo {
   cursor: pointer;
   width: 3rem;
@@ -380,8 +385,6 @@ p {
           flex-direction: column;
   font-size: 3rem;
   margin-bottom: 5rem;
-  -webkit-perspective: 1000px;
-          perspective: 1000px;
 }
 
 .landing-page__canvas {
@@ -449,10 +452,8 @@ p {
   bottom: -5rem;
   margin-left: auto;
   margin-right: auto;
-  -webkit-transform: rotateX(110deg);
-          transform: rotateX(110deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -505,7 +506,7 @@ p {
           align-items: center;
 }
 
-.content .section hr {
+.content .section .section-hr {
   border-style: dotted;
   border-width: 1rem;
   border-top: 1rem;
@@ -600,6 +601,7 @@ p {
   border-style: solid;
   border-color: #333333;
   border-width: 1px;
+  font-size: 1.2rem;
 }
 
 .content .section .projects__grid .project-card__page {
@@ -622,18 +624,29 @@ p {
 
 .content .section .projects__grid .project-card__page.secondary {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   bottom: 0;
   left: 0;
   height: 0;
-  background-color: #bbbbbb;
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
+  background-color: #F3F3F3;
+  overflow: hidden;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
 
-.content .section .projects__grid .project-card__page.secondary.page-visible {
+.content .section .projects__grid .project-card__page.secondary.is-visible {
   height: 100%;
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
 }
 
 .content .section .projects__grid .project-card__page .card-img {
@@ -648,21 +661,59 @@ p {
 }
 
 .content .section .projects__grid .project-card__page .card-text {
-  margin: 1rem;
+  margin: 1rem 2rem;
   height: 6rem;
+  line-height: initial;
   overflow-y: hidden;
-  border-style: solid;
-  border-color: #333333;
-  border-width: 1px;
 }
 
-.content .section .projects__grid .project-card__page .card-readmore {
+.content .section .projects__grid .project-card__page .card-hr {
+  width: 80%;
+  margin-top: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: solid;
+  border-width: 1px;
+  border-top: 1rem;
+  width: 60%;
+  color: #bbbbbb;
+}
+
+.content .section .projects__grid .project-card .card-list {
+  margin: 1rem 3rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.content .section .projects__grid .project-card .card-learnmore {
+  position: absolute;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 2rem;
   margin-top: auto;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3F9CD6;
+  cursor: pointer;
+}
+
+.content .section .projects__grid .project-card .card-learnmore__text {
+  margin: auto;
+  color: white;
+}
+
+.content .section .projects__grid .project-card .card-learnmore__text::-moz-selection {
+  background: transparent;
+}
+
+.content .section .projects__grid .project-card .card-learnmore__text::selection {
+  background: transparent;
 }
 
 .heading {
@@ -690,12 +741,12 @@ p {
 
 .fade-in-section {
   opacity: 0;
-  -webkit-transform: translateY(0vh);
-          transform: translateY(0vh);
-  -webkit-transition: opacity 0.15s ease-out, -webkit-transform 0.15s ease-out;
-  transition: opacity 0.15s ease-out, -webkit-transform 0.15s ease-out;
-  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
-  transition: opacity 0.15s ease-out, transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+  -webkit-transition: opacity 0.075s ease-out, -webkit-transform 0.075s ease-out;
+  transition: opacity 0.075s ease-out, -webkit-transform 0.075s ease-out;
+  transition: opacity 0.075s ease-out, transform 0.075s ease-out;
+  transition: opacity 0.075s ease-out, transform 0.075s ease-out, -webkit-transform 0.075s ease-out;
   will-change: opacity, visibility;
 }
 
@@ -751,6 +802,6 @@ p {
 }
 
 .bg-secondary {
-  background-color: #f3f3f3;
+  background-color: #F3F3F3;
 }
 /*# sourceMappingURL=main.css.map */
