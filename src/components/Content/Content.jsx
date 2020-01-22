@@ -2,10 +2,10 @@ import React from "react";
 import Section from "./Section";
 import LandingPage from "./Sections/Landing/Landing";
 import About from "./Sections/About";
-import Experience from "./Sections/Experience";
+import Experience from "./Sections/Experience/Experience";
 import Projects from "./Sections/Projects/Projects";
 import Skills from "./Sections/Skills";
-import Education from "./Sections/Education";
+import Education from "./Sections/Education/Education";
 //import Resume from "./Sections/Resume";
 
 export default () => (

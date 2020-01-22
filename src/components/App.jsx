@@ -1,13 +1,13 @@
 import React from "react";
 import Nav from "./Nav/Nav";
 import Content from "./Content/Content";
-import LineNumbers from "./LineNumbers";
+import Footer from "./Footer/Footer";
 
 export default () => {
   return (
   <div className="app">
     <Nav />
     <Content />
-    <LineNumbers />
+    <Footer />
   </div>
 )};

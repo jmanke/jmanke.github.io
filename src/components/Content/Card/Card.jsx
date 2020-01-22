@@ -6,6 +6,7 @@ export default (props) => {
 
   const firstPageVisible = firstPageActive ? " is-visible" : "";
   const secondPageVisible = firstPageActive ? "" : " is-visible";
+  let i = 0;
 
   return (
     <div className="project-card">
@@ -13,7 +14,7 @@ export default (props) => {
         <img src={props.image} alt="Test" className="card-img" />
         <h3 className="card-title">{props.title}</h3>
         <hr className="card-hr" />
-        <p className="card-text">
+        <p className="card-text txt-md">
           {props.cardText}
         </p>
       </div>
@@ -21,13 +22,15 @@ export default (props) => {
         <h3 className="card-title">Overview</h3>
         <hr className="card-hr" />
         <ul className="card-list">
-          {props.overviewItems ? props.overviewItems.map(item => <li>{item}</li>) : null}
+          {props.overviewItems ? 
+            props.overviewItems.map(item => <li key={i++}>{item}</li>) : 
+            null}
         </ul>
       </div>
       <div className="card-learnmore" onClick={() => setFirstPageActive(!firstPageVisible)}>
         {firstPageVisible ?
-          <h4 className="card-learnmore__text">Learn More</h4> :
-          <i className="fas fa-chevron-down card-learnmore__text" />}
+          <p className="card-learnmore__text txt-md">Learn More</p> :
+          <i className="fas fa-chevron-down card-learnmore__text txt-xlg" />}
       </div>
     </div>
   );

@@ -38,7 +38,7 @@ const projectInfo = [
       "Lead developer and project owner",
       "Designed and implemented Google Maps style label system",
       "Built a GeoJSON to mesh converter for 3D visualization",
-      "Developed a togographical, slope and contour shader.",
+      "Developed a togographical, slope and contour shader",
       "Made with Unity and C#"
     ]
   }

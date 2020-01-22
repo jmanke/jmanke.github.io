@@ -36,7 +36,7 @@ export default (props) => {
   }, [props.title]);
 
   return (
-    <section className={"section " + props.bgColor} ref={sectionRef}>
+    <section className={"section " + props.bgColor} ref={sectionRef} id={props.title}>
       <div className="link-id" id={props.title} />
       <Heading title={props.title} />
       <hr className="section-hr" />
