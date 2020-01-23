@@ -1,7 +1,7 @@
 import React from "react";
 import Img from "../../../images/MineLife-VR.jpg";
 
-export default (props) => {
+export default props => {
   const [firstPageActive, setFirstPageActive] = React.useState(true);
 
   const firstPageVisible = firstPageActive ? " is-visible" : "";
@@ -12,26 +12,23 @@ export default (props) => {
     <div className="project-card">
       <div className={"project-card__page primary"}>
         <img src={props.image} alt="Test" className="card-img" />
-        <h3 className="card-title">{props.title}</h3>
-        <hr className="card-hr" />
-        <p className="card-text txt-md">
-          {props.cardText}
-        </p>
+        <div className="card-txt-area">
+          <h3 className="card-title">{props.title}</h3>
+          <p className="card-text txt-xsm">{props.cardText}</p>
+          <button className="btn" onClick={() => setFirstPageActive(!firstPageVisible)}> Learn More</button>
+        </div>
       </div>
       <div className={"project-card__page secondary " + secondPageVisible}>
-        <h3 className="card-title">Overview</h3>
-        <hr className="card-hr" />
-        <ul className="card-list">
-          {props.overviewItems ? 
-            props.overviewItems.map(item => <li key={i++}>{item}</li>) : 
-            null}
-        </ul>
-      </div>
-      <div className="card-learnmore" onClick={() => setFirstPageActive(!firstPageVisible)}>
-        {firstPageVisible ?
-          <p className="card-learnmore__text txt-md">Learn More</p> :
-          <i className="fas fa-chevron-down card-learnmore__text txt-xlg" />}
+        <div className="card-txt-area">
+          <h3 className="card-title">Overview</h3>
+          <ul className="card-list">
+            {props.overviewItems
+              ? props.overviewItems.map(item => <li key={i++}>{item}</li>)
+              : null}
+          </ul>
+          <i class="fas fa-times card-close" onClick={() => setFirstPageActive(!firstPageVisible)}></i>
+        </div>
       </div>
     </div>
   );
-}
+};

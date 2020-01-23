@@ -376,6 +376,50 @@ ul li {
   padding: 0.25rem 0;
 }
 
+.btn {
+  /* default for <button>, but useful for <a> */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px #bbbbbb;
+  /* size comes from text & padding (no width/height) */
+  padding: 0.5em 1em;
+  /* make sure colors have enough contrast! */
+  color: #1E1E1E;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #3F9CD6;
+  color: white;
+}
+
+.btn:active {
+  border: solid 1px #bbbbbb;
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+  -webkit-filter: saturate(150%);
+          filter: saturate(150%);
+  outline: none;
+}
+
+.btn:focus {
+  border: solid 1px #bbbbbb;
+  outline: none;
+  background-color: #3F9CD6;
+  color: white;
+}
+
 p {
   color: #1E1E1E;
 }
@@ -385,6 +429,12 @@ p {
   width: 3rem;
   height: 3rem;
   margin: auto;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .nav-item {
@@ -854,9 +904,9 @@ p {
 }
 
 .content .section .section-container {
-  width: 80%;
+  width: 90%;
   padding: 5rem 0;
-  max-width: 70rem;
+  max-width: 72rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -898,6 +948,12 @@ p {
   width: 70%;
 }
 
+@media screen and (max-width: 1000px) {
+  .content .section .text-img-box__txt {
+    width: 100%;
+  }
+}
+
 .content .section .text-img-box__img {
   border-radius: 100%;
   padding: 2rem 2rem;
@@ -935,12 +991,11 @@ p {
 
 .content .section .projects__grid .project-card {
   position: relative;
-  width: 18rem;
-  height: 28rem;
-  margin: 2rem;
-  border-style: solid;
-  border-color: #333333;
-  border-width: 1px;
+  width: 20.5rem;
+  height: 25rem;
+  margin: 1rem;
+  -webkit-box-shadow: 0 0 15px #888888;
+          box-shadow: 0 0 15px #888888;
 }
 
 .content .section .projects__grid .project-card__page {
@@ -970,22 +1025,38 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
   bottom: 0;
   left: 0;
   height: 0;
-  background-color: #F3F3F3;
+  background-color: white;
   overflow: hidden;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
+  -webkit-transition: height 0.25s ease-in;
+  transition: height 0.25s ease-in;
+  will-change: height;
 }
 
 .content .section .projects__grid .project-card__page.secondary.is-visible {
   height: 100%;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
+  -webkit-transition: height 0.25s ease-out;
+  transition: height 0.25s ease-out;
+  will-change: height;
+}
+
+.content .section .projects__grid .project-card__page .card-txt-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 80%;
+  height: 100%;
 }
 
 .content .section .projects__grid .project-card__page .card-img {
@@ -993,64 +1064,38 @@ p {
 }
 
 .content .section .projects__grid .project-card__page .card-title {
-  margin-bottom: 0;
+  margin: 1rem 0;
   color: #3b3b3b;
-  text-align: center;
 }
 
 .content .section .projects__grid .project-card__page .card-text {
-  margin: 0 2rem;
+  margin: 0;
   height: 6rem;
-  line-height: 1.5rem;
   overflow-y: hidden;
+  color: #9b9b9b;
 }
 
-.content .section .projects__grid .project-card__page .card-hr {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: solid;
-  border-width: 1px;
-  border-top: 1rem;
-  width: 60%;
-  color: #bbbbbb;
+.content .section .projects__grid .project-card__page .card-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  color: #1E1E1E;
+}
+
+.content .section .projects__grid .project-card__page .card-close:hover {
+  color: #383838;
+}
+
+.content .section .projects__grid .project-card .btn {
+  margin-top: auto;
+  margin-bottom: 1rem;
 }
 
 .content .section .projects__grid .project-card .card-list {
-  margin: 1rem 1rem;
   -ms-flex-item-align: start;
       align-self: flex-start;
-}
-
-.content .section .projects__grid .project-card .card-learnmore {
-  position: absolute;
-  bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 2.5rem;
-  margin-top: auto;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background-color: #3F9CD6;
-  cursor: pointer;
-}
-
-.content .section .projects__grid .project-card .card-learnmore__text {
-  margin: auto;
-  color: white;
-}
-
-.content .section .projects__grid .project-card .card-learnmore__text::-moz-selection {
-  background: transparent;
-}
-
-.content .section .projects__grid .project-card .card-learnmore__text::selection {
-  background: transparent;
+  padding: 0 1.5rem;
 }
 
 .content .section .skills {
@@ -1089,6 +1134,7 @@ p {
 @media screen and (max-width: 700px) {
   .resume-item__header__primary {
     margin-right: initial;
+    width: 100%;
   }
 }
 
@@ -1105,6 +1151,10 @@ p {
 .resume-item__content {
   margin-left: auto;
   width: 100%;
+}
+
+.resume-item .resume-company {
+  color: #3F9CD6;
 }
 
 .heading {
@@ -1169,15 +1219,21 @@ p {
 .scale-expand {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: all 80ms linear;
-  transition: all 80ms linear;
+  -webkit-transition: -webkit-transform 80ms linear;
+  transition: -webkit-transform 80ms linear;
+  transition: transform 80ms linear;
+  transition: transform 80ms linear, -webkit-transform 80ms linear;
+  will-change: transform;
 }
 
 .scale-original {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 80ms linear;
-  transition: all 80ms linear;
+  -webkit-transition: -webkit-transform 80ms linear;
+  transition: -webkit-transform 80ms linear;
+  transition: transform 80ms linear;
+  transition: transform 80ms linear, -webkit-transform 80ms linear;
+  will-change: transform;
 }
 
 .show {
@@ -1262,6 +1318,10 @@ p {
 
 .txt-dark {
   color: #1E1E1E;
+}
+
+.txt-reset-lh {
+  line-height: initial;
 }
 
 .footer {

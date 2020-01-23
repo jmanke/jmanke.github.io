@@ -1,5 +1,6 @@
 const experienceInfo = [
     {
+        key: 0,
         company: "LlamaZOO Interactive Inc.",
         period: "Sep 2017 - Jan 2019",
         position: "Software Developer",
@@ -13,6 +14,7 @@ const experienceInfo = [
         
     },
     {
+        key: 1,
         company: "Canada Revenue Agency (CRA)",
         period: "Apr 2016 - Dec 2017",
         position: "Junior IT Analyst",

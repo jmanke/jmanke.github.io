@@ -29,6 +29,15 @@
 
 //@include scrollbars(1em, $accent-color, $secondary-color);
 
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
@@ -67,6 +76,48 @@ ul {
   }
 }
 
+.btn {
+  /* default for <button>, but useful for <a> */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px $accent-color;
+
+  /* size comes from text & padding (no width/height) */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: $text-color-dark;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-blue;
+    color: white;
+  }
+
+  &:active {
+    border: solid 1px $accent-color;
+    transform: translateY(1px);
+    filter: saturate(150%);
+    outline: none;
+  }
+
+  &:focus {
+    border: solid 1px $accent-color;
+    outline: none;
+    background-color: $accent-blue;
+    color: white;
+  }
+}
+
 p {
   color: $text-color-dark;
 }
@@ -76,6 +127,16 @@ p {
   width: 3rem;
   height: 3rem;
   margin: auto;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  // width: 100vw;
+  // height: 100vh;
+  // background-color: $primary-color-dark;
+  // z-index: -100;
 }
 
 .nav-item {
@@ -462,10 +523,10 @@ p {
     }
 
     .section-container {
-      width: 80%;
+      width: 90%;
       padding: $margin-vertical 0;
       // margin: $margin-vertical $margin-horizontal;
-      max-width: 70rem;
+      max-width: 72rem;
       display: flex;
       flex-direction: column;
 
@@ -485,6 +546,10 @@ p {
 
       &__txt {
         width: 70%;
+
+        @media screen and (max-width: $tablet-width) {
+          width: 100%;
+        }
       }
 
       &__img {
@@ -497,14 +562,12 @@ p {
           align-self: initial;
         }
       }
-    }   
+    }
 
-    .about { 
-
+    .about {
     }
 
     .experience {
-
     }
 
     .projects {
@@ -518,12 +581,10 @@ p {
 
         .project-card {
           position: relative;
-          width: 18rem;
-          height: 28rem;
-          margin: 2rem;
-          border-style: solid;
-          border-color: $secondary-color;
-          border-width: 1px;
+          width: 20.5rem;
+          height: 25rem;
+          margin: 1rem;
+          box-shadow: 0 0 15px #888888;
 
           &__page {
             width: 100%;
@@ -540,18 +601,28 @@ p {
               position: absolute;
               display: flex;
               flex-direction: column;
-              align-items: center;
+              align-items: left;
               bottom: 0;
               left: 0;
               height: 0;
-              background-color: $section-secondary;
+              background-color: white;
               overflow: hidden;
-              transition: all 0.25s ease-out;
+              transition: height 0.25s ease-in;
+              will-change: height;
 
               &.is-visible {
                 height: 100%;
-                transition: all 0.25s ease-out;
+                transition: height 0.25s ease-out;
+                will-change: height;
               }
+            }
+
+            .card-txt-area {
+              display: flex;
+              flex-direction: column;
+              align-self: center;
+              width: 80%;
+              height: 100%;
             }
 
             .card-img {
@@ -559,55 +630,38 @@ p {
             }
 
             .card-title {
-              margin-bottom: 0;
+              margin: 1rem 0;
               color: $heading-color;
-              text-align: center;
             }
 
             .card-text {
-              margin: 0 2rem;
+              margin: 0;
               height: 6rem;
-              line-height: 1.5rem;
               overflow-y: hidden;
+              color: #9b9b9b;
             }
 
-            .card-hr {
-              width: 80%;
-              margin-left: auto;
-              margin-right: auto;
-              border-style: solid;
-              border-width: 1px;
-              border-top: 1rem;
-              width: 60%;
-              color: $accent-color;
+            .card-close {
+              position: absolute;
+              top: 0.8rem;
+              right: 1rem;
+              font-size: 1.5rem;
+              color: $primary-color-dark;
+
+              &:hover {
+                color: lighten( $primary-color-dark, 10%);
+              }
             }
+          }
+
+          .btn {
+            margin-top: auto;
+            margin-bottom: 1rem;
           }
 
           .card-list {
-            margin: 1rem 1rem; 
             align-self: flex-start;
-          }
-
-          .card-learnmore {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            width: 100%;
-            height: 2.5rem;
-            margin-top: auto;
-            align-self: center;
-            align-items: center;
-            background-color: $accent-blue;
-            cursor: pointer;
-
-            &__text {
-              margin: auto;
-              color: white;
-
-              &::selection {
-                background: transparent;
-              }
-            }
+            padding: 0 1.5rem;
           }
         }
       }
@@ -618,14 +672,13 @@ p {
     }
 
     .education {
-
     }
   }
 }
 
 .resume-item {
   padding: 2rem 0;
-  
+
   &__header {
     display: flex;
 
@@ -644,6 +697,7 @@ p {
 
       @media screen and (max-width: $mobile-width) {
         margin-right: initial;
+        width: 100%;
       }
     }
 
@@ -659,6 +713,10 @@ p {
   &__content {
     margin-left: auto;
     width: 100%;
+  }
+
+  .resume-company {
+    color: $accent-blue;
   }
 }
 
@@ -714,12 +772,14 @@ p {
 
 .scale-expand {
   transform: scale(1.1);
-  transition: all 80ms linear;
+  transition: transform 80ms linear;
+  will-change: transform;
 }
 
 .scale-original {
   transform: scale(1);
-  transition: all 80ms linear;
+  transition: transform 80ms linear;
+  will-change: transform;
 }
 
 // END REFACTOR
@@ -762,7 +822,7 @@ p {
   }
 
   &-md {
-    font-size: 1.1em; 
+    font-size: 1.1em;
     line-height: 2rem;
 
     @media screen and (max-width: $tablet-width) {
@@ -797,6 +857,10 @@ p {
 
   &-dark {
     color: $text-color-dark;
+  }
+
+  &-reset-lh {
+    line-height: initial;
   }
 }
 
