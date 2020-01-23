@@ -898,6 +898,12 @@ p {
   width: 70%;
 }
 
+@media screen and (max-width: 1000px) {
+  .content .section .text-img-box__txt {
+    width: 100%;
+  }
+}
+
 .content .section .text-img-box__img {
   border-radius: 100%;
   padding: 2rem 2rem;
@@ -976,16 +982,18 @@ p {
   bottom: 0;
   left: 0;
   height: 0;
-  background-color: #F3F3F3;
+  background-color: #d2e8f5;
   overflow: hidden;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
+  -webkit-transition: height 0.25s ease-in;
+  transition: height 0.25s ease-in;
+  will-change: height;
 }
 
 .content .section .projects__grid .project-card__page.secondary.is-visible {
   height: 100%;
-  -webkit-transition: all 0.25s ease-out;
-  transition: all 0.25s ease-out;
+  -webkit-transition: height 0.25s ease-out;
+  transition: height 0.25s ease-out;
+  will-change: height;
 }
 
 .content .section .projects__grid .project-card__page .card-img {
@@ -1089,6 +1097,7 @@ p {
 @media screen and (max-width: 700px) {
   .resume-item__header__primary {
     margin-right: initial;
+    width: 100%;
   }
 }
 
@@ -1105,6 +1114,10 @@ p {
 .resume-item__content {
   margin-left: auto;
   width: 100%;
+}
+
+.resume-item .resume-company {
+  color: #3F9CD6;
 }
 
 .heading {
@@ -1169,15 +1182,21 @@ p {
 .scale-expand {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: all 80ms linear;
-  transition: all 80ms linear;
+  -webkit-transition: -webkit-transform 80ms linear;
+  transition: -webkit-transform 80ms linear;
+  transition: transform 80ms linear;
+  transition: transform 80ms linear, -webkit-transform 80ms linear;
+  will-change: transform;
 }
 
 .scale-original {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: all 80ms linear;
-  transition: all 80ms linear;
+  -webkit-transition: -webkit-transform 80ms linear;
+  transition: -webkit-transform 80ms linear;
+  transition: transform 80ms linear;
+  transition: transform 80ms linear, -webkit-transform 80ms linear;
+  will-change: transform;
 }
 
 .show {
@@ -1262,6 +1281,10 @@ p {
 
 .txt-dark {
   color: #1E1E1E;
+}
+
+.txt-reset-lh {
+  line-height: initial;
 }
 
 .footer {

@@ -485,6 +485,10 @@ p {
 
       &__txt {
         width: 70%;
+
+        @media screen and (max-width: $tablet-width) {
+          width: 100%;
+        }
       }
 
       &__img {
@@ -544,13 +548,15 @@ p {
               bottom: 0;
               left: 0;
               height: 0;
-              background-color: $section-secondary;
+              background-color: lighten($accent-blue, 35%);
               overflow: hidden;
-              transition: all 0.25s ease-out;
+              transition: height 0.25s ease-in;
+              will-change: height;
 
               &.is-visible {
                 height: 100%;
-                transition: all 0.25s ease-out;
+                transition: height 0.25s ease-out;
+                will-change: height;
               }
             }
 
@@ -644,6 +650,7 @@ p {
 
       @media screen and (max-width: $mobile-width) {
         margin-right: initial;
+        width: 100%;
       }
     }
 
@@ -659,6 +666,11 @@ p {
   &__content {
     margin-left: auto;
     width: 100%;
+  }
+
+  .resume-company{
+    color: $accent-blue;
+
   }
 }
 
@@ -714,12 +726,14 @@ p {
 
 .scale-expand {
   transform: scale(1.1);
-  transition: all 80ms linear;
+  transition: transform 80ms linear;
+  will-change: transform;
 }
 
 .scale-original {
   transform: scale(1);
-  transition: all 80ms linear;
+  transition: transform 80ms linear;
+  will-change: transform;
 }
 
 // END REFACTOR
@@ -797,6 +811,10 @@ p {
 
   &-dark {
     color: $text-color-dark;
+  }
+
+  &-reset-lh{
+    line-height: initial;
   }
 }
 
