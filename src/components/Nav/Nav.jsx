@@ -21,12 +21,13 @@ export default () => {
     setSidebarActive(false);
   }
 
-  function onSectionViewUpdate([title, intersectionHeight]) {
+  function onSectionViewUpdate([title, observerInfo]) {
     internalLinks.map( navLink => navLink.sectionActive = false);
     let link = internalLinks.find( navLink => navLink.title === title);
-    link["visibility"] = intersectionHeight;
+    link.visibility = observerInfo.intersectionRect.height;
     let max = internalLinks.reduce( (prev, curr) => curr.visibility > prev.visibility ? curr : prev );
-    max.sectionActive = max.visibility > window.innerHeight / 2;
+    max.sectionActive = max.visibility > window.innerHeight / 4;
+    //window.location.hash = "#" + title;
 
     setInternalLinks([...internalLinks]);
   }
@@ -48,6 +49,7 @@ export default () => {
           <NavItem
             {...link}
             showTooltip={true}
+            displayTitle={false}
           />
         )}
       </div>
@@ -59,6 +61,7 @@ export default () => {
           <NavItem 
             {...link}
             showTooltip={false}
+            displayTitle={false}
           />
         )}
       </div>
@@ -72,6 +75,7 @@ export default () => {
             <NavItem
               {...link}
               showTooltip={false}
+              displayTitle={true}
             />
           </div>
         )}

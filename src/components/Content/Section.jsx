@@ -29,7 +29,7 @@ export default (props) => {
     }
 
     const observer = new IntersectionObserver( entries => {
-      EventEmitter.dispatch("section_update", [props.title, entries[0].intersectionRect.height]);
+      EventEmitter.dispatch("section_update", [props.title, entries[0]]);
     }, options);
     observer.observe(sectionRef.current);
     return () => observer.unobserve(effectSectionRef);
