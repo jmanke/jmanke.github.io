@@ -9,12 +9,12 @@ export default props => {
   let i = 0;
 
   return (
-    <div className="project-card">
+    <div className={"project-card " + props.className}>
       <div className={"project-card__page primary"}>
         <img src={props.image} alt="Test" className="card-img" />
         <div className="card-txt-area">
           <h3 className="card-title">{props.title}</h3>
-          <p className="card-text txt-xsm">{props.cardText}</p>
+          <p className="card-text">{props.cardText}</p>
           <button className="btn" onClick={() => setFirstPageActive(!firstPageVisible)}> Learn More</button>
         </div>
       </div>
@@ -26,7 +26,7 @@ export default props => {
               ? props.overviewItems.map(item => <li key={i++}>{item}</li>)
               : null}
           </ul>
-          <i class="fas fa-times card-close" onClick={() => setFirstPageActive(!firstPageVisible)}></i>
+          <i className="fas fa-times card-close" onClick={() => setFirstPageActive(!firstPageVisible)}></i>
         </div>
       </div>
     </div>

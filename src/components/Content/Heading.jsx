@@ -1,11 +1,7 @@
 import React from "react";
 
-export default (props) => {
+export default props => {
   return (
-    <h1 className="heading">
-      {/* <span className="heading__tag unselectable">{"<"}</span> */}
-      {props.title}
-      {/* <span className="heading__tag unselectable">{">"}</span> */}
-    </h1>
-  )
+    <h1 className="heading">{props.title}</h1>
+  );
 };

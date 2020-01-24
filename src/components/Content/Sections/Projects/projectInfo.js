@@ -20,7 +20,7 @@ const projectInfo = [
     title: "MineLife Hololens",
     image: mineLifeHololensImg,
     cardText:
-      "Augmented Reailty visualization of proposed mining sites built for the Microsoft Hololens.",
+      "AR visualization of proposed mining sites built for the Microsoft Hololens.",
     overviewItems: [
       "Designed and built gesture interaction system",
       "Implemented hologram syncing (location and state) across multiple users",
@@ -33,7 +33,7 @@ const projectInfo = [
     title: "TimberOps",
     image: forestOpsImg,
     cardText:
-      "3D visualization of logging sites using GIS, LiDAR and ariel imagery built for VR and PC.",
+      "3D visualization of logging sites using GIS, LiDAR and ariel imagery for VR and PC.",
     overviewItems: [
       "Lead developer and project owner",
       "Designed and implemented Google Maps style label system",

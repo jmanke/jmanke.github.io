@@ -9,8 +9,8 @@ export default props => {
           <p className="txt-lg">{props.position}</p>
         </div>
         <div className="resume-item__header__secondary">
-          <p className="txt-sm">{props.period}</p>
-          <p className="txt-sm">{props.location}</p>
+          <p className="txt-sm txt-align-right">{props.period}</p>
+          <p className="txt-sm txt-align-right">{props.location}</p>
         </div>
       </div>
       <div className="resume-item__content">

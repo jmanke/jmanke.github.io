@@ -1,6 +1,7 @@
 import React from "react";
 import { EventEmitter } from "../Shared/Events";
 import Heading from "./Heading";
+import FadeSection from "../Shared/FadeSection";
 
 function buildThresholdList() {
   let thresholds = [];
@@ -35,11 +36,15 @@ export default (props) => {
     return () => observer.unobserve(effectSectionRef);
   }, [props.title]);
 
+  console.log(props.title);
+  console.log(props.children);
+
   return (
     <section className={"section " + props.bgColor} ref={sectionRef} id={props.title}>
       <div className="link-id" id={props.title} />
-      <Heading title={props.title} />
-      <hr className="section-hr" />
+      <FadeSection>
+        <Heading title={props.title} />
+      </FadeSection>
       {props.children}
     </section>
   )

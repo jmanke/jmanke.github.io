@@ -16,6 +16,5 @@ export default () => (
     <Section children={<Projects />} title={"Projects"} bgColor={"bg-primary"} />
     <Section children={<Skills />} title={"Skills"} bgColor={"bg-secondary"} />
     <Section children={<Education />} title={"Education"} bgColor={"bg-primary"} />
-    {/* <Section children={<Resume />} title={"Resume"} /> */}
   </div>
 );
