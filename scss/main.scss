@@ -1,37 +1,21 @@
 @import "./resets";
 @import "./variables";
 
-// @mixin scrollbars(
-//   $size,
-//   $foreground-color,
-//   $background-color: mix($foreground-color, white, 50%)
-// ) {
-//   // For Google Chrome
-//   ::-webkit-scrollbar {
-//     width: $size;
-//     height: $size;
-//   }
-
-//   ::-webkit-scrollbar-thumb {
-//     background: $foreground-color;
-//   }
-
-//   ::-webkit-scrollbar-track {
-//     background: $background-color;
-//   }
-
-//   // For Internet Explorer
-//   body {
-//     scrollbar-face-color: $foreground-color;
-//     scrollbar-track-color: $background-color;
-//   }
-// }
-
-//@include scrollbars(1em, $accent-color, $secondary-color);
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
 
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 // prevent selection
@@ -67,6 +51,48 @@ ul {
   }
 }
 
+.btn {
+  /* default for <button>, but useful for <a> */
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  height: fit-content;
+
+  /* create a small space when buttons wrap on 2 lines */
+  margin: 2px 0;
+
+  /* invisible border (will be colored on hover/focus) */
+  border: solid 1px $accent-color;
+
+  /* size comes from text & padding (no width/height) */
+  padding: 0.5em 1em;
+
+  /* make sure colors have enough contrast! */
+  color: $text-color-dark;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-blue;
+    color: white;
+  }
+
+  &:active {
+    border: solid 1px $accent-color;
+    transform: translateY(1px);
+    filter: saturate(150%);
+    outline: none;
+  }
+
+  &:focus {
+    border: solid 1px $accent-color;
+    outline: none;
+    background-color: $accent-blue;
+    color: white;
+  }
+}
+
 p {
   color: $text-color-dark;
 }
@@ -76,6 +102,30 @@ p {
   width: 3rem;
   height: 3rem;
   margin: auto;
+}
+
+.loading-screen {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $primary-color-dark;
+  z-index: 1000;
+
+  &.disable {
+    opacity: 0;
+    height: 0;
+    transition: opacity 1s ease-in-out, height 0s linear 1s;
+  }
+
+  .loader {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 
 .nav-item {
@@ -462,10 +512,10 @@ p {
     }
 
     .section-container {
-      width: 80%;
-      padding: $margin-vertical 0;
+      width: 90%;
+      padding: 2rem 0;
       // margin: $margin-vertical $margin-horizontal;
-      max-width: 70rem;
+      max-width: 72rem;
       display: flex;
       flex-direction: column;
 
@@ -501,35 +551,71 @@ p {
           align-self: initial;
         }
       }
-    }   
+    }
 
-    .about { 
-
+    .about {
     }
 
     .experience {
-
     }
 
     .projects {
-      height: 100%;
 
       &__grid {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+
+        .grid-columns {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          flex: 0;
+
+          .grid-column {
+            margin: 0.75vw;
+            width: 25vw;
+            height: 30.5vw;
+
+            max-width: 20.5rem;
+            max-height: 25rem;
+
+            @media screen and (max-width: $tablet-width) {
+              width: 35vw;
+              height: 42.7vw;
+              max-width: initial;
+              max-height: initial;
+  
+
+              margin: 1vw;
+            } 
+
+            @media screen and (max-width: $mobile-width) {
+              margin: 3vw;
+              width: 70vw;
+              height: 85.4vw;
+
+              min-width: 18rem;
+              min-height: 21.96rem;
+              max-width: 20.5rem;
+              max-height: 25rem;
+            } 
+          }
+        }
 
         .project-card {
           position: relative;
-          width: 18rem;
-          height: 28rem;
-          margin: 2rem;
-          border-style: solid;
-          border-color: $secondary-color;
-          border-width: 1px;
+          box-sizing: inherit;
+          box-shadow: 0 0 15px #888888;
+          transition: transform 0.2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.05);
+
+            @media screen and (max-width: $mobile-width) {
+              transform: none;
+            }
+          }
 
           &__page {
+            position: relative;
             width: 100%;
             height: 100%;
             display: flex;
@@ -544,11 +630,11 @@ p {
               position: absolute;
               display: flex;
               flex-direction: column;
-              align-items: center;
+              align-items: left;
               bottom: 0;
               left: 0;
               height: 0;
-              background-color: lighten($accent-blue, 35%);
+              background-color: white;
               overflow: hidden;
               transition: height 0.25s ease-in;
               will-change: height;
@@ -560,60 +646,52 @@ p {
               }
             }
 
+            .card-txt-area {
+              display: flex;
+              flex-direction: column;
+              align-self: center;
+              width: 80%;
+              height: 100%;
+            }
+
             .card-img {
               height: 50%;
             }
 
             .card-title {
-              margin-bottom: 0;
+              margin: 1rem 0;
               color: $heading-color;
-              text-align: center;
             }
 
             .card-text {
-              margin: 0 2rem;
-              height: 6rem;
-              line-height: 1.5rem;
+              margin: 0;
+              height: 60%;
               overflow-y: hidden;
+              color: #9b9b9b;
             }
 
-            .card-hr {
-              width: 80%;
-              margin-left: auto;
-              margin-right: auto;
-              border-style: solid;
-              border-width: 1px;
-              border-top: 1rem;
-              width: 60%;
-              color: $accent-color;
+            .card-close {
+              position: absolute;
+              top: 0.8rem;
+              right: 1rem;
+              font-size: 1.5rem;
+              color: $primary-color-dark;
+              cursor: pointer;
+
+              &:hover {
+                color: lighten( $primary-color-dark, 10%);
+              }
             }
+          }
+
+          .btn {
+            margin-top: auto;
+            margin-bottom: 1rem;
           }
 
           .card-list {
-            margin: 1rem 1rem; 
             align-self: flex-start;
-          }
-
-          .card-learnmore {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            width: 100%;
-            height: 2.5rem;
-            margin-top: auto;
-            align-self: center;
-            align-items: center;
-            background-color: $accent-blue;
-            cursor: pointer;
-
-            &__text {
-              margin: auto;
-              color: white;
-
-              &::selection {
-                background: transparent;
-              }
-            }
+            padding: 0 1.5rem;
           }
         }
       }
@@ -624,14 +702,13 @@ p {
     }
 
     .education {
-
     }
   }
 }
 
 .resume-item {
   padding: 2rem 0;
-  
+
   &__header {
     display: flex;
 
@@ -668,9 +745,8 @@ p {
     width: 100%;
   }
 
-  .resume-company{
+  .resume-company {
     color: $accent-blue;
-
   }
 }
 
@@ -679,7 +755,7 @@ p {
   color: $heading-color;
   text-align: center;
   font-size: 3rem;
-  padding: 5rem 0;
+  padding: 3rem 0;
 }
 
 .shadow-screen {
@@ -697,16 +773,14 @@ p {
 
 .fade-in-section {
   opacity: 0;
-  transform: translateY(10%);
-  transition: opacity 300ms ease-out, transform 600ms ease-out;
-  will-change: opacity, visibility;
+  transform: translateY(10vh);
 }
 
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
   visibility: visible;
-  transition: opacity 300ms ease-in, transform 600ms ease-in;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
 // move this to inline styling? Maybe using variable here in react would be better
@@ -776,7 +850,7 @@ p {
   }
 
   &-md {
-    font-size: 1.1em; 
+    font-size: 1.1em;
     line-height: 2rem;
 
     @media screen and (max-width: $tablet-width) {
@@ -813,7 +887,19 @@ p {
     color: $text-color-dark;
   }
 
-  &-reset-lh{
+  &-algn-cntr {
+    text-align: center;
+  }
+
+  &-align-left {
+    text-align: left;
+  }
+
+  &-align-right {
+    text-align: right;
+  }
+
+  &-reset-lh {
     line-height: initial;
   }
 }
@@ -841,3 +927,85 @@ p {
     left: 0;
   }
 }
+
+// SPINNER
+
+.lds-spinner {
+  color: official;
+  display: inline-block;
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: $accent-blue;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
