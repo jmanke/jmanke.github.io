@@ -364,6 +364,7 @@ html {
 body {
   background-color: white;
   font-family: "Ubuntu", sans-serif;
+  overflow-x: hidden;
 }
 
 .app {
@@ -837,29 +838,34 @@ p {
 .landing-page__container__title {
   font-size: 3em;
   color: whitesmoke;
-  margin-top: 9rem;
+  padding-top: 7rem;
+  margin-bottom: 1rem;
   margin-left: -1rem;
 }
 
 @media screen and (max-width: 800px) {
   .landing-page__container__title {
-    margin-top: 5rem;
+    padding-top: 5rem;
+    margin-bottom: 0.5rem;
     margin-left: -0.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 0.5rem;
   }
 }
 
-.landing-page__container__subtitle {
+.landing-page__container .type-writer {
   color: #6a9955;
-  margin-left: -1rem;
-  padding-top: 1rem;
+  margin-left: 4rem;
+  margin-top: 0.5rem;
+  padding: 0;
+  font-size: 1.5rem;
+  text-align: left;
 }
 
 @media screen and (max-width: 800px) {
-  .landing-page__container__subtitle {
-    margin-left: -0.5rem;
-    padding-top: initial;
+  .landing-page__container .type-writer {
+    margin-left: 3rem;
+    padding-top: 0;
+    margin-top: 0;
+    font-size: 1rem;
   }
 }
 
@@ -872,8 +878,8 @@ p {
   bottom: -5rem;
   margin-left: auto;
   margin-right: auto;
-  -webkit-transform: rotateX(90deg);
-          transform: rotateX(90deg);
+  -webkit-transform: scale(0);
+          transform: scale(0);
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
@@ -888,10 +894,8 @@ p {
 
 .landing-page__logo.is-visible {
   opacity: 1;
-  -webkit-transform: rotateX(0);
-          transform: rotateX(0);
-  -webkit-transition: all 0.3s ease-out;
-  transition: all 0.3s ease-out;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .content {
@@ -924,6 +928,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 3rem 0;
 }
 
 .content .section .section-hr {
@@ -991,6 +996,7 @@ p {
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 10rem;
+  margin-left: auto;
 }
 
 @media screen and (max-width: 1080px) {
@@ -998,6 +1004,7 @@ p {
     -ms-flex-item-align: initial;
         -ms-grid-row-align: initial;
         align-self: initial;
+    margin-left: initial;
   }
 }
 
@@ -1160,6 +1167,11 @@ p {
   color: #383838;
 }
 
+.content .section .projects__grid .project-card__page .card-close:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
 .content .section .projects__grid .project-card .btn {
   margin-top: auto;
   margin-bottom: 1rem;
@@ -1213,11 +1225,13 @@ p {
 
 .resume-item__header__secondary {
   margin-left: auto;
+  text-align: right;
 }
 
 @media screen and (max-width: 800px) {
   .resume-item__header__secondary {
     margin-left: initial;
+    text-align: initial;
   }
 }
 
