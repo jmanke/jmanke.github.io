@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.ee39c6e3.chunk.css",
+    "main.css": "/static/css/main.41d7cce2.chunk.css",
     "main.js": "/static/js/main.4b37204d.chunk.js",
     "main.js.map": "/static/js/main.4b37204d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ebe23bff.js",
@@ -8,9 +8,9 @@
     "static/js/2.80d2d2ac.chunk.js": "/static/js/2.80d2d2ac.chunk.js",
     "static/js/2.80d2d2ac.chunk.js.map": "/static/js/2.80d2d2ac.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.bfd2b03d2b7020e119c00e02a6731699.js": "/precache-manifest.bfd2b03d2b7020e119c00e02a6731699.js",
+    "precache-manifest.585d7c244dbf6662060b0a59bdf991a6.js": "/precache-manifest.585d7c244dbf6662060b0a59bdf991a6.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.ee39c6e3.chunk.css.map": "/static/css/main.ee39c6e3.chunk.css.map",
+    "static/css/main.41d7cce2.chunk.css.map": "/static/css/main.41d7cce2.chunk.css.map",
     "static/js/2.80d2d2ac.chunk.js.LICENSE": "/static/js/2.80d2d2ac.chunk.js.LICENSE",
     "static/media/Forest-Ops.png": "/static/media/Forest-Ops.fcac4558.png",
     "static/media/MineLife-Hololens.jpg": "/static/media/MineLife-Hololens.4359d434.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.ebe23bff.js",
     "static/js/2.80d2d2ac.chunk.js",
-    "static/css/main.ee39c6e3.chunk.css",
+    "static/css/main.41d7cce2.chunk.css",
     "static/js/main.4b37204d.chunk.js"
   ]
 }
