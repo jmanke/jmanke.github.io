@@ -36,6 +36,14 @@ body {
   //-ms-touch-action: none;
   //touch-action: none;
   //overflow-x: hidden;
+  &.page-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+  }
 }
 
 .app {

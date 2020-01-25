@@ -10,7 +10,7 @@ export default props => {
   return (
     <div className={"project-card " + props.className ?? ""}>
       <div className={"project-card__page primary"}>
-        <img src={props.image} alt="Test" className="card-img" />
+        <img src={props.image} alt={props.title} className="card-img" />
         <div className="card-txt-area">
           <h3 className="card-title">{props.title}</h3>
           <p className="card-text">{props.cardText}</p>

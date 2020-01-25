@@ -8,7 +8,6 @@ import Events from "./Shared/Events";
 window.onload = () => Events.eventEmitter.dispatch("onWindowLoad", null);
 
 export default () => {
-
   return (
   <div className="app">
     <LoadingScreen />
