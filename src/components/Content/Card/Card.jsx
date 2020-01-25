@@ -1,5 +1,4 @@
 import React from "react";
-import Img from "../../../images/MineLife-VR.jpg";
 
 export default props => {
   const [firstPageActive, setFirstPageActive] = React.useState(true);
@@ -9,7 +8,7 @@ export default props => {
   let i = 0;
 
   return (
-    <div className={"project-card " + props.className}>
+    <div className={"project-card " + props.className ?? ""}>
       <div className={"project-card__page primary"}>
         <img src={props.image} alt="Test" className="card-img" />
         <div className="card-txt-area">

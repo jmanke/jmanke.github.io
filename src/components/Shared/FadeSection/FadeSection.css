@@ -1,0 +1,11 @@
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(10vh);
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}

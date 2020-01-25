@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import navLinks from "../navLinks";
 import NavItem from "./NavItem";
 import logo from "../../images/logo.png";
-import { EventEmitter } from "../Shared/Events";
+import Events from "../Shared/Events";
 
 const navLogo = () => (
-  <img className="logo" href="/" src={logo} alt="Jeff Manke" />
+  <img className="logo" href="" src={logo} alt="Jeff Manke" onClick={() => {
+    window.location.href = "#";
+  }}/>
 );
 
 export default () => {
@@ -33,10 +35,10 @@ export default () => {
   }
 
   useEffect(() => {
-    EventEmitter.subscribe("section_update", onSectionViewUpdate);
+    Events.eventEmitter.subscribe("section_update", onSectionViewUpdate);
 
     return function cleanup () {
-       EventEmitter.unsubscribe("section_update", onSectionViewUpdate);
+      Events.eventEmitter.unsubscribe("section_update", onSectionViewUpdate);
     };
   });
 

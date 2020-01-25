@@ -1,0 +1,43 @@
+.fill-bar {
+	display: flex;
+	height: 2rem;
+
+	box-shadow: 0 0 5px #797979;
+	margin: 0.5rem 0;
+}
+
+.fill-bar .label-header {
+	display: flex;
+	height: 100%;
+	width: 10%;
+	min-width: 5rem;
+	background-color: #3F9CD6;
+}
+
+.fill-bar .label-header .label {
+	margin: auto;
+	color: white;
+}
+
+.fill-bar .fill-background {
+	display: flex;
+	background-color: transparent;
+	transition: width 4s ease-in-out;
+	will-change: width;
+	width: 0;
+	/* border: solid;
+	border-width: 1px;
+	border-color: black; */
+}
+
+.fill-bar .fill-background.is-visible {
+	width: 90%;
+}
+
+.fill-bar .fill-background .fill-percent {
+	color: white;
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: auto;
+	padding-left: 0.5rem;
+}

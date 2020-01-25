@@ -1,7 +1,7 @@
 import React from "react";
-import { EventEmitter } from "../Shared/Events";
+import Events from "../Shared/Events";
 import Heading from "./Heading";
-import FadeSection from "../Shared/FadeSection";
+import FadeSection from "../Shared/FadeSection/FadeSection";
 
 function buildThresholdList() {
   let thresholds = [];
@@ -17,7 +17,6 @@ function buildThresholdList() {
 }
 
 export default (props) => {
-  // reference to the section
   const sectionRef = React.useRef();
 
   React.useEffect( () => {
@@ -30,14 +29,11 @@ export default (props) => {
     }
 
     const observer = new IntersectionObserver( entries => {
-      EventEmitter.dispatch("section_update", [props.title, entries[0]]);
+      Events.eventEmitter.dispatch("section_update", [props.title, entries[0]]);
     }, options);
     observer.observe(sectionRef.current);
     return () => observer.unobserve(effectSectionRef);
   }, [props.title]);
-
-  console.log(props.title);
-  console.log(props.children);
 
   return (
     <section className={"section " + props.bgColor} ref={sectionRef} id={props.title}>

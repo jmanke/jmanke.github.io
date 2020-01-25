@@ -1,6 +1,6 @@
 import React from "react";
 import ResumeItem from "../../ResumeItem";
-import FadeSection from "../../../Shared/FadeSection";
+import FadeSection from "../../../Shared/FadeSection/FadeSection";
 
 export default () => {
   return (

@@ -1,6 +1,13 @@
 import React from "react";
 import jeffImg from "../../../images/jeff.jpg";
-import FadeSection from "../../Shared/FadeSection";
+import FadeSection from "../../Shared/FadeSection/FadeSection";
+import FillBar from "../../Shared/FillBar/FillBar";
+
+function createSkill(label, fill) {
+  return (
+    <FillBar label={label} fill={fill} />
+  );
+}
 
 export default () => {
   return (
@@ -8,15 +15,35 @@ export default () => {
       <FadeSection>
         <div className="text-img-box">
           <p className="text-img-box__txt txt-md">
-            Hello, my name is Jeff Manke and I am a Software Developer currently living in Victoria, BC.
-            I have a Bachelor of Science, Double Major in Computer Science and Economics from the Univeristy of Victoria.
-            Ever since I took Computer Science as my second major, I have been spending almost all of my time programming
-            and learning new technologies. Whether its writing highly optimized and multithreaded C#/C++ code, or front end
-            development with JavaScript and React.js, I love taking on new challenges and solving problems.
+            Hello, my name is Jeff Manke and I am a Software Developer currently
+            living in Victoria, BC. I have a Bachelor of Science, Double Major
+            in Computer Science and Economics from the Univeristy of Victoria.
+            Ever since I took Computer Science as my second major, I have been
+            spending almost all of my time programming and learning new
+            technologies. Whether its writing highly optimized and multithreaded
+            C#/C++ code, or front end development with JavaScript and React.js,
+            I love taking on new challenges and solving problems.
           </p>
-          <img src={jeffImg} alt="Jeff Manke Hololens" className="text-img-box__img" />
+          <img
+            src={jeffImg}
+            alt="Jeff Manke Hololens"
+            className="text-img-box__img"
+          />
         </div>
       </FadeSection>
+      <div className="about-skills">
+      <FadeSection delay={100}>
+        {createSkill("C#", 85)}
+        {createSkill("Unity", 85)}
+        {createSkill(".NET", 80)}
+        {createSkill("C++", 70)}
+        {createSkill("HTML5", 70)}
+        {createSkill("CSS", 70)}
+        {createSkill("Java", 65)}
+        {createSkill("JavaScript", 60)}
+        {createSkill("React.js", 60)}
+        </FadeSection>
+      </div>
     </div>
   );
-}
+};

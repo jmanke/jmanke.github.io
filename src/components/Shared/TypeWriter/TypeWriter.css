@@ -1,0 +1,26 @@
+@keyframes blinking {
+	0% {
+		opacity: 0;
+	}
+	
+	49% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.type-writer .type-line{
+	color: white;
+	font-size: 120%;
+}
+
+.type-writer .type-line.blink {
+	animation: blinking 1s infinite;
+}

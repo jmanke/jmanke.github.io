@@ -1,4 +1,5 @@
 import React from "react";
+import FillBar from "../../Shared/FillBar/FillBar";
 
 export default () => {
   return (

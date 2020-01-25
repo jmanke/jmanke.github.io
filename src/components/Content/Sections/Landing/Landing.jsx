@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import backgroundImage from "../../../../images/landing_background.png";
 import logo from "../../../../images/logo_circle.png";
 import Canvas from "./LandingCanvas";
 import IntersectionObserver from "../../../Shared/IntersectionObserver";
+import TypeWriter from "../../../Shared/TypeWriter/TypeWriter";
+import Events from "../../../Shared/Events";
 
 export default () => {
   const landingRef = React.useRef();
-  const [logoVisible, setLogoVisible] = useState(false);
+  const [logoVisible, setLogoVisible] = React.useState(false);
+  const [subtitleVisible, setSubtitleVisible] = React.useState(false);
   const showLogoThresh = 0.85;
 
   let imageStyle = {
@@ -16,6 +19,16 @@ export default () => {
   function handleLogoDisplay(intersectionInfo) {
     setLogoVisible(intersectionInfo[0].intersectionRatio < showLogoThresh ? true : false);
   }
+
+  function onWindowLoad() {
+    setSubtitleVisible(true);
+  }
+
+  React.useEffect(() => {
+    Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
+
+    return () => Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
+  });
 
   return (
     <div className="landing-page" ref={landingRef}>
@@ -28,12 +41,10 @@ export default () => {
         <h1 className="landing-page__container__title">
           Jeff Manke
         </h1>
-        <h2 className="landing-page__container__subtitle">
-          {"// Software Developer"}
-        </h2>
+        {subtitleVisible ? <TypeWriter text={"// Software Developer "} /> : null}
       </div>
       <img src={logo} alt="Jeff Manke Logo" 
-        className={"landing-page__logo" + (logoVisible ? " is-visible" : "")} />
+        className={"landing-page__logo unselectable" + (logoVisible ? " is-visible" : "")} />
     </div>
   );
 }

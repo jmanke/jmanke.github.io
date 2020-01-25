@@ -32,6 +32,7 @@ html {
 body {
   background-color: $primary-color;
   font-family: $heading-font;
+  overflow-x: hidden;
   //-ms-touch-action: none;
   //touch-action: none;
   //overflow-x: hidden;
@@ -436,25 +437,30 @@ p {
     &__title {
       font-size: 3em;
       color: whitesmoke;
-      margin-top: 9rem;
+      padding-top: 7rem;
+      margin-bottom: 1rem;
       margin-left: -1rem;
 
       @media screen and (max-width: $mobile-width) {
-        margin-top: 5rem;
+        padding-top: 5rem;
+        margin-bottom: 0.5rem;
         margin-left: -0.5rem;
-        padding-top: 1.5rem;
-        padding-bottom: 0.5rem;
       }
     }
 
-    &__subtitle {
+    .type-writer {
       color: #6a9955;
-      margin-left: -1rem;
-      padding-top: 1rem;
+      margin-left: 4rem;
+      margin-top: 0.5rem;
+      padding: 0;
+      font-size: 1.5rem;
+      text-align: left;
 
       @media screen and (max-width: $mobile-width) {
-        margin-left: -0.5rem;
-        padding-top: initial;
+        margin-left: 3rem;
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 1rem;
       }
     }
   }
@@ -468,7 +474,7 @@ p {
     bottom: -5rem;
     margin-left: auto;
     margin-right: auto;
-    transform: rotateX(90deg);
+    transform: scale(0);
     transition: all 0.2s ease-out;
 
     @media screen and (max-width: $mobile-width) {
@@ -479,8 +485,8 @@ p {
 
     &.is-visible {
       opacity: 1;
-      transform: rotateX(0);
-      transition: all 0.3s ease-out;
+      transform: scale(1);
+      //transform: rotateX(0);
     }
   }
 }
@@ -502,6 +508,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 3rem 0;
 
     .section-hr {
       border-style: dotted;
@@ -546,23 +553,27 @@ p {
         padding: 2rem 2rem;
         align-self: flex-start;
         width: 10rem;
+        margin-left: auto;
 
         @media screen and (max-width: $tablet-width) {
           align-self: initial;
+          margin-left: initial;
         }
       }
     }
 
     .about {
+
+      .about-skills {
+        padding: 4rem 0;
+      }
     }
 
     .experience {
     }
 
     .projects {
-
       &__grid {
-
         .grid-columns {
           display: flex;
           flex-wrap: wrap;
@@ -582,10 +593,9 @@ p {
               height: 42.7vw;
               max-width: initial;
               max-height: initial;
-  
 
               margin: 1vw;
-            } 
+            }
 
             @media screen and (max-width: $mobile-width) {
               margin: 3vw;
@@ -596,7 +606,7 @@ p {
               min-height: 21.96rem;
               max-width: 20.5rem;
               max-height: 25rem;
-            } 
+            }
           }
         }
 
@@ -679,7 +689,11 @@ p {
               cursor: pointer;
 
               &:hover {
-                color: lighten( $primary-color-dark, 10%);
+                color: lighten($primary-color-dark, 10%);
+              }
+
+              &:active {
+                transform: translateY(1px);
               }
             }
           }
@@ -704,10 +718,6 @@ p {
     .education {
     }
   }
-}
-
-.overlay-img {
-  
 }
 
 .resume-item {
@@ -737,9 +747,11 @@ p {
 
     &__secondary {
       margin-left: auto;
+      text-align: right;
 
       @media screen and (max-width: $mobile-width) {
         margin-left: initial;
+        text-align: initial;
       }
     }
   }
@@ -775,17 +787,6 @@ p {
   }
 }
 
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(10vh);
-}
-
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
 
 // move this to inline styling? Maybe using variable here in react would be better
 // TODO: REFACTOR
@@ -1012,4 +1013,3 @@ p {
     opacity: 0;
   }
 }
-
