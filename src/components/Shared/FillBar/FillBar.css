@@ -25,9 +25,6 @@
 	transition: width 3s ease-in-out;
 	will-change: width;
 	width: 0;
-	/* border: solid;
-	border-width: 1px;
-	border-color: black; */
 }
 
 .fill-bar .fill-background.is-visible {

@@ -1232,7 +1232,6 @@ p {
 @media screen and (max-width: 800px) {
   .resume-item__header__primary {
     margin-right: initial;
-    width: 100%;
   }
 }
 
