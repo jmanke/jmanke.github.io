@@ -36,6 +36,14 @@ body {
   //-ms-touch-action: none;
   //touch-action: none;
   //overflow-x: hidden;
+  &.page-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+  }
 }
 
 .app {
@@ -563,6 +571,10 @@ p {
     }
 
     .about {
+
+      .about-skills {
+        padding: 4rem 0;
+      }
     }
 
     .experience {
@@ -783,17 +795,6 @@ p {
   }
 }
 
-.fade-in-section {
-  opacity: 0;
-  transform: translateY(10vh);
-}
-
-.fade-in-section.is-visible {
-  opacity: 1;
-  transform: none;
-  visibility: visible;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
 
 // move this to inline styling? Maybe using variable here in react would be better
 // TODO: REFACTOR

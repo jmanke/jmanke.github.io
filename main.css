@@ -367,6 +367,15 @@ body {
   overflow-x: hidden;
 }
 
+body.page-loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
 .app {
   position: relative;
   height: -webkit-fit-content;
@@ -1008,6 +1017,10 @@ p {
   }
 }
 
+.content .section .about .about-skills {
+  padding: 4rem 0;
+}
+
 .content .section .projects__grid .grid-columns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1265,23 +1278,6 @@ p {
   .shadow-screen {
     display: initial;
   }
-}
-
-.fade-in-section {
-  opacity: 0;
-  -webkit-transform: translateY(10vh);
-          transform: translateY(10vh);
-}
-
-.fade-in-section.is-visible {
-  opacity: 1;
-  -webkit-transform: none;
-          transform: none;
-  visibility: visible;
-  -webkit-transition: opacity 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
-  transition: opacity 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out, -webkit-transform 0.8s ease-in-out;
 }
 
 .fade-in {
