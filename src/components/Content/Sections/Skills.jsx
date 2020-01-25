@@ -1,10 +1,10 @@
 import React from "react";
-import FillBar from "../../Shared/FillBar/FillBar";
+import FocusPanel from "../../Shared/FocusPanel/FocusPanel";
 
 export default () => {
   return (
     <div className="skills section-container">
-      
+      <FocusPanel />
     </div>
   );
 }

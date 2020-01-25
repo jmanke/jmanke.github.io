@@ -2,6 +2,12 @@
 	display: flex;
 	height: 2rem;
 
+	-webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+
 	box-shadow: 0 0 5px #797979;
 	margin: 0.5rem 0;
 }
