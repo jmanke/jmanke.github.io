@@ -27,7 +27,10 @@ export default props => {
       threshold: 0
     }
 
-    const observer = new IntersectionObserver((entry) => setShowFill(true), options);
+    const observer = new IntersectionObserver((entry) => {
+			if(entry[0].isIntersecting) {
+				setShowFill(true);
+			}}, options);
     observer.observe(domRef.current);
     return () => observer.unobserve(effectDomRef);
   }, [domRef]);

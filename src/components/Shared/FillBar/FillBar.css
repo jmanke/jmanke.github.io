@@ -22,7 +22,7 @@
 .fill-bar .fill-background {
 	display: flex;
 	background-color: transparent;
-	transition: width 4s ease-in-out;
+	transition: width 3s ease-in-out;
 	will-change: width;
 	width: 0;
 	/* border: solid;
