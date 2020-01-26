@@ -1,4 +1,5 @@
 import React from "react";
+import FocusPanel from "../../Shared/FocusPanel/FocusPanel";
 
 export default props => {
   const [firstPageActive, setFirstPageActive] = React.useState(true);
@@ -6,6 +7,8 @@ export default props => {
   const firstPageVisible = firstPageActive ? " is-visible" : "";
   const secondPageVisible = firstPageActive ? "" : " is-visible";
   let i = 0;
+
+  const onShowFocusPanel = new Event();
 
   return (
     <div className={"project-card " + props.className ?? ""}>
@@ -17,7 +20,10 @@ export default props => {
           <button className="btn" onClick={() => setFirstPageActive(!firstPageVisible)}> Learn More</button>
         </div>
       </div>
-      <div className={"project-card__page secondary " + secondPageVisible}>
+      <FocusPanel onShowEvent={onShowFocusPanel}>
+        Test text
+      </FocusPanel>
+      {/* <div className={"project-card__page secondary " + secondPageVisible}>
         <div className="card-txt-area">
           <h3 className="card-title">Overview</h3>
           <ul className="card-list">
@@ -27,7 +33,7 @@ export default props => {
           </ul>
           <i className="fas fa-times card-close" onClick={() => setFirstPageActive(!firstPageVisible)}></i>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
