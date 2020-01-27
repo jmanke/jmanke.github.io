@@ -6,10 +6,6 @@ import "./FocusPanel.css";
 // panelVisible: type(boolean), sets panel visible
 // onClose: type(callback), callback called when panel is closed 
 export default props => {
-
-  console.log("render");
-
-
   return (
 	<div className={"focus-panel " + (props.panelVisible ? "is-visible " : " ") + (props.className ?? "")}>
 		<div className="panel-overlay" onClick={() => props.onClose()}>
