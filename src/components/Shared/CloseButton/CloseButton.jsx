@@ -6,6 +6,6 @@ export default props => {
 
   return (
 	<div className={"close-button " + (props.className ?? "")} onClick={props.onClick}>
-    <i class="fas fa-times close-icon" />
+    <i className="fas fa-times close-icon" />
 	</div>
 	)};
