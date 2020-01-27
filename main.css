@@ -1069,24 +1069,6 @@ p {
   position: relative;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
-  -webkit-box-shadow: 0 0 15px #888888;
-          box-shadow: 0 0 15px #888888;
-  -webkit-transition: -webkit-transform 0.2s ease-in-out;
-  transition: -webkit-transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out;
-  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
-}
-
-.content .section .projects__grid .project-card:hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
-}
-
-@media screen and (max-width: 800px) {
-  .content .section .projects__grid .project-card:hover {
-    -webkit-transform: none;
-            transform: none;
-  }
 }
 
 .content .section .projects__grid .project-card__page {
@@ -1102,39 +1084,26 @@ p {
           flex-direction: column;
   -ms-flex-line-pack: center;
       align-content: center;
-}
-
-.content .section .projects__grid .project-card__page.primary {
   background-color: white;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  will-change: transform;
+  -webkit-box-shadow: 0 0 15px #888888;
+          box-shadow: 0 0 15px #888888;
 }
 
-.content .section .projects__grid .project-card__page.secondary {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  bottom: 0;
-  left: 0;
-  height: 0;
-  background-color: white;
-  overflow: hidden;
-  -webkit-transition: height 0.25s ease-in;
-  transition: height 0.25s ease-in;
-  will-change: height;
+.content .section .projects__grid .project-card__page:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
-.content .section .projects__grid .project-card__page.secondary.is-visible {
-  height: 100%;
-  -webkit-transition: height 0.25s ease-out;
-  transition: height 0.25s ease-out;
-  will-change: height;
+@media screen and (max-width: 800px) {
+  .content .section .projects__grid .project-card__page:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
 }
 
 .content .section .projects__grid .project-card__page .card-txt-area {
