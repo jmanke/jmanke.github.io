@@ -28,10 +28,25 @@
 
 .focus-panel .panel-container {
   position: relative;
+  display: flex;
   background-color: white;
   width: 80vw;
   height: 80vh;
   max-width: 80vh;
   max-height: 80vw;
   margin: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .focus-panel .panel-container {
+    max-width: initial;
+    max-height: initial;
+  }
+}
+
+.focus-panel .panel-container-contents {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  overflow-y: auto;
 }

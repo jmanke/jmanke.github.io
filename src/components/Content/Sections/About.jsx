@@ -4,9 +4,7 @@ import FadeSection from "../../Shared/FadeSection/FadeSection";
 import FillBar from "../../Shared/FillBar/FillBar";
 
 function createSkill(label, fill) {
-  return (
-    <FillBar label={label} fill={fill} />
-  );
+  return <FillBar label={label} fill={fill} />;
 }
 
 export default () => {
@@ -32,16 +30,25 @@ export default () => {
         </div>
       </FadeSection>
       <div className="about-skills">
-      <FadeSection delay={100}>
-        {createSkill("C#", 85)}
-        {createSkill("Unity", 85)}
-        {createSkill(".NET", 80)}
-        {createSkill("C++", 70)}
-        {createSkill("HTML5", 70)}
-        {createSkill("CSS", 70)}
-        {createSkill("Java", 65)}
-        {createSkill("JavaScript", 60)}
-        {createSkill("React.js", 60)}
+        <FadeSection className="skills-languages" delay={100}>
+          <div className="skills-heading">
+            <h3 className="txt-xlg">Languages</h3>
+          </div>
+          {createSkill("C#", 85)}
+          {createSkill("C++", 70)}
+          {createSkill("HTML5", 70)}
+          {createSkill("CSS", 70)}
+          {createSkill("Java", 65)}
+          {createSkill("JavaScript", 60)}
+        </FadeSection>
+
+        <FadeSection className="skills-technologies" delay={100}>
+          <div className="skills-heading">
+            <h3 className="txt-xlg">Technologies</h3>
+          </div>
+          {createSkill("Unity", 90)}
+          {createSkill(".NET", 80)}
+          {createSkill("React.js", 60)}
         </FadeSection>
       </div>
     </div>

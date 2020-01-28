@@ -4,7 +4,7 @@ import FocusPanel from "../../Shared/FocusPanel/FocusPanel";
 export default () => {
   return (
     <div className="skills section-container">
-    
+      
     </div>
   );
-}
+};

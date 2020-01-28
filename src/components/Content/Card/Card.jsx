@@ -16,26 +16,26 @@ export default props => {
         </div>
       </div>
       <FocusPanel panelVisible={panelVisible} onClose={() => setPanelVisible(false)}>
-        <div className="card-txt-area">
-          <h3 className="card-title">Overview</h3>
-          <ul className="card-list">
-            {props.overviewItems
-              ? props.overviewItems.map(item => <li key={i++}>{item}</li>)
-              : null}
-          </ul>
+        <div className="card-panel">
+          <div className="card-panel-content">
+            <h3 className="card-title">Achievements</h3>
+            <ul className="card-list">
+              {props.achievements
+                ? props.achievements.map(item => <li className="txt-lg" key={i++}>{item}</li>)
+                : null}
+            </ul>
+          </div>
+
+          <div className="card-panel-content">
+            <h3 className="card-title">Technologies</h3>
+            <ul className="card-list">
+              {props.technologies
+                ? props.technologies.map(item => <li className="txt-lg" key={i++}>{item}</li>)
+                : null}
+            </ul>
+          </div>
         </div>
       </FocusPanel>
-      {/* <div className={"project-card__page secondary " + secondPageVisible}>
-        <div className="card-txt-area">
-          <h3 className="card-title">Overview</h3>
-          <ul className="card-list">
-            {props.overviewItems
-              ? props.overviewItems.map(item => <li key={i++}>{item}</li>)
-              : null}
-          </ul>
-          <i className="fas fa-times card-close" onClick={() => setFirstPageActive(!firstPageVisible)}></i>
-        </div>
-      </div> */}
     </div>
   );
 };

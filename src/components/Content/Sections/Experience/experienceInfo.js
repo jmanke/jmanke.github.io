@@ -5,13 +5,13 @@ const experienceInfo = [
         period: "Sep 2017 - Jan 2019",
         position: "Software Developer",
         location: "Victoria, BC",
-        description: "Placeholder text."
-        // description: "I started at LlamaZOO as an intern looking into low-latency networking solutions for VR\
-        // and implementing VR interaction systems. After my internship ended, I got hired on full-time and\
-        // worked on their main projects. Many of the components and modules I wrote became\
-        // part of the core framework, which were written in C# using .NET and Unity. Performance was always a challenge\
-        // when working on VR devices and the Microsoft Hololens; therefore, I became adept at writing optimized code and\
-        // leveraged multi-threading where possible."
+        description: "LlamaZOO is a startup that specializes in 3D data visualization. I started as an intern\
+        researching low-level networking solutions for VR devices and building UI components.\
+        After my internship ended, I was hired on full-time to work on their main client facing projects. I was responsible\
+        for designing and implementing many core features that became part of the main platform. Some examples\
+        include but not limited to: an automatic GeoJSON to mesh converter, label engine, Google Earth style camera system,\
+        save/load system, and a dynamic menu system made with Unity's UI toolkit. I had the opportunity to learn how to write\
+        extremely optimized code to maintain high framrates, and leverage multi-threading in performance critical areas."
     },
     {
         key: 1,

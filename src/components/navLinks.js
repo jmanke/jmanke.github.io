@@ -31,12 +31,18 @@ const navLinks = [
   },
   {
     key: 5,
+    title: "Contact",
+    icon: "fas fa-envelope fa-fw",
+    href: "#Contact",
+  },
+  {
+    key: 6,
     title: "GitHub",
     icon: "fab fa-github-square fa-fw",
     href: "https://github.com/jmanke",
   },
   {
-    key: 6,
+    key: 7,
     title: "LinkedIn",
     icon: "fab fa-linkedin fa-fw",
     href: "https://www.linkedin.com/in/jeff-manke/",
