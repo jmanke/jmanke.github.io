@@ -1,7 +1,8 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 100%;
+  max-width: 35rem;
   margin: auto;
 }
 
@@ -31,7 +32,7 @@
 .contact-form .form-text-input.form-message {
   padding: 0.5rem;
   height: 20rem;
-  width: 95%;
+  width: 90%;
   resize: none;
 }
 
@@ -41,7 +42,7 @@
 
 .contact-form .form-submit {
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   padding: 0.5rem;
   width: 30%;
 }
@@ -49,11 +50,6 @@
 .contact-form .input-title.form-message-status {
   display: inline-block;
   padding-left: 1rem;
-  visibility: hidden;
-}
-
-.contact-form .input-title.form-message-status.sent {
-  visibility: visible;
 }
 
 

@@ -1,5 +1,13 @@
 import React from "react";
+import Email from "../smtp.js";
 import "./ContactForm.css";
+
+const messageStatusState = {
+  none: "none",
+  sending: "sending",
+  sent: "sent",
+  failed: "failed"
+};
 
 export default props => {
   const formProps = React.useRef({
@@ -24,7 +32,9 @@ export default props => {
     formProps.current.email.isValid,
     formProps.current.message.isValid
   ]);
-  const [messageSent, setMessageSent] = React.useState(false);
+  const [messageStatus, setMessageStatus] = React.useState(
+    messageStatusState.none
+  );
 
   function validateForm() {
     formProps.current.email.validate();
@@ -85,21 +95,53 @@ export default props => {
         required
       />
       <span>
-      <input
-        className={"form-submit " + (formValid ? "" : "invalid")}
-        type="submit"
-        value="Send"
-        onClick={() => {
-          if (validateForm()) {
-            console.log("Send message!");
-            console.log(formProps.current.name);
-            console.log(formProps.current.email.text);
-            console.log(formProps.current.message.text);
-            setMessageSent(true);
-          }
-        }}
-      />
-      <p className={"input-title txt-md txt-light form-message-status " + (messageSent ? " sent" : "")}>Message Sent!</p>
+        <input
+          className={"form-submit " + (formValid ? "" : "invalid")}
+          type="submit"
+          value="Send"
+          onClick={() => {
+            if (validateForm()) {
+              setMessageStatus(messageStatusState.sending);
+
+              const bodyMessage =
+                "Sender: " +
+                formProps.current.name +
+                "\r\n" +
+                "From Email: " +
+                formProps.current.email.text +
+                "\r\n \r\n" +
+                formProps.current.message.text;
+
+              Email.send({
+                SecureToken: "e05ed07e-86ad-40c2-93e2-4a3b41ee1f50",
+                To: "jeffman879@gmail.com",
+                From: "jeffman879@gmail.com",
+                Subject:
+                  "jmanke.github.io: Sender: " +
+                  formProps.current.name +
+                  ", Email: " +
+                  formProps.current.email.text,
+                Body: bodyMessage.replace(/[\r\n]/g, "<br />")
+              }).then(message => {
+                console.log(message);
+                setMessageStatus(
+                  message === "OK"
+                    ? messageStatusState.sent
+                    : messageStatusState.failed
+                );
+              });
+            }
+          }}
+        />
+        {messageStatus === messageStatusState.none ? null : (
+          <p className="input-title txt-md txt-light form-message-status ">
+            {messageStatus === messageStatusState.sending
+              ? "Sending..."
+                : messageStatus === messageStatusState.sent
+                ? "Message Sent!"
+                : "Send Failed..."}
+          </p>
+        )}
       </span>
     </div>
   );
