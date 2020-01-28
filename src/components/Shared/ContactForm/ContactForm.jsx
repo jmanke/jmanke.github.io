@@ -100,6 +100,10 @@ export default props => {
           type="submit"
           value="Send"
           onClick={() => {
+            if (messageStatus === messageStatusState.sent) {
+              return;
+            }
+
             if (validateForm()) {
               setMessageStatus(messageStatusState.sending);
 
@@ -116,11 +120,7 @@ export default props => {
                 SecureToken: "e05ed07e-86ad-40c2-93e2-4a3b41ee1f50",
                 To: "jeffman879@gmail.com",
                 From: "jeffman879@gmail.com",
-                Subject:
-                  "jmanke.github.io: Sender: " +
-                  formProps.current.name +
-                  ", Email: " +
-                  formProps.current.email.text,
+                Subject: "jmanke.github.io: Contact",
                 Body: bodyMessage.replace(/[\r\n]/g, "<br />")
               }).then(message => {
                 console.log(message);
