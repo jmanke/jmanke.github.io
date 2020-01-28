@@ -100,7 +100,7 @@ export default props => {
           type="submit"
           value="Send"
           onClick={() => {
-            if (messageStatus === messageStatusState.sent) {
+            if (messageStatus === messageStatusState.sent || messageStatus === messageStatusState.sending) {
               return;
             }
 
