@@ -1,0 +1,120 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  width: 70%;
+  height: fit-content;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.timeline .timeline-line-container {
+  display: grid;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  grid-template-columns: 1fr 0.15fr 1fr;
+}
+
+.timeline .timeline-line {
+  /* position: absolute; */
+  /* left: 27.65%; */
+  margin: auto;
+  height: 100%;
+  width: 0.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 3px #6d6d6d;
+}
+
+.timeline .timeline-event {
+  padding: 1rem 0;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: fit-content;
+  display: grid;
+  grid-template-columns: 1fr 0.15fr 1fr;
+}
+
+.timeline .timeline-event.reverse {
+  direction: rtl;
+}
+
+.timeline .timeline-event .event-item {
+  display: flex;
+}
+
+.timeline .timeline-event .event-time {
+  width: 100%;
+  text-align: right;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.timeline .timeline-event.reverse .event-time {
+  text-align: left;
+}
+
+.timeline .timeline-event .event-node {
+  margin: auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #C5D5DF;
+
+  border-radius: 100%;
+  border-color: white;
+  border-width: 2px;
+  border-style: solid;
+} 
+
+.timeline .timeline-event .event-info-box {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3px #6d6d6d;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.timeline .timeline-event .info-box-title {
+  padding: 0 0.5rem;
+}
+
+.timeline .timeline-event .info-box-description {
+  padding: 0 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .timeline {
+    width: 100%;
+  }
+
+  .timeline .timeline-line-container {
+    grid-template-columns: 0.35fr 0.15fr 1fr;
+  }
+
+  .timeline .timeline-event {
+    grid-template-columns: 0.35fr 0.15fr 1fr;
+  }
+
+  .timeline .timeline-event.reverse {
+    direction: ltr;
+  }
+
+  .timeline .timeline-event.reverse .event-time {
+    text-align: right;
+  }
+}
+
+

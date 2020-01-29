@@ -38,7 +38,7 @@ function FadeSection(props) {
   let i = 0;
 
   return (
-    <div className={"fade-in-section-container " + props.className ?? ""} ref={domRef}>
+    <div className={"fade-in-section-container " + (props.className ?? "")} ref={domRef}>
       {React.Children.map(props.children, child => (
         <div className={`fade-in-section ${isVisible && i++ < numVisible ? "is-visible" : ""}`}>
           {child}
