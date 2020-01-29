@@ -1,4 +1,5 @@
 import React from "react";
+import FadeSection from "../FadeSection/FadeSection"
 import "./Timeline.css";
 
 const eventInfoBox = (title, description) => (
@@ -37,7 +38,9 @@ export default props => {
         <div className="timeline-line" />
         <div></div>
       </div>
-      {props.timelineEvents.reverse().map( timelineEventInfo => timelineEvent(timelineEventInfo))}
+      <FadeSection delay={200}>
+        {props.timelineEvents.reverse().map( timelineEventInfo => timelineEvent(timelineEventInfo))}
+      </FadeSection>
     </div>
   );
 };

@@ -1593,27 +1593,4 @@ p {
     opacity: 0;
   }
 }
-/*# sourceMappingURL=main.css.map */: rotate(330deg);
-          transform: rotate(330deg);
-  -webkit-animation-delay: 0s;
-          animation-delay: 0s;
-}
-
-@-webkit-keyframes lds-spinner {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes lds-spinner {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 /*# sourceMappingURL=main.css.map */
