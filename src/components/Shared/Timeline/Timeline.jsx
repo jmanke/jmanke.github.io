@@ -6,17 +6,17 @@ const eventInfoBox = (title, description) => (
     <h4 className="info-box-title">
       {title}
     </h4>
-    <p className="info-box-description">
+    <p className="info-box-description txt-description">
       {description}
     </p>
   </div>
 );
 
 const timelineEvent = (timelineEventInfo) => (
-  <div className={"timeline-event" + (timelineEventInfo.key % 2 === 0 ? "" : " reverse")}>
+  <div key={timelineEventInfo.key} className={"timeline-event" + (timelineEventInfo.key % 2 === 0 ? "" : " reverse")}>
     <div className="event-item">
       <div className="event-time">
-        <p>{timelineEventInfo.month + " " + timelineEventInfo.year}</p>
+        <h3 className="txt-date">{timelineEventInfo.month + " " + timelineEventInfo.year}</h3>
       </div>
     </div>
     <div className="event-item">
@@ -29,19 +29,12 @@ const timelineEvent = (timelineEventInfo) => (
 );
 
 export default props => {
-
-  const timelineRef = React.useRef(null);
-
-  React.useEffect(() => {
-    console.log(timelineRef);
-  });
-
   return (
     <div className="timeline">
       <div className="timeline-line-container">
         {/* mimic the behaviour of the timeline grid to correctly place the line */}
         <div></div> 
-        <div className="timeline-line" ref={timelineRef} />
+        <div className="timeline-line" />
         <div></div>
       </div>
       {props.timelineEvents.reverse().map( timelineEventInfo => timelineEvent(timelineEventInfo))}

@@ -44,6 +44,11 @@
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 0.15fr 1fr;
+  transition: all 0.1s ease-in-out;
+}
+
+.timeline .timeline-event:hover {
+  transform: scale(1.1);
 }
 
 .timeline .timeline-event.reverse {
@@ -75,7 +80,13 @@
   border-color: white;
   border-width: 2px;
   border-style: solid;
+
+  transition: all 0.1s ease-in-out;
 } 
+
+.timeline .timeline-event:hover .event-node {
+  background-color: #84F5BD;
+}
 
 .timeline .timeline-event .event-info-box {
   background-color: white;
@@ -88,6 +99,7 @@
 }
 
 .timeline .timeline-event .info-box-title {
+  color: #3b3b3b;
   padding: 0 0.5rem;
 }
 
@@ -95,9 +107,22 @@
   padding: 0 0.5rem;
 }
 
+.timeline .txt-date {
+  color: #3b3b3b;
+  font-size: 1rem;
+}
+
+.timeline .txt-description {
+  color: #8a8a8a;
+}
+
 @media screen and (max-width: 800px) {
   .timeline {
     width: 100%;
+  }
+
+  .timeline .timeline-event:hover {
+    transform: scale(1);
   }
 
   .timeline .timeline-line-container {

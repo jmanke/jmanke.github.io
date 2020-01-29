@@ -43,7 +43,7 @@ export default () => {
             ),
             createTimelineEvent(
               3,
-              "Job at CRA",
+              "Job at the Canada Revenue Agency",
               2016,
               "Apr",
               "Started work at the Canada Revenue Agency as a Junior IT Analyst"

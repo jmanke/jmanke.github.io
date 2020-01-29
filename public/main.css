@@ -541,7 +541,7 @@ p {
   text-align: center;
   top: 16%;
   left: 4.8rem;
-  color: #bebebe;
+  color: #8a8a8a;
   pointer-events: none;
   font-size: 0.8rem;
   border-radius: 0.5rem;
@@ -1407,7 +1407,7 @@ p {
 }
 
 .txt-light {
-  color: #bebebe;
+  color: #8a8a8a;
 }
 
 .txt-dark {
@@ -1571,6 +1571,29 @@ p {
 
 .lds-spinner div:nth-child(12) {
   -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+}
+
+@-webkit-keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */: rotate(330deg);
           transform: rotate(330deg);
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
