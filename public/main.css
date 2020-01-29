@@ -343,7 +343,6 @@ template {
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
@@ -352,19 +351,18 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
-.unselectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
-
 body {
   background-color: white;
   font-family: "Ubuntu", sans-serif;
   overflow-x: hidden;
+  font-size: 1rem;
+  line-height: 1.375rem;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    line-height: 1.25rem;
+  }
 }
 
 body.page-loading {
@@ -374,6 +372,72 @@ body.page-loading {
   width: 100vw;
   height: 100vh;
   overflow-y: hidden;
+}
+
+p {
+  color: #1E1E1E;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #3b3b3b;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.05em;
+}
+
+h2 {
+  font-size: 2.25em;
+  line-height: 1.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25em;
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.22222em;
+}
+
+@media screen and (max-width: 1080px) {
+  h1 {
+    font-size: 2.5em;
+    line-height: 1.125em;
+  }
+  h2 {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+  h4 {
+    font-size: 1.125em;
+    line-height: 1.22222em;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+  h2 {
+    font-size: 1.625em;
+    line-height: 1.5384615em;
+  }
+  h3 {
+    font-size: 1.375em;
+    line-height: 1.13636364em;
+  }
+  h4 {
+    font-size: 1.125em;
+    line-height: 1.1111111em;
+  }
 }
 
 .app {
@@ -390,6 +454,15 @@ ul {
 
 ul li {
   padding: 0.25rem 0;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .btn {
@@ -541,7 +614,7 @@ p {
   text-align: center;
   top: 16%;
   left: 4.8rem;
-  color: #8a8a8a;
+  color: #F3F3F3;
   pointer-events: none;
   font-size: 0.8rem;
   border-radius: 0.5rem;
@@ -847,15 +920,15 @@ p {
 .landing-page__container__title {
   font-size: 3em;
   color: whitesmoke;
-  padding-top: 7rem;
-  margin-bottom: 1rem;
+  padding-top: 8rem;
+  margin-bottom: 2.5rem;
   margin-left: -1rem;
 }
 
 @media screen and (max-width: 800px) {
   .landing-page__container__title {
     padding-top: 5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
     margin-left: -0.5rem;
   }
 }
@@ -1036,7 +1109,6 @@ p {
 .content .section .about .about-skills .skills-heading {
   text-align: center;
   color: #3F9CD6;
-  font-size: 1.5rem;
 }
 
 .content .section .about .about-skills .skills-languages {
@@ -1119,6 +1191,7 @@ p {
   position: relative;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+  border-radius: 15px;
 }
 
 .project-card__page {
@@ -1142,6 +1215,7 @@ p {
   will-change: transform;
   -webkit-box-shadow: 0 0 15px #888888;
           box-shadow: 0 0 15px #888888;
+  border-radius: 7px;
 }
 
 .project-card__page:hover {
@@ -1171,13 +1245,13 @@ p {
 }
 
 .project-card .card-img {
+  border-radius: 7px 7px 0 0;
   position: relative;
   max-height: 50%;
 }
 
 .project-card .card-title {
   margin: 1rem 0 0.5rem;
-  color: #3b3b3b;
 }
 
 .project-card .card-text {
@@ -1199,18 +1273,32 @@ p {
   color: #1E1E1E;
 }
 
+.project-card .card-list.card-technologies {
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
 .project-card .card-panel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .project-card .card-panel .card-title {
-  text-align: center;
+  text-align: left;
+  color: #3F9CD6;
 }
 
 .project-card .card-panel-content {
-  width: 50%;
+  width: 90%;
 }
 
 .resume-item {
@@ -1267,13 +1355,17 @@ p {
 
 .resume-item .resume-company {
   color: #3F9CD6;
+  padding: 0.5rem 0;
+}
+
+.resume-item .resume-position {
+  padding: 0.5rem 0;
 }
 
 .heading {
   position: relative;
   color: #3b3b3b;
   text-align: center;
-  font-size: 3rem;
   padding: 3rem 0;
 }
 
@@ -1347,63 +1439,26 @@ p {
 }
 
 .txt-xsm {
-  font-size: 0.9em;
-  line-height: 1.2em;
-}
-
-@media screen and (max-width: 1080px) {
-  .txt-xsm {
-    font-size: 0.8em;
-    line-height: 1em;
-  }
+  font-size: 0.8em;
 }
 
 .txt-sm {
-  font-size: 1em;
-  line-height: 1.5em;
-}
-
-@media screen and (max-width: 1080px) {
-  .txt-sm {
-    font-size: 0.9em;
-    line-height: 1.2em;
-  }
+  font-size: 0.9em;
 }
 
 .txt-md {
   font-size: 1.1em;
-  line-height: 2em;
-}
-
-@media screen and (max-width: 1080px) {
-  .txt-md {
-    font-size: 1em;
-    line-height: 1.5em;
-  }
+  line-height: 1.1em;
 }
 
 .txt-lg {
   font-size: 1.3em;
-  line-height: 2.5em;
-}
-
-@media screen and (max-width: 1080px) {
-  .txt-lg {
-    font-size: 1.1em;
-    line-height: 2em;
-  }
+  line-height: 1.2em;
 }
 
 .txt-xlg {
   font-size: 1.5em;
-  line-height: 2.75em;
-}
-
-@media screen and (max-width: 1080px) {
-  .txt-xlg {
-    font-size: 1.3em;
-    line-height: 2.5em;
-  }
+  line-height: 1.3em;
 }
 
 .txt-light {
@@ -1412,6 +1467,14 @@ p {
 
 .txt-dark {
   color: #1E1E1E;
+}
+
+.txt-one-half {
+  line-height: 1.5em;
+}
+
+.txt-double {
+  line-height: 2em;
 }
 
 .txt-algn-cntr {

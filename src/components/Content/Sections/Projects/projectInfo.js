@@ -27,7 +27,7 @@ const projectInfo = [
     title: "MineLife Hololens",
     image: mineLifeHololensImg,
     cardText:
-      "AR visualization of proposed mining sites built for the Microsoft Hololens.",
+      "Visualization of mining sites for the Microsoft Hololens.",
     achievements: [
       "Designed and built gesture interaction system",
       "Implemented hologram syncing (location and state) across multiple users",
@@ -81,7 +81,7 @@ const projectInfo = [
     title: "Sudoku Solver",
     image: sudokuImg,
     cardText:
-      "C++ implementation of a Sudoku solver that reduces Sudoku to the exact cover problem.",
+      "C++ implementation of a Sudoku solver.",
     achievements: [
       "Reduces the problem to exact cover rather than using heuristics",
       "First C++ project",

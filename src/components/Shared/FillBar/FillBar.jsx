@@ -7,7 +7,8 @@ function fillStyle(width) {
     backgroundColor: "rgb(35, 94, 131)",
     width: width ? width.toString() + "%" : "0%",
     height: "100%",
-    alignSelf: "center"
+    alignSelf: "center",
+    borderRadius: "0 3px 3px 0"
   };
 }
 

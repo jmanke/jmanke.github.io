@@ -10,27 +10,28 @@ export default props => {
       <div className={"project-card__page"}>
         <img src={props.image} alt={props.title} className="card-img" />
         <div className="card-txt-area">
-          <h3 className="card-title">{props.title}</h3>
+          <h4 className="card-title">{props.title}</h4>
           <p className="card-text">{props.cardText}</p>
           <button className="btn" onClick={() => setPanelVisible(true)}> Learn More</button>
         </div>
       </div>
       <FocusPanel panelVisible={panelVisible} onClose={() => setPanelVisible(false)}>
         <div className="card-panel">
+          <h3>{props.title}</h3>
           <div className="card-panel-content">
-            <h3 className="card-title">Achievements</h3>
+            <h4 className="card-title">Achievements</h4>
             <ul className="card-list">
               {props.achievements
-                ? props.achievements.map(item => <li className="txt-lg" key={i++}>{item}</li>)
+                ? props.achievements.map(item => <li className="txt-sm" key={i++}>{item}</li>)
                 : null}
             </ul>
           </div>
 
           <div className="card-panel-content">
-            <h3 className="card-title">Technologies</h3>
-            <ul className="card-list">
+            <h4 className="card-title">Technologies</h4>
+            <ul className="card-list card-technologies">
               {props.technologies
-                ? props.technologies.map(item => <li className="txt-lg" key={i++}>{item}</li>)
+                ? props.technologies.map(item => <li className="txt-sm" key={i++}>{item}</li>)
                 : null}
             </ul>
           </div>

@@ -6,7 +6,7 @@ export default props => {
       <div className="resume-item__header">
         <div className="resume-item__header__primary">
           <p className="resume-company txt-xlg txt-reset-lh"><strong>{props.company}</strong></p>
-          <p className="txt-lg">{props.position}</p>
+          <p className="resume-position txt-lg">{props.position}</p>
         </div>
         <div className="resume-item__header__secondary">
           <p className="txt-sm">{props.period}</p>
@@ -14,7 +14,7 @@ export default props => {
         </div>
       </div>
       <div className="resume-item__content">
-        <p className="txt-md">{props.description}</p>
+        <p className="txt-md txt-one-half">{props.description}</p>
       </div>
     </div>
   );

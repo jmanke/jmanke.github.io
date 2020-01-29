@@ -95,7 +95,6 @@
   border-radius: 0.5rem;
   box-shadow: 0 0 3px #6d6d6d;
   text-align: left;
-  font-size: 0.9rem;
 }
 
 .timeline .timeline-event .info-box-title {
@@ -113,7 +112,6 @@
 
 .timeline .txt-date {
   color: #3b3b3b;
-  font-size: 1rem;
 }
 
 .timeline .txt-description {

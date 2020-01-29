@@ -17,7 +17,7 @@ const timelineEvent = (timelineEventInfo) => (
   <div key={timelineEventInfo.key} className={"timeline-event" + (timelineEventInfo.key % 2 === 0 ? "" : " reverse")}>
     <div className="event-item">
       <div className="event-time">
-        <h3 className="txt-date">{timelineEventInfo.month + " " + timelineEventInfo.year}</h3>
+        <h4 className="txt-date">{timelineEventInfo.month + " " + timelineEventInfo.year}</h4>
       </div>
     </div>
     <div className="event-item">

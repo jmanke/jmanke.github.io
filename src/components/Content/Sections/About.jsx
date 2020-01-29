@@ -12,7 +12,7 @@ export default () => {
     <div className="about section-container">
       <FadeSection>
         <div className="text-img-box">
-          <p className="text-img-box__txt txt-md">
+          <p className="txt-md txt-one-half">
             Hello, my name is Jeff Manke and I am a Software Developer currently
             living in Victoria, BC. I have a Bachelor of Science, Double Major
             in Computer Science and Economics from the Univeristy of Victoria.
@@ -32,7 +32,7 @@ export default () => {
       <div className="about-skills">
         <FadeSection className="skills-languages" delay={100}>
           <div className="skills-heading">
-            <h3 className="txt-xlg">Languages</h3>
+            <h3>Languages</h3>
           </div>
           {createSkill("C#", 85)}
           {createSkill("C++", 70)}
@@ -44,7 +44,7 @@ export default () => {
 
         <FadeSection className="skills-technologies" delay={100}>
           <div className="skills-heading">
-            <h3 className="txt-xlg">Technologies</h3>
+            <h3>Technologies</h3>
           </div>
           {createSkill("Unity", 90)}
           {createSkill(".NET", 80)}
