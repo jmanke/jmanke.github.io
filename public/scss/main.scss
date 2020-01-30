@@ -530,12 +530,12 @@ p {
       font-size: 3em;
       color: whitesmoke;
       padding-top: 8rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 1rem;
       margin-left: -1rem;
 
       @media screen and (max-width: $mobile-width) {
         padding-top: 5rem;
-        margin-bottom: 1.25rem;
+        margin-bottom: 0.5rem;
         margin-left: -0.5rem;
       }
     }
@@ -624,32 +624,21 @@ p {
     }
 
     .text-img-box {
-      display: flex;
-      flex-direction: row;
-
+      display: grid;
+      grid-template-columns: 0.7fr 0.3fr;
+      
       @media screen and (max-width: $tablet-width) {
+        display: flex;
         flex-direction: column-reverse;
-        align-items: center;
-      }
-
-      &__txt {
-        width: 70%;
-
-        @media screen and (max-width: $tablet-width) {
-          width: 100%;
-        }
       }
 
       &__img {
         border-radius: 100%;
-        padding: 2rem 2rem;
-        align-self: flex-start;
-        width: 10rem;
-        margin-left: auto;
+        margin: auto;
+        // width: 10rem;
 
         @media screen and (max-width: $tablet-width) {
-          align-self: initial;
-          margin-left: initial;
+          margin-bottom: 3rem;
         }
       }
     }
@@ -734,18 +723,18 @@ p {
       
     }
 
+    &.contact {
+      .heading {
+        color: $heading-color-light;
+      }
+    }
+
     .skills {
       padding-bottom: 500px;
     }
 
     .contact {
 
-    }
-  }
-
-  .section-contact {
-    .heading {
-      color: $heading-color-light;
     }
   }
 }
@@ -984,6 +973,10 @@ p {
 
   &-dark {
     color: $text-color-dark;
+  }
+
+  &-accent {
+    color: $accent-blue;
   }
 
   &-one-half {

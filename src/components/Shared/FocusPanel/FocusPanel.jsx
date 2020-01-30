@@ -11,10 +11,11 @@ export default props => {
 		<div className="panel-overlay" onClick={() => props.onClose()}>
 		</div>
 		<div className="panel-container">
-			<div className="panel-container-contents">
+      <h3 className="panel-heading">{props.heading}</h3>
+			<CloseButton onClick={() => props.onClose()}/>
+      <div className="panel-container-contents">
 				{props.children}
 			</div>
-			<CloseButton onClick={() => props.onClose()}/>
 		</div>
 	</div>
 	)};

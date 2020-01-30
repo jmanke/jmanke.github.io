@@ -59,7 +59,6 @@ export default props => {
         onChange={change => {
           formProps.current.name = change.target.value;
         }}
-        required
       />
       {formProps.current.email.isValid ? (
         <p className="input-title txt-md txt-light">Email</p>
@@ -71,12 +70,11 @@ export default props => {
           "form-text-input" +
           (formProps.current.email.isValid ? "" : " invalid")
         }
-        type="email"
+        type="text"
         placeholder="Enter Email"
         onChange={change => {
           formProps.current.email.text = change.target.value;
         }}
-        required
       />
       {formProps.current.message.isValid ? (
         <p className="input-title txt-md txt-light">Message</p>

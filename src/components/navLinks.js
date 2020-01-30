@@ -26,7 +26,7 @@ const navLinks = [
   {
     key: 4,
     title: "Contact",
-    icon: "fas fa-envelope fa-fw",
+    icon: "fas fa-envelope-open-text fa-fw",
     href: "#Contact",
   },
   {

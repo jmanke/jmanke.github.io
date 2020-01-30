@@ -31,9 +31,7 @@ export default () => {
       </FadeSection>
       <div className="about-skills">
         <FadeSection className="skills-languages" delay={100}>
-          <div className="skills-heading">
-            <h3>Languages</h3>
-          </div>
+          <h3 className="skills-heading">Languages</h3>
           {createSkill("C#", 85)}
           {createSkill("C++", 70)}
           {createSkill("HTML5", 70)}
@@ -43,9 +41,7 @@ export default () => {
         </FadeSection>
 
         <FadeSection className="skills-technologies" delay={100}>
-          <div className="skills-heading">
-            <h3>Technologies</h3>
-          </div>
+          <h3 className="skills-heading">Technologies</h3>
           {createSkill("Unity", 90)}
           {createSkill(".NET", 80)}
           {createSkill("React.js", 60)}

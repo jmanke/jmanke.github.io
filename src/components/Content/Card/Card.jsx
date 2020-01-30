@@ -15,9 +15,8 @@ export default props => {
           <button className="btn" onClick={() => setPanelVisible(true)}> Learn More</button>
         </div>
       </div>
-      <FocusPanel panelVisible={panelVisible} onClose={() => setPanelVisible(false)}>
+      <FocusPanel heading={props.title} panelVisible={panelVisible} onClose={() => setPanelVisible(false)}>
         <div className="card-panel">
-          <h3>{props.title}</h3>
           <div className="card-panel-content">
             <h4 className="card-title">Achievements</h4>
             <ul className="card-list">
