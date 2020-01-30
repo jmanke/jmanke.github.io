@@ -1,29 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.24af60d0.chunk.css",
-    "main.js": "/static/js/main.579885b8.chunk.js",
-    "main.js.map": "/static/js/main.579885b8.chunk.js.map",
+    "main.css": "/static/css/main.80d05f3e.chunk.css",
+    "main.js": "/static/js/main.9e90147d.chunk.js",
+    "main.js.map": "/static/js/main.9e90147d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ebe23bff.js",
     "runtime-main.js.map": "/static/js/runtime-main.ebe23bff.js.map",
-    "static/js/2.80d2d2ac.chunk.js": "/static/js/2.80d2d2ac.chunk.js",
-    "static/js/2.80d2d2ac.chunk.js.map": "/static/js/2.80d2d2ac.chunk.js.map",
+    "static/js/2.453bc976.chunk.js": "/static/js/2.453bc976.chunk.js",
+    "static/js/2.453bc976.chunk.js.map": "/static/js/2.453bc976.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9fb2d0478456375c4e9f77b7c524caf3.js": "/precache-manifest.9fb2d0478456375c4e9f77b7c524caf3.js",
+    "precache-manifest.7d500fd05ba3733c4454463b2678157f.js": "/precache-manifest.7d500fd05ba3733c4454463b2678157f.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.24af60d0.chunk.css.map": "/static/css/main.24af60d0.chunk.css.map",
-    "static/js/2.80d2d2ac.chunk.js.LICENSE": "/static/js/2.80d2d2ac.chunk.js.LICENSE",
+    "static/css/main.80d05f3e.chunk.css.map": "/static/css/main.80d05f3e.chunk.css.map",
+    "static/js/2.453bc976.chunk.js.LICENSE": "/static/js/2.453bc976.chunk.js.LICENSE",
     "static/media/Forest-Ops.png": "/static/media/Forest-Ops.fcac4558.png",
     "static/media/MineLife-Hololens.jpg": "/static/media/MineLife-Hololens.4359d434.jpg",
     "static/media/MineLife-VR.jpg": "/static/media/MineLife-VR.4ec119b5.jpg",
+    "static/media/galaxy.jpg": "/static/media/galaxy.7ef022c3.jpg",
     "static/media/jeff.jpg": "/static/media/jeff.2df84c4c.jpg",
     "static/media/landing_background.png": "/static/media/landing_background.35a76c41.png",
     "static/media/logo.png": "/static/media/logo.f83b4400.png",
-    "static/media/logo_circle.png": "/static/media/logo_circle.6a76451d.png"
+    "static/media/logo_circle.png": "/static/media/logo_circle.6a76451d.png",
+    "static/media/sudoku.jpg": "/static/media/sudoku.fd05b9d5.jpg",
+    "static/media/voxel-engine.png": "/static/media/voxel-engine.60acf1ee.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ebe23bff.js",
-    "static/js/2.80d2d2ac.chunk.js",
-    "static/css/main.24af60d0.chunk.css",
-    "static/js/main.579885b8.chunk.js"
+    "static/js/2.453bc976.chunk.js",
+    "static/css/main.80d05f3e.chunk.css",
+    "static/js/main.9e90147d.chunk.js"
   ]
 }

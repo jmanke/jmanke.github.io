@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4ad003cb3275e0bccdd59270a483b867",
+    "revision": "0cfa010162a1031facffea025fac6785",
     "url": "/index.html"
   },
   {
-    "revision": "069da417f733273db901",
-    "url": "/static/css/main.24af60d0.chunk.css"
+    "revision": "758256b73a2e188eb4c1",
+    "url": "/static/css/main.80d05f3e.chunk.css"
   },
   {
-    "revision": "2a5b49656833e4fa8de6",
-    "url": "/static/js/2.80d2d2ac.chunk.js"
+    "revision": "47d5b79010bc35c422f7",
+    "url": "/static/js/2.453bc976.chunk.js"
   },
   {
     "revision": "d705cb622423d72c5defbf368ca70dcc",
-    "url": "/static/js/2.80d2d2ac.chunk.js.LICENSE"
+    "url": "/static/js/2.453bc976.chunk.js.LICENSE"
   },
   {
-    "revision": "069da417f733273db901",
-    "url": "/static/js/main.579885b8.chunk.js"
+    "revision": "758256b73a2e188eb4c1",
+    "url": "/static/js/main.9e90147d.chunk.js"
   },
   {
     "revision": "d1a19a062f5214fe4145",
@@ -36,6 +36,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/MineLife-VR.4ec119b5.jpg"
   },
   {
+    "revision": "7ef022c3832bd400dbc5b083c88a242c",
+    "url": "/static/media/galaxy.7ef022c3.jpg"
+  },
+  {
     "revision": "2df84c4cef2b713c3829cb2a25ff931f",
     "url": "/static/media/jeff.2df84c4c.jpg"
   },
@@ -50,5 +54,13 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6a76451d7969a3abd3030be80b134b1d",
     "url": "/static/media/logo_circle.6a76451d.png"
+  },
+  {
+    "revision": "fd05b9d5a1e59625e6b8629ae42ce445",
+    "url": "/static/media/sudoku.fd05b9d5.jpg"
+  },
+  {
+    "revision": "60acf1eeacdc6ba035ec3663c30d5063",
+    "url": "/static/media/voxel-engine.60acf1ee.png"
   }
 ]);

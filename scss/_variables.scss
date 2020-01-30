@@ -4,9 +4,10 @@ $section-primary: white;
 $section-secondary: #F3F3F3;
 $secondary-color: #333333;
 $accent-color: #bbbbbb;
-$text-color-light: #bebebe;
+$text-color-light: #8a8a8a;
 $text-color-dark: #1E1E1E;
 $heading-color: #3b3b3b;
+$heading-color-light: #F3F3F3;
 $highlight-blue: #8CDCFE;
 $accent-blue: #3F9CD6;
 
@@ -20,8 +21,6 @@ $margin-vertical: 5rem;
 $margin-horizontal-mobile: 2rem;
 $margin-vertical-mobile: 2rem;
 
-$tablet-width: 1080px;
-$mobile-width: 800px;
+$tablet-width: 1024px;
+$mobile-width: 767px;
 $min-width: 200px;
-
-$wide-view-mode: true;

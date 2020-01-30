@@ -12,27 +12,22 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
-}
-
-// prevent selection
-.unselectable {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
 }
 
 body {
   background-color: $primary-color;
   font-family: $heading-font;
   overflow-x: hidden;
+  font-size: 1rem;
+  line-height: 1.375rem;
+
+  @media screen and (max-width: $mobile-width) {
+    line-height: 1.25rem;
+  }
+
   //-ms-touch-action: none;
   //touch-action: none;
   //overflow-x: hidden;
@@ -43,6 +38,84 @@ body {
     width: 100vw;
     height: 100vh;
     overflow-y: hidden;
+  }
+}
+
+// Desktop Typography
+
+p {
+  color: $text-color-dark;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $heading-color;
+}
+
+h1 {
+  font-size: 3em;
+  line-height: 1.05em;
+}
+
+h2 {
+  font-size: 2.25em;
+  line-height: 1.25em;
+}
+
+h3 {
+  font-size: 1.75em;
+  line-height: 1.25em;
+}
+
+h4 {
+  font-size: 1.125em;
+  line-height: 1.22222em;
+}
+
+// Tablet Typography
+
+@media screen and (max-width: $tablet-width) {
+  h1 {
+    font-size: 2.5em;
+    line-height: 1.125em;
+  }
+  
+  h2 {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+  
+  h4 {
+    font-size: 1.125em;
+    line-height: 1.22222em;
+  }
+}
+
+// Mobile Typography
+
+@media screen and (max-width: $mobile-width) {
+  h1 {
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+  
+  h2 {
+    font-size: 1.625em;
+    line-height: 1.5384615em;
+  }
+  
+  h3 {
+    font-size: 1.375em;
+    line-height: 1.13636364em
+  }
+  
+  h4 {
+    font-size: 1.125em;
+    line-height: 1.1111111em;
   }
 }
 
@@ -58,6 +131,17 @@ ul {
   li {
     padding: 0.25rem 0;
   }
+}
+
+// prevent selection
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 .btn {
@@ -193,7 +277,7 @@ p {
     text-align: center;
     top: 16%;
     left: $margin-left + 0.8rem;
-    color: $text-color-light;
+    color: $heading-color-light;
     pointer-events: none;
     font-size: 0.8rem;
     border-radius: 0.5rem;
@@ -219,7 +303,7 @@ p {
   left: 0;
   top: 0;
   font-size: 1.25em;
-  z-index: 1;
+  z-index: 10;
   flex-direction: column;
   width: $margin-left;
   height: 100vh;
@@ -445,7 +529,7 @@ p {
     &__title {
       font-size: 3em;
       color: whitesmoke;
-      padding-top: 7rem;
+      padding-top: 8rem;
       margin-bottom: 1rem;
       margin-left: -1rem;
 
@@ -540,44 +624,59 @@ p {
     }
 
     .text-img-box {
-      display: flex;
-      flex-direction: row;
-
+      display: grid;
+      grid-template-columns: 0.7fr 0.3fr;
+      
       @media screen and (max-width: $tablet-width) {
+        display: flex;
         flex-direction: column-reverse;
-        align-items: center;
-      }
-
-      &__txt {
-        width: 70%;
-
-        @media screen and (max-width: $tablet-width) {
-          width: 100%;
-        }
       }
 
       &__img {
         border-radius: 100%;
-        padding: 2rem 2rem;
-        align-self: flex-start;
-        width: 10rem;
-        margin-left: auto;
+        margin: auto;
+        // width: 10rem;
 
         @media screen and (max-width: $tablet-width) {
-          align-self: initial;
-          margin-left: initial;
+          margin-bottom: 3rem;
         }
       }
     }
 
     .about {
-
       .about-skills {
         padding: 4rem 0;
-      }
-    }
+        display: flex;
 
-    .experience {
+        @media screen and (max-width: $mobile-width) {
+          flex-direction: column;
+        }
+
+        .skills-heading {
+          text-align: center;
+          color: $accent-blue;
+        }
+
+        .skills-languages {
+          width: 47.5%;
+          margin-right: auto;
+
+          @media screen and (max-width: $mobile-width) {
+            width: 100%;
+            margin: auto;
+          }
+        }
+
+        .skills-technologies {
+          width: 47.5%;
+          margin-left: auto;
+
+          @media screen and (max-width: $mobile-width) {
+            width: 100%;
+            margin: auto;
+          }
+        } 
+      }
     }
 
     .projects {
@@ -597,8 +696,8 @@ p {
             max-height: 25rem;
 
             @media screen and (max-width: $tablet-width) {
-              width: 35vw;
-              height: 42.7vw;
+              width: 32.5vw;
+              height: 39.65vw;
               max-width: initial;
               max-height: initial;
 
@@ -617,83 +716,16 @@ p {
             }
           }
         }
+      }
+    }
 
-        .project-card {
-          position: relative;
-          box-sizing: inherit;
+    &.education {
+      
+    }
 
-          &__page {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-content: center;
-            background-color: white;
-            transition: transform 0.2s ease-in-out;
-            will-change: transform;
-            box-shadow: 0 0 15px #888888;
-
-            &:hover {
-              transform: scale(1.05);
-  
-              @media screen and (max-width: $mobile-width) {
-                transform: none;
-              }
-            }
-
-            .card-txt-area {
-              display: flex;
-              flex-direction: column;
-              align-self: center;
-              width: 80%;
-              height: 100%;
-            }
-
-            .card-img {
-              height: 50%;
-            }
-
-            .card-title {
-              margin: 1rem 0;
-              color: $heading-color;
-            }
-
-            .card-text {
-              margin: 0;
-              height: 60%;
-              overflow-y: hidden;
-              color: #9b9b9b;
-            }
-
-            .card-close {
-              position: absolute;
-              top: 0.8rem;
-              right: 1rem;
-              font-size: 1.5rem;
-              color: $primary-color-dark;
-              cursor: pointer;
-
-              &:hover {
-                color: lighten($primary-color-dark, 10%);
-              }
-
-              &:active {
-                transform: translateY(1px);
-              }
-            }
-          }
-
-          .btn {
-            margin-top: auto;
-            margin-bottom: 1rem;
-          }
-
-          .card-list {
-            align-self: flex-start;
-            padding: 0 1.5rem;
-          }
-        }
+    &.contact {
+      .heading {
+        color: $heading-color-light;
       }
     }
 
@@ -701,7 +733,97 @@ p {
       padding-bottom: 500px;
     }
 
-    .education {
+    .contact {
+
+    }
+  }
+}
+
+.project-card {
+  position: relative;
+  box-sizing: inherit;
+  border-radius: 15px;
+
+  &__page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background-color: white;
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
+    box-shadow: 0 0 15px #888888;
+    border-radius: 7px;
+
+    &:hover {
+      transform: scale(1.05);
+
+      @media screen and (max-width: $mobile-width) {
+        transform: none;
+      }
+    }
+  }
+
+  .card-txt-area {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80%;
+    height: 100%;
+  }
+
+  .card-img {
+    border-radius:  7px 7px 0 0;
+    position: relative;
+    max-height: 50%;
+  }
+
+  .card-title {
+    margin: 1rem 0 0.5rem;
+  }
+
+  .card-text {
+    margin: 0;
+    height: 60%;
+    overflow-y: hidden;
+    color: #9b9b9b;
+  }
+
+  .btn {
+    margin-top: auto;
+    margin-bottom: 1rem;
+  }
+
+  .card-list {
+    align-self: flex-start;
+    padding: 0 1.5rem;
+    color: $text-color-dark;
+
+    &.card-technologies {
+      columns: 2;
+      -webkit-columns: 2;
+      -moz-columns: 2;
+    }
+  }
+
+  .card-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card-title {
+      text-align: left;
+      color: $accent-blue;
+
+      @media screen and (max-width: $mobile-width) {
+        text-align: center;
+      }
+    }
+
+    &-content {
+      width: 90%;
     }
   }
 }
@@ -748,6 +870,11 @@ p {
 
   .resume-company {
     color: $accent-blue;
+    padding: 0.5rem 0;
+  }
+
+  .resume-position {
+    padding: 0.5rem 0;
   }
 }
 
@@ -755,7 +882,6 @@ p {
   position: relative;
   color: $heading-color;
   text-align: center;
-  font-size: 3rem;
   padding: 3rem 0;
 }
 
@@ -771,7 +897,6 @@ p {
     display: initial;
   }
 }
-
 
 // move this to inline styling? Maybe using variable here in react would be better
 // TODO: REFACTOR
@@ -818,55 +943,32 @@ p {
   background-color: $section-secondary;
 }
 
+.bg-dark {
+  background-color: $heading-color;
+}
+
 .txt {
   &-xsm {
-    font-size: 0.9rem;
-    line-height: 1.2rem;
-
-    @media screen and (max-width: $tablet-width) {
-      font-size: 0.8rem;
-      line-height: 1rem;
-    }
+    font-size: 0.8em;
   }
 
   &-sm {
-    font-size: 1rem;
-    line-height: 1.5rem;
-
-    @media screen and (max-width: $tablet-width) {
-      font-size: 0.9rem;
-      line-height: 1.2rem;
-    }
+    font-size: 0.9em;
   }
 
   &-md {
     font-size: 1.1em;
-    line-height: 2rem;
-
-    @media screen and (max-width: $tablet-width) {
-      font-size: 1rem;
-      line-height: 1.5rem;
-    }
+    line-height: 1.1em;
   }
 
   &-lg {
-    font-size: 1.3rem;
-    line-height: 2.5rem;
-
-    @media screen and (max-width: $tablet-width) {
-      font-size: 1.1rem;
-      line-height: 2rem;
-    }
+    font-size: 1.3em;
+    line-height: 1.2em;
   }
 
   &-xlg {
-    font-size: 1.5rem;
-    line-height: 2.75rem;
-
-    @media screen and (max-width: $tablet-width) {
-      font-size: 1.3rem;
-      line-height: 2.5rem;
-    }
+    font-size: 1.5em;
+    line-height: 1.3em;
   }
 
   &-light {
@@ -875,6 +977,18 @@ p {
 
   &-dark {
     color: $text-color-dark;
+  }
+
+  &-accent {
+    color: $accent-blue;
+  }
+
+  &-one-half {
+    line-height: 1.5em;
+  }
+
+  &-double {
+    line-height: 2em;
   }
 
   &-algn-cntr {
