@@ -33,17 +33,10 @@
   background-color: white;
   width: 80vw;
   height: fit-content;
-  max-width: 80vh;
+  max-width: 60vh;
   max-height: 80vw;
   border-radius: 20px;
   margin: auto;
-}
-
-@media screen and (max-width: 800px) {
-  .focus-panel .panel-container {
-    max-width: initial;
-    max-height: initial;
-  }
 }
 
 .focus-panel .panel-heading {
@@ -54,9 +47,16 @@
 }
 
 .focus-panel .panel-container-contents {
-  width: 80%;
+  width: 90%;
   height: fit-content;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   margin: auto;
   overflow-y: auto;
 }
+
+@media screen and (max-width: 50rem) {
+  .focus-panel .panel-container {
+    max-width: 80vw;
+    max-height: 80vh;
+  }
+} 

@@ -696,8 +696,8 @@ p {
             max-height: 25rem;
 
             @media screen and (max-width: $tablet-width) {
-              width: 35vw;
-              height: 42.7vw;
+              width: 32.5vw;
+              height: 39.65vw;
               max-width: initial;
               max-height: initial;
 
@@ -816,6 +816,10 @@ p {
     .card-title {
       text-align: left;
       color: $accent-blue;
+
+      @media screen and (max-width: $mobile-width) {
+        text-align: center;
+      }
     }
 
     &-content {

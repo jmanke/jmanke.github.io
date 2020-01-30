@@ -10,7 +10,7 @@ const projectInfo = [
     key: 0,
     title: "MineLife",
     image: mineLifeVRImg,
-    cardText: "3D visualization of proposed mining sites built for VR and PC.",
+    cardText: "3D visualization of proposed mining sites.",
     achievements: [
       "Designed and implemented VR/PC menu system and interaction",
       "Built a Google Earth style camera for PC mode",
@@ -27,7 +27,7 @@ const projectInfo = [
     title: "MineLife Hololens",
     image: mineLifeHololensImg,
     cardText:
-      "Visualization of mining sites for the Microsoft Hololens.",
+      "Visualization of mining sites for AR.",
     achievements: [
       "Designed and built gesture interaction system",
       "Implemented hologram syncing (location and state) across multiple users",
@@ -36,7 +36,7 @@ const projectInfo = [
     technologies: [
       "Unity",
       "C#",
-      "Hololens",
+      "Microsoft Hololens",
     ]
   },
   {
@@ -44,7 +44,7 @@ const projectInfo = [
     title: "TimberOps",
     image: forestOpsImg,
     cardText:
-      "3D visualization of logging sites using GIS, LiDAR and ariel imagery for VR and PC.",
+      "3D visualization of logging sites using GIS data.",
     achievements: [
       "Lead developer and project owner",
       "Designed and implemented a Google Maps style label system that significantly increased framerate and legibility over the previous system",
@@ -55,7 +55,10 @@ const projectInfo = [
       "Unity",
       "C#",
       "GeoJSON.NET",
-      "ShaderLab"
+      "ShaderLab",
+      "HTC Vive",
+      "Oculus Rift",
+      "Windows Mixed Reality"
     ]
   },
   {
@@ -106,6 +109,7 @@ const projectInfo = [
     technologies: [
       "Unity",
       "C#",
+      "HTC Vive"
     ]
   }
 ];
