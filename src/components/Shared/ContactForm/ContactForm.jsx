@@ -51,9 +51,9 @@ export default props => {
 
   return (
     <div className={"contact-form " + (props.className ?? "")}>
-      <p className="input-title txt-md txt-light">Name</p>
+      <p className="contact-form__input-title txt-md txt-light">Name</p>
       <input
-        className="form-text-input"
+        className="contact-form__text-input"
         type="text"
         placeholder="Enter Name"
         onChange={change => {
@@ -61,14 +61,14 @@ export default props => {
         }}
       />
       {formProps.current.email.isValid ? (
-        <p className="input-title txt-md txt-light">Email</p>
+        <p className="contact-form__input-title txt-md txt-light">Email</p>
       ) : (
-        <p className="input-title txt-md invalid">Please Enter a Valid Email</p>
+        <p className="contact-form__input-title_invalid txt-md">Please Enter a Valid Email</p>
       )}
       <input
         className={
-          "form-text-input" +
-          (formProps.current.email.isValid ? "" : " invalid")
+          "contact-form__text-input" +
+          (formProps.current.email.isValid ? "" : " contact-form__text-input_invalid")
         }
         type="text"
         placeholder="Enter Email"
@@ -77,14 +77,14 @@ export default props => {
         }}
       />
       {formProps.current.message.isValid ? (
-        <p className="input-title txt-md txt-light">Message</p>
+        <p className="contact-form__input-title txt-md txt-light">Message</p>
       ) : (
-        <p className="input-title txt-md invalid">Please Enter a Message</p>
+        <p className="contact-form__input-title_invalid txt-md">Please Enter a Message</p>
       )}
       <textarea
         className={
-          "form-text-input form-message" +
-          (formProps.current.message.isValid ? "" : " invalid")
+          "contact-form__text-input form-message" +
+          (formProps.current.message.isValid ? "" : " contact-form__text-input_invalid")
         }
         placeholder="Enter Message"
         onChange={change => {
@@ -94,7 +94,7 @@ export default props => {
       />
       <span>
         <input
-          className={"form-submit " + (formValid ? "" : "invalid")}
+          className={"contact-form__submit"}
           type="submit"
           value="Send"
           onClick={() => {
@@ -132,7 +132,7 @@ export default props => {
           }}
         />
         {messageStatus === messageStatusState.none ? null : (
-          <p className="input-title txt-md txt-light form-message-status ">
+          <p className="contact-form__input-title txt-md txt-light form-message-status ">
             {messageStatus === messageStatusState.sending
               ? "Sending..."
                 : messageStatus === messageStatusState.sent

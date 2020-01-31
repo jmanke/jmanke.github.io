@@ -20,8 +20,8 @@ export default () => {
   });
 
   return (
-    <div className={"loading-screen" + (windowLoaded ? " disable" : "")}>
-			<div className={"lds-spinner loader " + (windowLoaded ? " hidden" : "")}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <div className={"loading-screen" + (windowLoaded ? " loading-screen_disable" : "")}>
+			<div className={"lds-spinner loading-screen__loader " + (windowLoaded ? " hidden" : "")}><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     </div>
   );
 };

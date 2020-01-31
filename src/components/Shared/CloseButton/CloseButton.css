@@ -15,6 +15,6 @@
   will-change: transform;
 }
 
-.close-button .close-icon {
+.close-button__close-icon {
   text-align: center;
 }

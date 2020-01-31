@@ -3,27 +3,27 @@ import FadeSection from "../FadeSection/FadeSection"
 import "./Timeline.css";
 
 const eventInfoBox = (title, description) => (
-  <div className="event-info-box">
-    <h4 className="info-box-title">
+  <div className="timeline__event-info-box">
+    <h4 className="timeline__event-info-box-title">
       {title}
     </h4>
-    <p className="info-box-description txt-description">
+    <p className="timeline__event-info-box-description">
       {description}
     </p>
   </div>
 );
 
 const timelineEvent = (timelineEventInfo) => (
-  <div key={timelineEventInfo.key} className={"timeline-event" + (timelineEventInfo.key % 2 === 0 ? "" : " reverse")}>
-    <div className="event-item">
-      <div className="event-time">
-        <h4 className="txt-date">{timelineEventInfo.month + " " + timelineEventInfo.year}</h4>
+  <div key={timelineEventInfo.key} className={"timeline__event" + (timelineEventInfo.key % 2 === 0 ? "" : " timeline__event_reverse")}>
+    <div className="timeline__event-item">
+      <div className="timeline__event-time">
+        <h4 className="timeline__txt-date">{timelineEventInfo.month + " " + timelineEventInfo.year}</h4>
       </div>
     </div>
-    <div className="event-item">
-      <div className="event-node" />
+    <div className="timeline__event-item">
+      <div className="timeline__event-node" />
     </div>
-    <div className="event-item">
+    <div className="timeline__event-item">
       {eventInfoBox(timelineEventInfo.title, timelineEventInfo.description)}
     </div>
   </div>
@@ -32,10 +32,10 @@ const timelineEvent = (timelineEventInfo) => (
 export default props => {
   return (
     <div className="timeline">
-      <div className="timeline-line-container">
+      <div className="timeline__line-container">
         {/* mimic the behaviour of the timeline grid to correctly place the line */}
         <div></div> 
-        <div className="timeline-line" />
+        <div className="timeline__line" />
         <div></div>
       </div>
       <FadeSection delay={200}>

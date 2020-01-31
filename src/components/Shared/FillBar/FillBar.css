@@ -13,7 +13,7 @@
   margin: 0.5rem 0;
 }
 
-.fill-bar .label-header {
+.fill-bar__label-header {
   border-radius: 3px 0 0 3px;
   display: flex;
   height: 100%;
@@ -22,13 +22,13 @@
   background-color: #3f9cd6;
 }
 
-.fill-bar .label-header .label {
+.fill-bar__label {
   margin: auto;
   padding: 0 0.5rem;
   color: white;
 }
 
-.fill-bar .fill-background-container {
+.fill-bar__background-container {
 	position: relative;
 	display: flex;
 	background-color: transparent;
@@ -36,7 +36,7 @@
 	overflow: hidden;
 }
 
-.fill-bar .fill-background {
+.fill-bar__background {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -46,11 +46,11 @@
 	height: 100%;
 }
 
-.fill-bar .fill-background.is-visible {
+.fill-bar__background_is-visible {
 	transform: translateX(0);
 }
 
-.fill-bar .fill-background-container .fill-percent {
+.fill-bar__fill-percent {
   color: white;
 	padding-left: 0.5rem;
 	margin-top: auto;

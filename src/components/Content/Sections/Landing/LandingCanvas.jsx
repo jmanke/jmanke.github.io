@@ -15,14 +15,23 @@ const maxLineDist = Math.pow(150, 2);
 const maxLineWidth = 1;
 const margin = 0.1;
 const mouseConnectDist = Math.pow(200, 2);
-// const mousePushDist = 100;
-// const mousePushStr = 20;
 const pingPushStr = 10;
 const pingRadius = 150;
 const pingTimeout = 100;
 const pingSpeed = 3;
 const pingLineWidth = 3;
 const particleColor = "#71D5FF";
+
+function floatToInt(num) {
+  // With a bitwise or.
+  let rounded = (0.5 + num) | 0;
+  // A double bitwise not.
+  rounded = ~~ (0.5 + num);
+  // Finally, a left bitwise shift.
+  rounded = (0.5 + num) << 0;
+
+  return rounded;
+}
 
 function createParticle(canvas, createOnBorder) {
   let position = new Vector2(
@@ -90,15 +99,17 @@ function drawParticle(ctx, particle) {
   ctx.fill();
 }
 
-function drawLines(ctx, particle, particles) {
-  for (let i = 0; i < particles.length; i++) {
-    let dist = particle.position.sqrDistance(particles[i].position);
+// returns the indicies of lines to draw (to and from)
+function drawLines(ctx, currParticleIndex, particles) {
+  ctx.strokeStyle = particleColor;
 
-    if (dist < maxLineDist) {
+  for (let i = currParticleIndex + 1; i < particles.length; i++) {
+    const dist = particles[currParticleIndex].position.sqrDistance(particles[i].position);
+
+    if (dist < maxLineDist) { 
       ctx.beginPath();
-      ctx.strokeStyle = particle.color;
       ctx.lineWidth = 1 - maxLineWidth * (dist / maxLineDist);
-      ctx.moveTo(particle.position.x, particle.position.y);
+      ctx.moveTo(particles[currParticleIndex].position.x, particles[currParticleIndex].position.y);
       ctx.lineTo(particles[i].position.x, particles[i].position.y);
       ctx.stroke();
     }
@@ -219,13 +230,14 @@ export default () => {
 
   React.useEffect(() => {
     let requestId;
-    window.addEventListener("resize", onWindowResize);
     let containerRect = canvasContainerRef.current.getBoundingClientRect();
 
     if (canvasDim.x !== containerRect.width || canvasDim.y !== containerRect.height) {
       onWindowResize();
       return;
     }
+
+    window.addEventListener("resize", onWindowResize);
 
     function updateCanvas() {
       if (!canvasRef.current) return;
@@ -264,7 +276,7 @@ export default () => {
       }
 
       for (let i = 0; i < canvasInfo.current.particles.length; i++) {
-        // push particle with mouse
+        // connect particle with mouse
         connectParticleMouse(
           ctx,
           canvasInfo.current.particles[i],
@@ -285,14 +297,11 @@ export default () => {
             canvasInfo.current.particles[i].velocity
           );
         }
-        // draw particles
+        // draw particle
         drawParticle(ctx, canvasInfo.current.particles[i]);
-        // draw lines
-        drawLines(
-          ctx,
-          canvasInfo.current.particles[i],
-          canvasInfo.current.particles
-        );
+
+        // draw lines from this particle to other particles nearby
+        drawLines(ctx, i, canvasInfo.current.particles);
       }
 
       let margin_x = width * margin;

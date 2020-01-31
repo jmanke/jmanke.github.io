@@ -41,7 +41,9 @@ export default (props) => {
       <FadeSection>
         <Heading title={props.title} />
       </FadeSection>
-      {props.children}
+      <div className="section__container">
+        {props.children}
+      </div>
     </section>
   )
 };

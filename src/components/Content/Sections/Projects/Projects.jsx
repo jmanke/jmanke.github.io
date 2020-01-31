@@ -5,11 +5,11 @@ import FadeSection from "../../../Shared/FadeSection/FadeSection";
 
 export default () => {
   return (
-    <div className="projects section-container">
-      <div className="projects__grid">
-        <FadeSection delay={200} className="grid-columns">
+    <div className="projects">
+      <div className="projects-grid">
+        <FadeSection delay={200} className="projects-grid__columns">
           {projectInfo.map(info => (
-            <Card {...info} className="grid-column" />
+            <Card {...info} className="projects-grid__column" />
           ))}
         </FadeSection>
       </div>

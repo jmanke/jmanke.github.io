@@ -4,7 +4,7 @@ import FadeSection from "../../Shared/FadeSection/FadeSection";
 
 export default () => {
   return (
-    <div className="contact section-container">
+    <div className="contact">
       <FadeSection>
         <ContactForm />
       </FadeSection>

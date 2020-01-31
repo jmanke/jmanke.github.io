@@ -38,13 +38,13 @@ export default () => {
         />
       <Canvas />
       <div style={imageStyle} className="landing-page__container unselectable">
-        <h1 className="landing-page__container__title">
+        <h1 className="landing-page__container-title">
           Jeff Manke
         </h1>
         {subtitleVisible ? <TypeWriter text={"// Software Developer "} /> : null}
       </div>
       <img src={logo} alt="Jeff Manke Logo" 
-        className={"landing-page__logo unselectable" + (logoVisible ? " is-visible" : "")} />
+        className={"landing-page__logo unselectable" + (logoVisible ? " landing-page__logo_is-visible" : "")} />
     </div>
   );
 }

@@ -15,7 +15,7 @@ function createTimelineEvent(key, title, year, month, description) {
 
 export default () => {
   return (
-    <div className="education section-container">
+    <div className="education">
       <FadeSection>
         <Timeline
           range={[2012, 2020]}

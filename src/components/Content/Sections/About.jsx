@@ -9,7 +9,7 @@ function createSkill(label, fill) {
 
 export default () => {
   return (
-    <div className="about section-container">
+    <div className="about">
       <FadeSection>
         <div className="text-img-box">
           <p className="txt-md txt-one-half">
@@ -29,9 +29,9 @@ export default () => {
           />
         </div>
       </FadeSection>
-      <div className="about-skills">
-        <FadeSection className="skills-languages" delay={100}>
-          <h3 className="skills-heading">Languages</h3>
+      <div className="skills">
+        <FadeSection className="skills__languages" delay={100}>
+          <h3 className="skills__heading">Languages</h3>
           {createSkill("C#", 85)}
           {createSkill("C++", 70)}
           {createSkill("HTML5", 70)}
@@ -40,8 +40,8 @@ export default () => {
           {createSkill("JavaScript", 60)}
         </FadeSection>
 
-        <FadeSection className="skills-technologies" delay={100}>
-          <h3 className="skills-heading">Technologies</h3>
+        <FadeSection className="skills__technologies" delay={100}>
+          <h3 className="skills__heading">Technologies</h3>
           {createSkill("Unity", 90)}
           {createSkill(".NET", 80)}
           {createSkill("React.js", 60)}

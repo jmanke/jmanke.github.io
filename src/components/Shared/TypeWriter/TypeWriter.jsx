@@ -21,7 +21,7 @@ export default props => {
   return (
     <p className={"type-writer"}>
       {props.text.slice(0, currTextIndex)}
-      <span className={textComplete ? "type-line blink" : "type-line"}>{"|"}</span>
+      <span className={textComplete ? "type-writer__type-line_blink" : "type-writer__type-line"}>{"|"}</span>
     </p>
   );
 };

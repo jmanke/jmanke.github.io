@@ -12,8 +12,9 @@ const projectInfo = [
     image: mineLifeVRImg,
     cardText: "3D visualization of proposed mining sites.",
     achievements: [
-      "Designed and implemented VR/PC menu system and interaction",
-      "Built a Google Earth style camera for PC mode",
+      "Designed and implemented a VR/PC menu system and interaction using Unity's UI",
+      "Built a Google Earth style camera for PC mode using a State Design Pattern",
+      "Developed a dynamic scene loading system"
     ],
     technologies: [
       "Unity",

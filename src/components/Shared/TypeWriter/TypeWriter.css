@@ -16,11 +16,11 @@
 	}
 }
 
-.type-writer .type-line{
+.type-writer__type-line{
 	color: white;
 	font-size: 120%;
 }
 
-.type-writer .type-line.blink {
+.type-writer__type-line_blink {
 	animation: blinking 1s infinite;
 }

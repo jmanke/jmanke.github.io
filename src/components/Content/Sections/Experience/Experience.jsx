@@ -7,7 +7,7 @@ export default () => {
   let i = 0;
 
   return (
-    <div className="experience section-container">
+    <div className="experience">
         {experienceInfo.map(info => (
           <FadeSection key={i++}>
             <ResumeItem {...info} />

@@ -6,7 +6,7 @@
   margin: auto;
 }
 
-.contact-form .form-text-input {
+.contact-form__text-input {
   border-radius: 3px;
   border: solid;
   border-style: solid;
@@ -20,34 +20,35 @@
   background-color: white;
 }
 
-.contact-form .form-text-input:focus {
+.contact-form__text-input:focus {
   outline: none;
   border-color: #257AFD;
+  box-shadow: 0 0 5px #257AFD;
 }
 
-.contact-form .input-title.invalid {
+.contact-form__input-title_invalid {
   color: red;
 }
 
-.contact-form .form-text-input.form-message {
+.contact-form__text-input.form-message {
   padding: 0.5rem;
   height: 20rem;
   width: 90%;
   resize: none;
 }
 
-.contact-form .form-text-input.invalid {
+.contact-form__text-input_invalid {
   border-color: red;
 }
 
-.contact-form .form-submit {
+.contact-form__submit {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.5rem;
   width: 30%;
 }
 
-.contact-form .input-title.form-message-status {
+.contact-form__input-title.form-message-status {
   display: inline-block;
   padding-left: 1rem;
 }

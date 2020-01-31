@@ -38,14 +38,14 @@ export default props => {
 
   return (
     <div ref={domRef} className={"fill-bar " + props.className ?? ""}>
-      <div className="label-header">
-        <div className="label">{props.label}</div>
+      <div className="fill-bar__label-header">
+        <div className="fill-bar__label">{props.label}</div>
       </div>
-      <div className={"fill-background-container"}>
-        <div className={"fill-background " + (showFill ? " is-visible" : "")}>
+      <div className={"fill-bar__background-container"}>
+        <div className={"fill-bar__background" + (showFill ? " fill-bar__background_is-visible" : "")}>
           <div style={fillStyle(props.fill)} />
         </div>
-        <div className="fill-percent">{props.fill + "%"}</div>
+        <div className="fill-bar__fill-percent">{props.fill + "%"}</div>
       </div>
     </div>
   );

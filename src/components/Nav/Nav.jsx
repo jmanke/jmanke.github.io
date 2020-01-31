@@ -45,7 +45,7 @@ export default () => {
   return (
     <nav className="nav">
       <div className="nav__start">
-        <i tabIndex="-1" onClick={onMenuToggle} className="fas fa-bars menu-toggle"></i>
+        <i tabIndex="-1" onClick={onMenuToggle} className="fas fa-bars nav__menu-toggle"></i>
         {navLogo()}
         {internalLinks.map(link =>
           <NavItem
@@ -67,9 +67,9 @@ export default () => {
           />
         )}
       </div>
-      <div className={"nav__sidebar" + (sidebarActive ? " active" : "")}>
+      <div className={"nav__sidebar" + (sidebarActive ? " nav__sidebar_active" : "")}>
         <div className="nav__sidebar__header">
-          <i tabIndex="-1" onClick={onMenuHide} className="fas fa-bars menu-toggle"></i>
+          <i tabIndex="-1" onClick={onMenuHide} className="fas fa-bars nav__menu-toggle"></i>
           {navLogo()}
         </div>
         {internalLinks.map(link =>

@@ -14,7 +14,7 @@
   user-select: none;
 }
 
-.timeline .timeline-line-container {
+.timeline__line-container {
   display: grid;
   position: absolute;
   top: 0;
@@ -24,7 +24,7 @@
   grid-template-columns: 1fr 0.15fr 1fr;
 }
 
-.timeline .timeline-line {
+.timeline__line {
   /* position: absolute; */
   /* left: 27.65%; */
   margin: auto;
@@ -35,7 +35,7 @@
   box-shadow: 0 0 3px #6d6d6d;
 }
 
-.timeline .timeline-event {
+.timeline__event {
   padding: 1rem 0;
   z-index: 1;
   margin-left: auto;
@@ -47,30 +47,30 @@
   transition: all 0.1s ease-in-out;
 }
 
-.timeline .timeline-event:hover {
-  transform: scale(1.1);
+.timeline__event:hover {
+  transform: translateY(-5px);
 }
 
-.timeline .timeline-event.reverse {
+.timeline__event_reverse {
   direction: rtl;
 }
 
-.timeline .timeline-event .event-item {
+.timeline__event-item {
   display: flex;
 }
 
-.timeline .timeline-event .event-time {
+.timeline__event-time {
   width: 100%;
   text-align: right;
   margin-top: auto;
   margin-bottom: auto;
 }
 
-.timeline .timeline-event.reverse .event-time {
+.timeline__event_reverse .timeline__event-time {
   text-align: left;
 }
 
-.timeline .timeline-event .event-node {
+.timeline__event-node {
   margin: auto;
   width: 1.5rem;
   height: 1.5rem;
@@ -84,11 +84,11 @@
   transition: all 0.1s ease-in-out;
 } 
 
-.timeline .timeline-event:hover .event-node {
-  background-color: #84F5BD;
+.timeline__event:hover .timeline__event-node {
+  background-color: #3F9CD6;
 }
 
-.timeline .timeline-event .event-info-box {
+.timeline__event-info-box {
   background-color: white;
   width: 100%;
   height: 100%;
@@ -97,26 +97,23 @@
   text-align: left;
 }
 
-.timeline .timeline-event .info-box-title {
+.timeline__event-info-box-title {
   color: #3b3b3b;
   padding: 0 0.5rem;
   margin: 0.5rem 0;
 }
 
-.timeline .timeline-event .info-box-description {
+.timeline__event-info-box-description {
   padding: 0 0.5rem;
+  color: #8a8a8a;
 }
 
 .timeline .fade-in-section-container {
   z-index: 0;
 }
 
-.timeline .txt-date {
+.timeline__txt-date {
   color: #3b3b3b;
-}
-
-.timeline .txt-description {
-  color: #8a8a8a;
 }
 
 @media screen and (max-width: 800px) {
@@ -124,23 +121,23 @@
     width: 100%;
   }
 
-  .timeline .timeline-event:hover {
+  .timeline__event:hover {
     transform: scale(1);
   }
 
-  .timeline .timeline-line-container {
+  .timeline__line-container {
     grid-template-columns: 0.35fr 0.15fr 1fr;
   }
 
-  .timeline .timeline-event {
+  .timeline__event {
     grid-template-columns: 0.35fr 0.15fr 1fr;
   }
 
-  .timeline .timeline-event.reverse {
+  .timeline__event_reverse {
     direction: ltr;
   }
 
-  .timeline .timeline-event.reverse .event-time {
+  .timeline__event_reverse .timeline__event-time {
     text-align: right;
   }
 }
