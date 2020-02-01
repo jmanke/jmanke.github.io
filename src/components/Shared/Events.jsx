@@ -1,16 +1,16 @@
 const eventEmitter = {
   events: {},
   dispatch: function(event, data) {
-    console.log("dipatch " + event);
+    //console.log("dipatch " + event);
     if (event in this.events) this.events[event].forEach(callBack => callBack(data))
   },
   subscribe: function(event, callback) {
-    console.log("subscribe " + event);
+    //console.log("subscribe " + event);
     if (!(event in this.events)) this.events[event] = []
     this.events[event].push(callback)
   },
   unsubscribe: function(event, callback) {
-    console.log("unsubscribe " + event);
+    //console.log("unsubscribe " + event);
     if (event in this.events) {
       const index = this.events[event].indexOf(callback)
       if (index > -1) {

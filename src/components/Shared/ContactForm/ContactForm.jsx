@@ -51,7 +51,7 @@ export default props => {
 
   return (
     <div className={"contact-form " + (props.className ?? "")}>
-      <p className="contact-form__input-title txt-md txt-light">Name</p>
+      <p className="contact-form__input-title txt-md">Name</p>
       <input
         className="contact-form__text-input"
         type="text"
@@ -61,7 +61,7 @@ export default props => {
         }}
       />
       {formProps.current.email.isValid ? (
-        <p className="contact-form__input-title txt-md txt-light">Email</p>
+        <p className="contact-form__input-title txt-md">Email</p>
       ) : (
         <p className="contact-form__input-title_invalid txt-md">Please Enter a Valid Email</p>
       )}
@@ -77,7 +77,7 @@ export default props => {
         }}
       />
       {formProps.current.message.isValid ? (
-        <p className="contact-form__input-title txt-md txt-light">Message</p>
+        <p className="contact-form__input-title txt-md">Message</p>
       ) : (
         <p className="contact-form__input-title_invalid txt-md">Please Enter a Message</p>
       )}

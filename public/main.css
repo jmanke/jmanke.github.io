@@ -1051,7 +1051,7 @@ p {
       flex-wrap: wrap;
 }
 
-@media screen and (max-width: 90rem) {
+@media screen and (max-width: 1024px) {
   .about__info .info-card:hover {
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -1061,25 +1061,27 @@ p {
 .about__info .info-card:nth-child(1) {
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: auto;
+  margin-right: 1rem;
+  margin-left: auto;
 }
 
 .about__info .info-card:nth-child(2) {
-  width: 25rem;
-  height: 30.5rem;
+  width: 20rem;
+  height: 24.4rem;
 }
 
 .about__info .info-card:nth-child(2) .info-card__icon .fa-icon {
-  font-size: 9rem;
+  font-size: 6rem;
 }
 
 .about__info .info-card:nth-child(3) {
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: auto;
+  margin-left: 1rem;
+  margin-right: auto;
 }
 
-@media screen and (max-width: 90rem) {
+@media screen and (max-width: 1024px) {
   .about__info .info-card:nth-child(1) {
     margin-right: auto;
     width: 49%;
@@ -1112,7 +1114,7 @@ p {
             flex-direction: column;
   }
   .about__info .info-card__icon {
-    height: 10rem;
+    height: 7rem;
   }
   .about__info .info-card:nth-child(1) {
     width: 85vw;
@@ -1141,7 +1143,7 @@ p {
             order: 1;
   }
   .about__info .info-card:nth-child(2) .info-card__icon .fa-icon {
-    font-size: 7rem;
+    font-size: 4rem;
   }
   .about__info .info-card:nth-child(3) {
     width: 85vw;

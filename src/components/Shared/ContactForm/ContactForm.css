@@ -26,6 +26,10 @@
   box-shadow: 0 0 5px #257AFD;
 }
 
+.contact-form__input-title {
+  color: #bbbbbb;
+}
+
 .contact-form__input-title_invalid {
   color: red;
 }
