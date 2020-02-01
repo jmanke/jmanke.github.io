@@ -685,9 +685,13 @@ p {
     @media screen and (max-width: $mobile-width) {
       flex-direction: column;
 
+      .info-card__icon {
+        height: 10rem;
+      }
+
       .info-card:nth-child(1) {
         width: 85vw;
-        height: 85vh;
+        height: fit-content;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1rem;
@@ -696,16 +700,20 @@ p {
       }
       .info-card:nth-child(2) {
         width: 85vw;
-        height: 85vh;
+        height: fit-content;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1rem;
         margin-top: 1rem;
         order: 1;
+
+        .info-card__icon .fa-icon {
+          font-size: 7rem;
+        }
       }
       .info-card:nth-child(3) {
         width: 85vw;
-        height: 85vh;
+        height: fit-content;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1rem;

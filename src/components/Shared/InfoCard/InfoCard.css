@@ -18,10 +18,10 @@
 
 .info-card__icon .fa-icon {
   font-size: 7rem;
-  /* margin: auto; */
-  margin-left: auto;
+  margin: auto;
+  /* margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
+  margin-top: auto; */
 }
 
 .info-card__title {
@@ -30,6 +30,7 @@
   text-align: center;
   color: white;
   background-color: #3F9CD6;
+  margin-top: 0;
   margin-bottom: 0rem;
 }
 
@@ -53,7 +54,7 @@
 .info-card__text {
   margin: auto;
   text-align: center;
-  padding: 0 5%;
+  padding: 5%;
   color: #3F9CD6;
 }
 

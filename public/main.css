@@ -1105,9 +1105,14 @@ p {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .about__info .info-card__icon {
+    height: 10rem;
+  }
   .about__info .info-card:nth-child(1) {
     width: 85vw;
-    height: 85vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -1118,7 +1123,9 @@ p {
   }
   .about__info .info-card:nth-child(2) {
     width: 85vw;
-    height: 85vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
@@ -1127,9 +1134,14 @@ p {
         -ms-flex-order: 1;
             order: 1;
   }
+  .about__info .info-card:nth-child(2) .info-card__icon .fa-icon {
+    font-size: 7rem;
+  }
   .about__info .info-card:nth-child(3) {
     width: 85vw;
-    height: 85vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1rem;
