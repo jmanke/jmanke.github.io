@@ -4,6 +4,15 @@
   will-change: transform;
 }
 
+/* Disable effect for mobile */
+@media screen and (max-width: 767px) {
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+
 .fade-in-section_is-visible {
   opacity: 1;
   transform: none;
