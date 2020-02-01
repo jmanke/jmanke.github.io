@@ -13,10 +13,16 @@ export default () => {
     document.body.classList.remove(pageLoading);
   }
 
+  if (React.windowIsLoaded && !windowLoaded) {
+    onWindowLoad();
+  }
+
   React.useEffect(() => {
-    Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
+    if (!React.windowIsLoaded && !windowLoaded) {
+      Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
     
-    return () => Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
+      return () => Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
+    }
   });
 
   return (

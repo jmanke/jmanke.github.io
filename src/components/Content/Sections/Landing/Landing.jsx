@@ -24,10 +24,16 @@ export default () => {
     setSubtitleVisible(true);
   }
 
+  if (React.windowIsLoaded && !subtitleVisible) {
+    onWindowLoad();
+  }
+
   React.useEffect(() => {
-    Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
+    if (!React.windowIsLoaded && !subtitleVisible) {
+      Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
     
-    return () => Events.eventEmitter.unsubscribe("load", onWindowLoad);
+      return () => Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
+    }
   });
 
   return (
