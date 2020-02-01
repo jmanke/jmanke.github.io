@@ -13,11 +13,11 @@ export default () => {
     document.body.classList.remove(pageLoading);
   }
 
-  if (React.windowIsLoaded && !windowLoaded) {
-    onWindowLoad();
-  }
-
   React.useEffect(() => {
+    if (React.windowIsLoaded && !windowLoaded) {
+      onWindowLoad();
+    }
+
     if (!React.windowIsLoaded && !windowLoaded) {
       Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
     

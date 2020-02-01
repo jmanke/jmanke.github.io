@@ -24,11 +24,11 @@ export default () => {
     setSubtitleVisible(true);
   }
 
-  if (React.windowIsLoaded && !subtitleVisible) {
-    onWindowLoad();
-  }
-
   React.useEffect(() => {
+    if (React.windowIsLoaded && !subtitleVisible) {
+      onWindowLoad();
+    }
+
     if (!React.windowIsLoaded && !subtitleVisible) {
       Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
     

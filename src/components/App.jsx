@@ -5,17 +5,14 @@ import Footer from "./Footer/Footer";
 import LoadingScreen from "./LoadingScreen";
 import Events from "./Shared/Events";
 
-React.windowIsLoaded = false;
+React.windowIsLoaded = React.windowIsLoaded ?? false;
+
+window.onload = function() {
+  Events.eventEmitter.dispatch("onWindowLoad", "");
+  React.windowIsLoaded = true;
+};
 
 export default () => {
-
-  React.windowIsLoaded = React.windowIsLoaded ?? false;
-
-  window.onload = function() {
-    Events.eventEmitter.dispatch("onWindowLoad", "");
-    React.windowIsLoaded = true;
-  };
-
   return (
   <div className="app">
     <LoadingScreen />
