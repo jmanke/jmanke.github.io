@@ -265,14 +265,12 @@ p {
     width: 0.25rem;
     height: 100%;
     background-color: $accent-blue;
+    transition: all 150ms linear;
+    transform: scale(1);
+    will-change: transform;
 
     &_hidden {
-      height: 0;
-      transition: all 75ms linear;
-    }
-
-    &_show {
-      transition: all 150ms linear;
+      transform: scale(0);
     }
   }
 
@@ -778,8 +776,8 @@ p {
     max-height: 25rem;
 
     @media screen and (max-width: $tablet-width) {
-      width: 32.5vw;
-      height: 39.65vw;
+      width: 37.5vw;
+      height: 45.75vw;
       max-width: initial;
       max-height: initial;
 
