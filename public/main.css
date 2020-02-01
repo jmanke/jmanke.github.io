@@ -1084,6 +1084,7 @@ p {
 @media screen and (max-width: 1024px) {
   .about__info .info-card:nth-child(1) {
     margin-right: auto;
+    margin-left: 0;
     width: 49%;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
@@ -1099,6 +1100,7 @@ p {
   }
   .about__info .info-card:nth-child(3) {
     margin-left: auto;
+    margin-right: 0;
     width: 49%;
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;

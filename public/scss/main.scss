@@ -664,10 +664,10 @@ p {
       margin-right: auto;
     }
 
-    //TODO: test across screens
     @media screen and (max-width: $tablet-width) {
       .info-card:nth-child(1) {
         margin-right: auto;
+        margin-left: 0;
         width: 49%;
         order: 2;
       }
@@ -679,6 +679,7 @@ p {
       }
       .info-card:nth-child(3) {
         margin-left: auto;
+        margin-right: 0;
         width: 49%;
         order: 3;
       }
