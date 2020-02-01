@@ -55,7 +55,6 @@ const projectInfo = [
     technologies: [
       "Unity",
       "C#",
-      "GeoJSON.NET",
       "ShaderLab",
       "HTC Vive",
       "Oculus Rift",

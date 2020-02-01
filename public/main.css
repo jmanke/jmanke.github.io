@@ -377,7 +377,12 @@ p {
   color: #696969;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #3b3b3b;
 }
 
@@ -1035,6 +1040,103 @@ p {
 @media screen and (max-width: 767px) {
   .section__container {
     padding: 2rem 0;
+  }
+}
+
+.about__info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.about__info .info-card:nth-child(1) {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: auto;
+}
+
+.about__info .info-card:nth-child(2) {
+  width: 25rem;
+  height: 30.5rem;
+}
+
+.about__info .info-card:nth-child(2) .info-card__icon .fa-icon {
+  font-size: 9rem;
+}
+
+.about__info .info-card:nth-child(3) {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+@media screen and (max-width: 90rem) {
+  .about__info .info-card:nth-child(1) {
+    margin-right: auto;
+    width: 49%;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .about__info .info-card:nth-child(2) {
+    margin: auto;
+    margin-bottom: 2%;
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .about__info .info-card:nth-child(3) {
+    margin-left: auto;
+    width: 49%;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .about__info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .about__info .info-card:nth-child(1) {
+    width: 85vw;
+    height: 85vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .about__info .info-card:nth-child(2) {
+    width: 85vw;
+    height: 85vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .about__info .info-card:nth-child(3) {
+    width: 85vw;
+    height: 85vh;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
   }
 }
 

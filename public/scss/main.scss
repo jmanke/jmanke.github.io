@@ -47,7 +47,12 @@ p {
   color: $text-color-light;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $heading-color;
 }
 
@@ -78,17 +83,17 @@ h4 {
     font-size: 2.5em;
     line-height: 1.125em;
   }
-  
+
   h2 {
     font-size: 2em;
     line-height: 1.25em;
   }
-  
+
   h3 {
     font-size: 1.5em;
     line-height: 1.25em;
   }
-  
+
   h4 {
     font-size: 1.125em;
     line-height: 1.22222em;
@@ -102,17 +107,17 @@ h4 {
     font-size: 2em;
     line-height: 1.25em;
   }
-  
+
   h2 {
     font-size: 1.625em;
     line-height: 1.5384615em;
   }
-  
+
   h3 {
     font-size: 1.375em;
-    line-height: 1.13636364em
+    line-height: 1.13636364em;
   }
-  
+
   h4 {
     font-size: 1.125em;
     line-height: 1.1111111em;
@@ -615,12 +620,98 @@ p {
     width: 90%;
     padding: 2rem 0;
     // margin: $margin-vertical $margin-horizontal;
-    max-width: 72rem;
+    max-width: $max-width;
     display: flex;
     flex-direction: column;
 
     @media screen and (max-width: $mobile-width) {
       padding: $margin-vertical-mobile 0;
+    }
+  }
+}
+
+.about {
+  &__info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    //TODO: test across screens
+    @media screen and (max-width: 90rem) {
+    }
+
+    .info-card:nth-child(1) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: auto;
+    }
+
+    .info-card:nth-child(2) {
+      width: 25rem;
+      height: 30.5rem;
+
+      .info-card__icon .fa-icon {
+        font-size: 9rem;
+      }
+    }
+
+    .info-card:nth-child(3) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+
+    //TODO: test across screens
+    @media screen and (max-width: 90rem) {
+      .info-card:nth-child(1) {
+        margin-right: auto;
+        width: 49%;
+        order: 2;
+      }
+      .info-card:nth-child(2) {
+        margin: auto;
+        margin-bottom: 2%;
+        width: 100%;
+        order: 1;
+      }
+      .info-card:nth-child(3) {
+        margin-left: auto;
+        width: 49%;
+        order: 3;
+      }
+    }
+
+    //TODO: test across screens
+    @media screen and (max-width: $mobile-width) {
+      flex-direction: column;
+
+      .info-card:nth-child(1) {
+        width: 85vw;
+        height: 85vh;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        order: 2;
+      }
+      .info-card:nth-child(2) {
+        width: 85vw;
+        height: 85vh;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        order: 1;
+      }
+      .info-card:nth-child(3) {
+        width: 85vw;
+        height: 85vh;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        order: 3;
+      }
     }
   }
 }
@@ -656,7 +747,7 @@ p {
       width: 100%;
       margin: auto;
     }
-  } 
+  }
 }
 
 .projects-grid {
@@ -706,7 +797,7 @@ p {
 .text-img-box {
   display: grid;
   grid-template-columns: 0.7fr 0.3fr;
-  
+
   @media screen and (max-width: $tablet-width) {
     display: flex;
     flex-direction: column-reverse;
@@ -760,7 +851,7 @@ p {
   }
 
   &__img {
-    border-radius:  7px 7px 0 0;
+    border-radius: 7px 7px 0 0;
     position: relative;
     max-height: 50%;
   }

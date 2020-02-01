@@ -28,7 +28,7 @@ export default props => {
 
           <div className="project-card__panel-content">
             <h4 className="project-card__title">Technologies</h4>
-            <ul className="project-card__list_technologies">
+            <ul className="project-card__list project-card__list_technologies">
               {props.technologies
                 ? props.technologies.map(item => <li className="txt-sm" key={i++}>{item}</li>)
                 : null}

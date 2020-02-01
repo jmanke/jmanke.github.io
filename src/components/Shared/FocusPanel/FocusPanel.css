@@ -55,8 +55,12 @@
 }
 
 @media screen and (max-width: 50rem) {
-  .focus-panel .panel-container {
+  .focus-panel__container {
     max-width: 80vw;
     max-height: 80vh;
+  }
+
+  .focus-panel__container-contents {
+    width: 100%;
   }
 } 
