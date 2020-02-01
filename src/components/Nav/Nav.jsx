@@ -30,7 +30,6 @@ export default () => {
     link.visibility = observerInfo.intersectionRect.height;
     let max = internalLinks.reduce( (prev, curr) => curr.visibility > prev.visibility ? curr : prev );
     max.sectionActive = max.visibility > window.innerHeight / 4;
-    //window.location.hash = "#" + title;
 
     setInternalLinks([...internalLinks]);
   }
