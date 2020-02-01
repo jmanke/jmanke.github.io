@@ -11,7 +11,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -44,10 +44,15 @@ body {
 // Desktop Typography
 
 p {
-  color: $text-color-dark;
+  color: $text-color-light;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: $heading-color;
 }
 
@@ -78,17 +83,17 @@ h4 {
     font-size: 2.5em;
     line-height: 1.125em;
   }
-  
+
   h2 {
     font-size: 2em;
     line-height: 1.25em;
   }
-  
+
   h3 {
     font-size: 1.5em;
     line-height: 1.25em;
   }
-  
+
   h4 {
     font-size: 1.125em;
     line-height: 1.22222em;
@@ -102,17 +107,17 @@ h4 {
     font-size: 2em;
     line-height: 1.25em;
   }
-  
+
   h2 {
     font-size: 1.625em;
     line-height: 1.5384615em;
   }
-  
+
   h3 {
     font-size: 1.375em;
-    line-height: 1.13636364em
+    line-height: 1.13636364em;
   }
-  
+
   h4 {
     font-size: 1.125em;
     line-height: 1.1111111em;
@@ -151,6 +156,11 @@ ul {
   text-decoration: none;
   width: fit-content;
   height: fit-content;
+  background-color: white;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: $text-color-light;
 
   /* create a small space when buttons wrap on 2 lines */
   margin: 2px 0;
@@ -163,16 +173,17 @@ ul {
 
   /* make sure colors have enough contrast! */
   color: $text-color-dark;
-  background-color: transparent;
   cursor: pointer;
 
   &:hover {
     background-color: $accent-blue;
+    border-color: $accent-blue;
     color: white;
   }
 
   &:active {
     border: solid 1px $accent-color;
+    border-color: $accent-blue;
     transform: translateY(1px);
     filter: saturate(150%);
     outline: none;
@@ -180,6 +191,7 @@ ul {
 
   &:focus {
     border: solid 1px $accent-color;
+    border-color: $accent-blue;
     outline: none;
     background-color: $accent-blue;
     color: white;
@@ -208,14 +220,15 @@ p {
   height: 100vh;
   background-color: $primary-color-dark;
   z-index: 1000;
+  opacity: 1;
+  transition: opacity 1s ease-in-out, height 0s linear 1s;
 
-  &.disable {
+  &_disable {
     opacity: 0;
     height: 0;
-    transition: opacity 1s ease-in-out, height 0s linear 1s;
   }
 
-  .loader {
+  &__loader {
     width: 5rem;
     height: 5rem;
   }
@@ -253,12 +266,12 @@ p {
     height: 100%;
     background-color: $accent-blue;
 
-    &.hidden {
+    &_hidden {
       height: 0;
       transition: all 75ms linear;
     }
 
-    &.show {
+    &_show {
       transition: all 150ms linear;
     }
   }
@@ -321,7 +334,7 @@ p {
     border-width: 1px;
   }
 
-  .menu-toggle {
+  &__menu-toggle {
     color: lighten($accent-color, $amount: 80%);
     padding-left: $margin-top / 2;
     display: none;
@@ -440,7 +453,7 @@ p {
         margin-right: 1rem;
       }
 
-      .menu-toggle {
+      .nav__menu-toggle {
         margin-right: auto;
         margin-left: 1.5rem;
         padding: 0;
@@ -477,10 +490,10 @@ p {
         margin-top: 1.5rem;
       }
     }
-  }
 
-  .active {
-    transform: translateX(0);
+    &_active {
+      transform: translateX(0);
+    }
   }
 }
 
@@ -526,7 +539,7 @@ p {
       height: 17rem;
     }
 
-    &__title {
+    &-title {
       font-size: 3em;
       color: whitesmoke;
       padding-top: 8rem;
@@ -575,7 +588,7 @@ p {
       bottom: -2.5rem;
     }
 
-    &.is-visible {
+    &_is-visible {
       opacity: 1;
       transform: scale(1);
       //transform: rotateX(0);
@@ -592,149 +605,222 @@ p {
   @media screen and (max-width: $mobile-width) {
     margin-left: 0;
   }
+}
 
-  .section {
-    //TODO: REMOVE
-    //padding-bottom: 2000px;
-    position: relative;
+.section {
+  //TODO: REMOVE
+  //padding-bottom: 2000px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+
+  &__container {
+    width: 90%;
+    padding: 2rem 0;
+    // margin: $margin-vertical $margin-horizontal;
+    max-width: $max-width;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 3rem 0;
 
-    .section-hr {
-      border-style: dotted;
-      border-width: 1rem;
-      border-top: 1rem;
-      width: 5rem;
-      color: #dfdfdf;
+    @media screen and (max-width: $mobile-width) {
+      padding: $margin-vertical-mobile 0;
+    }
+  }
+}
+
+.about {
+  &__info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    //TODO: test across screens
+    @media screen and (max-width: 90rem) {
+      .info-card:hover {
+        transform: translateY(0);
+      }
     }
 
-    .section-container {
-      width: 90%;
-      padding: 2rem 0;
-      // margin: $margin-vertical $margin-horizontal;
-      max-width: 72rem;
-      display: flex;
+    .info-card:nth-child(1) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-right: auto;
+    }
+
+    .info-card:nth-child(2) {
+      width: 25rem;
+      height: 30.5rem;
+
+      .info-card__icon .fa-icon {
+        font-size: 9rem;
+      }
+    }
+
+    .info-card:nth-child(3) {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    }
+
+    //TODO: test across screens
+    @media screen and (max-width: 90rem) {
+      .info-card:nth-child(1) {
+        margin-right: auto;
+        width: 49%;
+        order: 2;
+      }
+      .info-card:nth-child(2) {
+        margin: auto;
+        margin-bottom: 2%;
+        width: 100%;
+        order: 1;
+      }
+      .info-card:nth-child(3) {
+        margin-left: auto;
+        width: 49%;
+        order: 3;
+      }
+    }
+
+    //TODO: test across screens
+    @media screen and (max-width: $mobile-width) {
       flex-direction: column;
 
-      @media screen and (max-width: $mobile-width) {
-        padding: $margin-vertical-mobile 0;
-      }
-    }
-
-    .text-img-box {
-      display: grid;
-      grid-template-columns: 0.7fr 0.3fr;
-      
-      @media screen and (max-width: $tablet-width) {
-        display: flex;
-        flex-direction: column-reverse;
+      .info-card__icon {
+        height: 10rem;
       }
 
-      &__img {
-        border-radius: 100%;
-        margin: auto;
-        // width: 10rem;
+      .info-card:nth-child(1) {
+        width: 85vw;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        order: 2;
+      }
+      .info-card:nth-child(2) {
+        width: 85vw;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        order: 1;
 
-        @media screen and (max-width: $tablet-width) {
-          margin-bottom: 3rem;
+        .info-card__icon .fa-icon {
+          font-size: 7rem;
         }
       }
-    }
-
-    .about {
-      .about-skills {
-        padding: 4rem 0;
-        display: flex;
-
-        @media screen and (max-width: $mobile-width) {
-          flex-direction: column;
-        }
-
-        .skills-heading {
-          text-align: center;
-          color: $accent-blue;
-        }
-
-        .skills-languages {
-          width: 47.5%;
-          margin-right: auto;
-
-          @media screen and (max-width: $mobile-width) {
-            width: 100%;
-            margin: auto;
-          }
-        }
-
-        .skills-technologies {
-          width: 47.5%;
-          margin-left: auto;
-
-          @media screen and (max-width: $mobile-width) {
-            width: 100%;
-            margin: auto;
-          }
-        } 
+      .info-card:nth-child(3) {
+        width: 85vw;
+        height: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+        order: 3;
       }
     }
+  }
+}
 
-    .projects {
-      &__grid {
-        .grid-columns {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          flex: 0;
+.skills {
+  padding: 4rem 0;
+  display: flex;
 
-          .grid-column {
-            margin: 0.75vw;
-            width: 25vw;
-            height: 30.5vw;
+  @media screen and (max-width: $mobile-width) {
+    flex-direction: column;
+  }
 
-            max-width: 20.5rem;
-            max-height: 25rem;
+  &__heading {
+    text-align: center;
+    color: $accent-blue;
+  }
 
-            @media screen and (max-width: $tablet-width) {
-              width: 32.5vw;
-              height: 39.65vw;
-              max-width: initial;
-              max-height: initial;
+  &__languages {
+    width: 47.5%;
+    margin-right: auto;
 
-              margin: 1vw;
-            }
+    @media screen and (max-width: $mobile-width) {
+      width: 100%;
+      margin: auto;
+    }
+  }
 
-            @media screen and (max-width: $mobile-width) {
-              margin: 3vw;
-              width: 70vw;
-              height: 85.4vw;
+  &__technologies {
+    width: 47.5%;
+    margin-left: auto;
 
-              min-width: 18rem;
-              min-height: 21.96rem;
-              max-width: 20.5rem;
-              max-height: 25rem;
-            }
-          }
-        }
-      }
+    @media screen and (max-width: $mobile-width) {
+      width: 100%;
+      margin: auto;
+    }
+  }
+}
+
+.projects-grid {
+  &__columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 0;
+  }
+
+  &__column {
+    margin: 0.75vw;
+    width: 25vw;
+    height: 30.5vw;
+
+    max-width: 20.5rem;
+    max-height: 25rem;
+
+    @media screen and (max-width: $tablet-width) {
+      width: 32.5vw;
+      height: 39.65vw;
+      max-width: initial;
+      max-height: initial;
+
+      margin: 1vw;
     }
 
-    &.education {
-      
+    @media screen and (max-width: $mobile-width) {
+      margin: 3vw;
+      width: 70vw;
+      height: 85.4vw;
+
+      min-width: 18rem;
+      min-height: 21.96rem;
+      max-width: 20.5rem;
+      max-height: 25rem;
     }
+  }
+}
 
-    &.contact {
-      .heading {
-        color: $heading-color-light;
-      }
-    }
+.contact {
+  .heading {
+    color: $heading-color-light;
+  }
+}
 
-    .skills {
-      padding-bottom: 500px;
-    }
+.text-img-box {
+  display: grid;
+  grid-template-columns: 0.7fr 0.3fr;
 
-    .contact {
+  @media screen and (max-width: $tablet-width) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 
+  &__img {
+    border-radius: 100%;
+    margin: auto;
+    // width: 10rem;
+
+    @media screen and (max-width: $tablet-width) {
+      margin-bottom: 3rem;
     }
   }
 }
@@ -752,13 +838,14 @@ p {
     flex-direction: column;
     align-content: center;
     background-color: white;
-    transition: transform 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     will-change: transform;
     box-shadow: 0 0 15px #888888;
     border-radius: 7px;
 
     &:hover {
-      transform: scale(1.05);
+      transform: translateY(-0.5rem);
+      box-shadow: 0 0 17px #505050;
 
       @media screen and (max-width: $mobile-width) {
         transform: none;
@@ -766,7 +853,7 @@ p {
     }
   }
 
-  .card-txt-area {
+  &__txt-area {
     display: flex;
     flex-direction: column;
     align-self: center;
@@ -774,17 +861,17 @@ p {
     height: 100%;
   }
 
-  .card-img {
-    border-radius:  7px 7px 0 0;
+  &__img {
+    border-radius: 7px 7px 0 0;
     position: relative;
     max-height: 50%;
   }
 
-  .card-title {
+  &__title {
     margin: 1rem 0 0.5rem;
   }
 
-  .card-text {
+  &__text {
     margin: 0;
     height: 60%;
     overflow-y: hidden;
@@ -796,24 +883,24 @@ p {
     margin-bottom: 1rem;
   }
 
-  .card-list {
+  &__list {
     align-self: flex-start;
     padding: 0 1.5rem;
     color: $text-color-dark;
 
-    &.card-technologies {
+    &_technologies {
       columns: 2;
       -webkit-columns: 2;
       -moz-columns: 2;
     }
   }
 
-  .card-panel {
+  &__panel {
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    .card-title {
+    .project-card__title {
       text-align: left;
       color: $accent-blue;
 
@@ -842,7 +929,7 @@ p {
       margin: 0;
     }
 
-    &__primary {
+    &-primary {
       margin-right: auto;
       padding-right: 2rem;
       width: 60%;
@@ -852,7 +939,7 @@ p {
       }
     }
 
-    &__secondary {
+    &-secondary {
       margin-left: auto;
       text-align: right;
 
@@ -868,12 +955,12 @@ p {
     width: 100%;
   }
 
-  .resume-company {
+  &__company {
     color: $accent-blue;
     padding: 0.5rem 0;
   }
 
-  .resume-position {
+  &__position {
     padding: 0.5rem 0;
   }
 }
