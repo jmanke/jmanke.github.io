@@ -3,6 +3,11 @@ import Nav from "./Nav/Nav";
 import Content from "./Content/Content";
 import Footer from "./Footer/Footer";
 import LoadingScreen from "./LoadingScreen";
+import Events from "./Shared/Events";
+
+window.onload = function() {
+  Events.eventEmitter.dispatch("onWindowLoad", "");
+};
 
 export default () => {
   return (
