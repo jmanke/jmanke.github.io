@@ -1052,6 +1052,13 @@ p {
       flex-wrap: wrap;
 }
 
+@media screen and (max-width: 90rem) {
+  .about__info .info-card:hover {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 .about__info .info-card:nth-child(1) {
   margin-top: auto;
   margin-bottom: auto;
@@ -1221,8 +1228,8 @@ p {
 
 @media screen and (max-width: 1024px) {
   .projects-grid__column {
-    width: 32.5vw;
-    height: 39.65vw;
+    width: 37.5vw;
+    height: 45.75vw;
     max-width: initial;
     max-height: initial;
     margin: 1vw;

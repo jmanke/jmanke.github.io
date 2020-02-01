@@ -12,8 +12,6 @@ function createCard() {
 
 }
 
-
-
 export default () => {
   return (
     <div className="about">
@@ -30,7 +28,7 @@ export default () => {
         className="info-card__about-me" 
         title={"About Me"} 
         icon={<i class="fa-icon far fa-user"></i>} 
-        text={"My name is Jeff Manke and I am a Software Developer \
+        text={"Hello, my name is Jeff Manke and I am a Software Developer \
             living in Victoria, BC. I have a Bachelor of Science, Double Major \
             in Computer Science and Economics from the Univeristy of Victoria. \
             Ever since I took Computer Science as my second major, I have been \
@@ -45,25 +43,6 @@ export default () => {
         games are Kerbal Space Program, Halo, The Witcher 3, and The Outer Wilds."} 
         />
       </div>
-      {/* <FadeSection>
-        <div className="text-img-box">
-          <p className="txt-md txt-one-half">
-            Hello, my name is Jeff Manke and I am a Software Developer currently
-            living in Victoria, BC. I have a Bachelor of Science, Double Major
-            in Computer Science and Economics from the Univeristy of Victoria.
-            Ever since I took Computer Science as my second major, I have been
-            spending almost all of my time programming and learning new
-            technologies. Whether its writing highly optimized and multithreaded
-            C#/C++ code, or front end development with JavaScript and React.js,
-            I love taking on new challenges and solving problems.
-          </p>
-          <img
-            src={jeffImg}
-            alt="Jeff Manke Hololens"
-            className="text-img-box__img"
-          />
-        </div>
-      </FadeSection> */}
       <div className="skills">
         <FadeSection className="skills__languages" delay={100}>
           <h3 className="skills__heading">Languages</h3>

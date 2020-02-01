@@ -638,6 +638,9 @@ p {
 
     //TODO: test across screens
     @media screen and (max-width: 90rem) {
+      .info-card:hover {
+        transform: translateY(0);
+      }
     }
 
     .info-card:nth-child(1) {
@@ -775,8 +778,8 @@ p {
     max-height: 25rem;
 
     @media screen and (max-width: $tablet-width) {
-      width: 32.5vw;
-      height: 39.65vw;
+      width: 37.5vw;
+      height: 45.75vw;
       max-width: initial;
       max-height: initial;
 
