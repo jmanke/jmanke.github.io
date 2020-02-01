@@ -635,7 +635,7 @@ p {
     flex-wrap: wrap;
 
     //TODO: test across screens
-    @media screen and (max-width: 90rem) {
+    @media screen and (max-width: $tablet-width) {
       .info-card:hover {
         transform: translateY(0);
       }
@@ -644,26 +644,28 @@ p {
     .info-card:nth-child(1) {
       margin-top: auto;
       margin-bottom: auto;
-      margin-right: auto;
+      margin-right: 1rem;
+      margin-left: auto;
     }
 
     .info-card:nth-child(2) {
-      width: 25rem;
-      height: 30.5rem;
+      width: 20rem;
+      height: 24.4rem;
 
       .info-card__icon .fa-icon {
-        font-size: 9rem;
+        font-size: 6rem;
       }
     }
 
     .info-card:nth-child(3) {
       margin-top: auto;
       margin-bottom: auto;
-      margin-left: auto;
+      margin-left: 1rem;
+      margin-right: auto;
     }
 
     //TODO: test across screens
-    @media screen and (max-width: 90rem) {
+    @media screen and (max-width: $tablet-width) {
       .info-card:nth-child(1) {
         margin-right: auto;
         width: 49%;
@@ -687,7 +689,7 @@ p {
       flex-direction: column;
 
       .info-card__icon {
-        height: 10rem;
+        height: 7rem;
       }
 
       .info-card:nth-child(1) {
@@ -709,7 +711,7 @@ p {
         order: 1;
 
         .info-card__icon .fa-icon {
-          font-size: 7rem;
+          font-size: 4rem;
         }
       }
       .info-card:nth-child(3) {
