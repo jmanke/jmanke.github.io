@@ -22,16 +22,16 @@ const pingSpeed = 3;
 const pingLineWidth = 3;
 const particleColor = "#71D5FF";
 
-function floatToInt(num) {
-  // With a bitwise or.
-  let rounded = (0.5 + num) | 0;
-  // A double bitwise not.
-  rounded = ~~ (0.5 + num);
-  // Finally, a left bitwise shift.
-  rounded = (0.5 + num) << 0;
+// function floatToInt(num) {
+//   // With a bitwise or.
+//   let rounded = (0.5 + num) | 0;
+//   // A double bitwise not.
+//   rounded = ~~ (0.5 + num);
+//   // Finally, a left bitwise shift.
+//   rounded = (0.5 + num) << 0;
 
-  return rounded;
-}
+//   return rounded;
+// }
 
 function createParticle(canvas, createOnBorder) {
   let position = new Vector2(

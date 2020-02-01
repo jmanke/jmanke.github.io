@@ -16,6 +16,7 @@ export default props => {
       text: "",
       isValid: true,
       validate: function() {
+        // eslint-disable-next-line no-useless-escape
         const pattern = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
         this.isValid = this.text.match(pattern) !== null;
       }
@@ -28,6 +29,7 @@ export default props => {
       }
     }
   });
+  // eslint-disable-next-line no-unused-vars
   const [formValid, setFormValid] = React.useState([
     formProps.current.email.isValid,
     formProps.current.message.isValid
@@ -118,7 +120,7 @@ export default props => {
                 SecureToken: "e05ed07e-86ad-40c2-93e2-4a3b41ee1f50",
                 To: "jeffman879@gmail.com",
                 From: "jeffman879@gmail.com",
-                Subject: "jmanke.github.io: Contact",
+                Subject: "Message From jmanke.github.io: Contact",
                 Body: bodyMessage.replace(/[\r\n]/g, "<br />")
               }).then(message => {
                 console.log(message);
