@@ -596,17 +596,16 @@ p {
   width: 0.25rem;
   height: 100%;
   background-color: #3F9CD6;
+  -webkit-transition: all 150ms linear;
+  transition: all 150ms linear;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  will-change: transform;
 }
 
 .nav-item__active-bar_hidden {
-  height: 0;
-  -webkit-transition: all 75ms linear;
-  transition: all 75ms linear;
-}
-
-.nav-item__active-bar_show {
-  -webkit-transition: all 150ms linear;
-  transition: all 150ms linear;
+  -webkit-transform: scale(0);
+          transform: scale(0);
 }
 
 .nav-item__text {

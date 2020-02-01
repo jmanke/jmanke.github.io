@@ -1,6 +1,7 @@
 .fade-in-section {
   opacity: 0;
   transform: translateY(10vh);
+  will-change: transform;
 }
 
 .fade-in-section_is-visible {

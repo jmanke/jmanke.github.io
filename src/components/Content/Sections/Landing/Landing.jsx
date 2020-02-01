@@ -4,7 +4,6 @@ import logo from "../../../../images/logo_circle.png";
 import Canvas from "./LandingCanvas";
 import IntersectionObserver from "../../../Shared/IntersectionObserver";
 import TypeWriter from "../../../Shared/TypeWriter/TypeWriter";
-import Events from "../../../Shared/Events";
 
 export default () => {
   const landingRef = React.useRef();
@@ -25,9 +24,9 @@ export default () => {
   }
 
   React.useEffect(() => {
-    Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
-
-    return () => Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
+    window.addEventListener("load", onWindowLoad);
+    
+    return () => window.removeEventListener("load", onWindowLoad);
   });
 
   return (

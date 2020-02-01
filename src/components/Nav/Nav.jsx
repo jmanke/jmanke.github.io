@@ -7,6 +7,7 @@ import Events from "../Shared/Events";
 const navLogo = () => (
   <img className="logo" href="" src={logo} alt="Jeff Manke" onClick={() => {
     window.location.href = "#";
+    document.location.reload();
   }}/>
 );
 

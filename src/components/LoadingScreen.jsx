@@ -1,5 +1,4 @@
 import React from "react";
-import Events from "./Shared/Events";
 
 const pageLoading = 'page-loading';
 
@@ -14,9 +13,9 @@ export default () => {
   }
 
   React.useEffect(() => {
-    Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
+    window.addEventListener("load", onWindowLoad);
 
-    return () => Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
+    return () => window.removeEventListener("load", onWindowLoad);
   });
 
   return (

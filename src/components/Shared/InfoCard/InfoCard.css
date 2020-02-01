@@ -10,8 +10,7 @@
 }
 
 .info-card:hover {
-  box-shadow: 0 0 15px #777777;
-  transform: translateY(-10px);
+  box-shadow: 0 0 18px #777777;
 }
 
 .info-card__icon {
