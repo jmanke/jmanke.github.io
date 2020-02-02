@@ -12,7 +12,6 @@
   border-style: solid;
   border-width: 2px;
   border-color: #c5c5c5;
-  width: 40%;
 
   min-width: 12rem;
 
@@ -37,7 +36,6 @@
 .contact-form__text-input.form-message {
   padding: 0.5rem;
   height: 20rem;
-  width: 90%;
   resize: none;
 }
 
@@ -49,6 +47,7 @@
   display: inline-block;
   cursor: pointer;
   margin-top: 1.5rem;
+  margin-left: auto;
   padding: 0.5rem;
   width: 30%;
 }

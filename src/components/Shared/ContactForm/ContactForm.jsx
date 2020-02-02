@@ -15,7 +15,7 @@ export default props => {
     email: {
       text: "",
       isValid: true,
-      validate: function() {
+      validate: function () {
         // eslint-disable-next-line no-useless-escape
         const pattern = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
         this.isValid = this.text.match(pattern) !== null;
@@ -24,7 +24,7 @@ export default props => {
     message: {
       text: "",
       isValid: true,
-      validate: function() {
+      validate: function () {
         this.isValid = this.text.length > 0;
       }
     }
@@ -65,8 +65,8 @@ export default props => {
       {formProps.current.email.isValid ? (
         <p className="contact-form__input-title txt-md">Email</p>
       ) : (
-        <p className="contact-form__input-title_invalid txt-md">Please Enter a Valid Email</p>
-      )}
+          <p className="contact-form__input-title_invalid txt-md">Please Enter a Valid Email</p>
+        )}
       <input
         className={
           "contact-form__text-input" +
@@ -81,8 +81,8 @@ export default props => {
       {formProps.current.message.isValid ? (
         <p className="contact-form__input-title txt-md">Message</p>
       ) : (
-        <p className="contact-form__input-title_invalid txt-md">Please Enter a Message</p>
-      )}
+          <p className="contact-form__input-title_invalid txt-md">Please Enter a Message</p>
+        )}
       <textarea
         className={
           "contact-form__text-input form-message" +
@@ -94,55 +94,53 @@ export default props => {
         }}
         required
       />
-      <span>
-        <input
-          className={"contact-form__submit"}
-          type="submit"
-          value="Send"
-          onClick={() => {
-            if (messageStatus === messageStatusState.sent || messageStatus === messageStatusState.sending) {
-              return;
-            }
+      <input
+        className={"contact-form__submit"}
+        type="submit"
+        value="Send"
+        onClick={() => {
+          if (messageStatus === messageStatusState.sent || messageStatus === messageStatusState.sending) {
+            return;
+          }
 
-            if (validateForm()) {
-              setMessageStatus(messageStatusState.sending);
+          if (validateForm()) {
+            setMessageStatus(messageStatusState.sending);
 
-              const bodyMessage =
-                "Sender: " +
-                formProps.current.name +
-                "\r\n" +
-                "From Email: " +
-                formProps.current.email.text +
-                "\r\n \r\n" +
-                formProps.current.message.text;
+            const bodyMessage =
+              "Sender: " +
+              formProps.current.name +
+              "\r\n" +
+              "From Email: " +
+              formProps.current.email.text +
+              "\r\n \r\n" +
+              formProps.current.message.text;
 
-              Email.send({
-                SecureToken: "e05ed07e-86ad-40c2-93e2-4a3b41ee1f50",
-                To: "jeffman879@gmail.com",
-                From: "jeffman879@gmail.com",
-                Subject: "Message From jmanke.github.io: Contact",
-                Body: bodyMessage.replace(/[\r\n]/g, "<br />")
-              }).then(message => {
-                console.log(message);
-                setMessageStatus(
-                  message === "OK"
-                    ? messageStatusState.sent
-                    : messageStatusState.failed
-                );
-              });
-            }
-          }}
-        />
-        {messageStatus === messageStatusState.none ? null : (
-          <p className="contact-form__input-title txt-md txt-light form-message-status ">
-            {messageStatus === messageStatusState.sending
-              ? "Sending..."
-                : messageStatus === messageStatusState.sent
-                ? "Message Sent!"
-                : "Send Failed..."}
-          </p>
-        )}
-      </span>
+            Email.send({
+              SecureToken: "e05ed07e-86ad-40c2-93e2-4a3b41ee1f50",
+              To: "jeffman879@gmail.com",
+              From: "jeffman879@gmail.com",
+              Subject: "Message From jmanke.github.io: Contact",
+              Body: bodyMessage.replace(/[\r\n]/g, "<br />")
+            }).then(message => {
+              console.log(message);
+              setMessageStatus(
+                message === "OK"
+                  ? messageStatusState.sent
+                  : messageStatusState.failed
+              );
+            });
+          }
+        }}
+      />
+      {messageStatus === messageStatusState.none ? null : (
+        <p className="contact-form__input-title txt-md txt-light form-message-status ">
+          {messageStatus === messageStatusState.sending
+            ? "Sending..."
+            : messageStatus === messageStatusState.sent
+              ? "Message Sent!"
+              : "Send Failed..."}
+        </p>
+      )}
     </div>
   );
 };

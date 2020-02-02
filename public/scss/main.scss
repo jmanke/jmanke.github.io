@@ -644,27 +644,27 @@ p {
     .info-card:nth-child(1) {
       margin-top: auto;
       margin-bottom: auto;
-      margin-right: 1rem;
+      margin-right: 2rem;
       margin-left: auto;
     }
 
     .info-card:nth-child(2) {
       width: 20rem;
       height: 24.4rem;
-
-      .info-card__icon .fa-icon {
-        font-size: 6rem;
-      }
     }
 
     .info-card:nth-child(3) {
       margin-top: auto;
       margin-bottom: auto;
-      margin-left: 1rem;
+      margin-left: 2rem;
       margin-right: auto;
     }
 
-    @media screen and (max-width: $tablet-width) {
+    @media screen and (max-width: 72rem) {
+      .info-card__icon-container {
+        height: 8rem;
+      }
+
       .info-card:nth-child(1) {
         margin-right: auto;
         margin-left: 0;
@@ -675,6 +675,7 @@ p {
         margin: auto;
         margin-bottom: 2%;
         width: 100%;
+        height: fit-content;
         order: 1;
       }
       .info-card:nth-child(3) {
@@ -689,10 +690,6 @@ p {
     @media screen and (max-width: $mobile-width) {
       flex-direction: column;
 
-      .info-card__icon {
-        height: 7rem;
-      }
-
       .info-card:nth-child(1) {
         width: 85vw;
         height: fit-content;
@@ -710,10 +707,6 @@ p {
         margin-bottom: 1rem;
         margin-top: 1rem;
         order: 1;
-
-        .info-card__icon .fa-icon {
-          font-size: 4rem;
-        }
       }
       .info-card:nth-child(3) {
         width: 85vw;
@@ -829,7 +822,7 @@ p {
 .project-card {
   position: relative;
   box-sizing: inherit;
-  border-radius: 15px;
+  // border-radius: 15px;
 
   &__page {
     position: relative;
@@ -841,12 +834,12 @@ p {
     background-color: white;
     transition: all 0.2s ease-in-out;
     will-change: transform;
-    box-shadow: 0 0 15px #888888;
-    border-radius: 7px;
+    box-shadow: 0 0 7px rgb(136, 197, 235);
+    // border-radius: 7px;
 
     &:hover {
       transform: translateY(-0.5rem);
-      box-shadow: 0 0 17px #505050;
+      box-shadow: 0 0 10px rgb(136, 197, 235);
 
       @media screen and (max-width: $mobile-width) {
         transform: none;
@@ -863,13 +856,14 @@ p {
   }
 
   &__img {
-    border-radius: 7px 7px 0 0;
+    // border-radius: 7px 7px 0 0;
     position: relative;
     max-width: 100%;
     max-height: 50%;
   }
 
   &__title {
+    color: $accent-blue;
     margin: 1rem 0 0.5rem;
   }
 

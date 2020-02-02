@@ -4,8 +4,8 @@ import "./InfoCard.css";
 export default props => {
   return (
     <div className={"info-card " + (props.secondary ? "info-card_secondary " : "") + (props.className ?? "")}>
-      <div className="info-card__icon">
-        {props.icon}
+      <div className="info-card__icon-container">
+        <img src={props.icon} className="info-card__icon" alt={props.iconAlt ?? "icon"} />
       </div>
       <h3 className="info-card__title txt-lg">
         {props.title}

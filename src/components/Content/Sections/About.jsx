@@ -2,6 +2,9 @@ import React from "react";
 import FadeSection from "../../Shared/FadeSection/FadeSection";
 import FillBar from "../../Shared/FillBar/FillBar";
 import InfoCard from "../../Shared/InfoCard/InfoCard";
+import developmentImg from "../../../images/monitor.svg"; 
+import manImg from "../../../images/man.svg";
+import joystickImg from "../../../images/joystick.svg";
 
 function createSkill(label, fill) {
   return <FillBar label={label} fill={fill} />;
@@ -15,7 +18,7 @@ export default () => {
           <InfoCard
             title={"Development"}
             secondary={true}
-            icon={<i className="fa-icon fas fa-laptop-code"></i>}
+            icon={developmentImg}
             text={"Whether its writing efficient, multi-threaded \
             C# or C++ code, or front-end with JavaScript and React, \
             I love taking on new challenges and solving problems."}
@@ -23,7 +26,7 @@ export default () => {
           <InfoCard
             className="info-card__about-me"
             title={"About Me"}
-            icon={<i className="fa-icon far fa-user"></i>}
+            icon={manImg}
             text={"My name is Jeff Manke and I'm a Software Developer \
             living in Victoria, BC. I have a BSc, Double Major \
             in Computer Science and Economics from the Univeristy of Victoria. \
@@ -34,7 +37,7 @@ export default () => {
           <InfoCard
             title={"Hobbies"}
             secondary={true}
-            icon={<i className="fa-icon fas fa-gamepad"></i>}
+            icon={joystickImg}
             text={"Playing video games is one of my favourite hobbies. Some of my favourite \
         games are Kerbal Space Program, Halo, The Witcher 3, and The Outer Wilds."}
           />
