@@ -1026,7 +1026,7 @@ p {
 .section__container {
   width: 90%;
   padding: 2rem 0;
-  max-width: 69rem;
+  max-width: 1104px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1061,7 +1061,7 @@ p {
 .about__info .info-card:nth-child(1) {
   margin-top: auto;
   margin-bottom: auto;
-  margin-right: 1rem;
+  margin-right: 2rem;
   margin-left: auto;
 }
 
@@ -1070,18 +1070,21 @@ p {
   height: 24.4rem;
 }
 
-.about__info .info-card:nth-child(2) .info-card__icon .fa-icon {
-  font-size: 6rem;
+.about__info .info-card:nth-child(2) .info-card__icon {
+  height: 70%;
 }
 
 .about__info .info-card:nth-child(3) {
   margin-top: auto;
   margin-bottom: auto;
-  margin-left: 1rem;
+  margin-left: 2rem;
   margin-right: auto;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 72rem) {
+  .about__info .info-card__icon-container {
+    height: 8rem;
+  }
   .about__info .info-card:nth-child(1) {
     margin-right: auto;
     margin-left: 0;
@@ -1094,6 +1097,9 @@ p {
     margin: auto;
     margin-bottom: 2%;
     width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -1115,9 +1121,6 @@ p {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .about__info .info-card__icon {
-    height: 7rem;
-  }
   .about__info .info-card:nth-child(1) {
     width: 85vw;
     height: -webkit-fit-content;
@@ -1143,9 +1146,6 @@ p {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
-  }
-  .about__info .info-card:nth-child(2) .info-card__icon .fa-icon {
-    font-size: 4rem;
   }
   .about__info .info-card:nth-child(3) {
     width: 85vw;
@@ -1289,7 +1289,6 @@ p {
   position: relative;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
-  border-radius: 15px;
 }
 
 .project-card__page {
@@ -1309,16 +1308,15 @@ p {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   will-change: transform;
-  -webkit-box-shadow: 0 0 15px #888888;
-          box-shadow: 0 0 15px #888888;
-  border-radius: 7px;
+  -webkit-box-shadow: 0 0 7px #afcfe4;
+          box-shadow: 0 0 7px #afcfe4;
 }
 
 .project-card__page:hover {
   -webkit-transform: translateY(-0.5rem);
           transform: translateY(-0.5rem);
-  -webkit-box-shadow: 0 0 17px #505050;
-          box-shadow: 0 0 17px #505050;
+  -webkit-box-shadow: 0 0 10px #afcfe4;
+          box-shadow: 0 0 10px #afcfe4;
 }
 
 @media screen and (max-width: 767px) {
@@ -1343,13 +1341,13 @@ p {
 }
 
 .project-card__img {
-  border-radius: 7px 7px 0 0;
   position: relative;
   max-width: 100%;
   max-height: 50%;
 }
 
 .project-card__title {
+  color: #3F9CD6;
   margin: 1rem 0 0.5rem;
 }
 

@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9f59be7b0f210b3355a072b89563fd88",
+    "revision": "b141c625308a770377c9b1dfb4a13269",
     "url": "/index.html"
   },
   {
-    "revision": "c17f535376a2ffa30640",
-    "url": "/static/css/main.4ea96a30.chunk.css"
+    "revision": "c437265779e2348f06b7",
+    "url": "/static/css/main.5ab2e19a.chunk.css"
   },
   {
-    "revision": "f7f3d2239a3c8af8ee3b",
-    "url": "/static/js/2.7bb13b6e.chunk.js"
+    "revision": "514f07eabe22a81b886e",
+    "url": "/static/js/2.d222f261.chunk.js"
   },
   {
     "revision": "d705cb622423d72c5defbf368ca70dcc",
-    "url": "/static/js/2.7bb13b6e.chunk.js.LICENSE"
+    "url": "/static/js/2.d222f261.chunk.js.LICENSE"
   },
   {
-    "revision": "c17f535376a2ffa30640",
-    "url": "/static/js/main.73505be8.chunk.js"
+    "revision": "c437265779e2348f06b7",
+    "url": "/static/js/main.14e49df4.chunk.js"
   },
   {
     "revision": "d1a19a062f5214fe4145",
@@ -36,6 +36,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/MineLife-VR.4ec119b5.jpg"
   },
   {
+    "revision": "41ae3b1f9400c1c3cd13cf038fa9bfb2",
+    "url": "/static/media/close.41ae3b1f.svg"
+  },
+  {
+    "revision": "bdcf5ce86389737b03caefe79c02cea4",
+    "url": "/static/media/coin.bdcf5ce8.svg"
+  },
+  {
     "revision": "7ef022c3832bd400dbc5b083c88a242c",
     "url": "/static/media/galaxy.7ef022c3.jpg"
   },
@@ -50,6 +58,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6a76451d7969a3abd3030be80b134b1d",
     "url": "/static/media/logo_circle.6a76451d.png"
+  },
+  {
+    "revision": "04e78049fc3ccb5cab358f87a177a8d3",
+    "url": "/static/media/man.04e78049.svg"
+  },
+  {
+    "revision": "c182928956d873e6dcf11c082291efa1",
+    "url": "/static/media/monitor.c1829289.svg"
   },
   {
     "revision": "fd05b9d5a1e59625e6b8629ae42ce445",
