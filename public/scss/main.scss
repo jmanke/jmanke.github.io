@@ -834,12 +834,12 @@ p {
     background-color: white;
     transition: all 0.2s ease-in-out;
     will-change: transform;
-    box-shadow: 0 0 7px rgb(136, 197, 235);
+    box-shadow: 0 0 7px rgb(175, 207, 228);
     // border-radius: 7px;
 
     &:hover {
       transform: translateY(-0.5rem);
-      box-shadow: 0 0 10px rgb(136, 197, 235);
+      box-shadow: 0 0 10px rgb(175, 207, 228);
 
       @media screen and (max-width: $mobile-width) {
         transform: none;

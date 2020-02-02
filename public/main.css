@@ -1304,15 +1304,15 @@ p {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   will-change: transform;
-  -webkit-box-shadow: 0 0 7px #88c5eb;
-          box-shadow: 0 0 7px #88c5eb;
+  -webkit-box-shadow: 0 0 7px #afcfe4;
+          box-shadow: 0 0 7px #afcfe4;
 }
 
 .project-card__page:hover {
   -webkit-transform: translateY(-0.5rem);
           transform: translateY(-0.5rem);
-  -webkit-box-shadow: 0 0 10px #88c5eb;
-          box-shadow: 0 0 10px #88c5eb;
+  -webkit-box-shadow: 0 0 10px #afcfe4;
+          box-shadow: 0 0 10px #afcfe4;
 }
 
 @media screen and (max-width: 767px) {

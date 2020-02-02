@@ -2,7 +2,7 @@
   width: 18rem;
   height: 21.96rem;
   background-color: white;
-  box-shadow: 0 0 7px rgb(136, 197, 235);
+  box-shadow: 0 0 7px rgb(175, 207, 228);
   display: flex;
   flex-direction: column;
   /* border-radius: 7px; */
@@ -10,7 +10,7 @@
 }
 
 .info-card:hover {
-  box-shadow: 0 0 10px rgb(136, 197, 235);
+  box-shadow: 0 0 10px rgb(175, 207, 228);
 }
 
 .info-card__icon-container {
