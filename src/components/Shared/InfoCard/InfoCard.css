@@ -20,7 +20,7 @@
 }
 
 .info-card__icon {
-  height: 70%;
+  height: 55%;
   margin: auto;
 }
 
@@ -63,6 +63,7 @@
   margin: auto;
   text-align: center;
   padding: 5%;
+  height: 85%;
   color: #3F9CD6;
 }
 

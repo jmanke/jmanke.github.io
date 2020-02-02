@@ -1070,6 +1070,10 @@ p {
   height: 24.4rem;
 }
 
+.about__info .info-card:nth-child(2) .info-card__icon {
+  height: 70%;
+}
+
 .about__info .info-card:nth-child(3) {
   margin-top: auto;
   margin-bottom: auto;

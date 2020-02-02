@@ -4,7 +4,7 @@ import FillBar from "../../Shared/FillBar/FillBar";
 import InfoCard from "../../Shared/InfoCard/InfoCard";
 import developmentImg from "../../../images/monitor.svg"; 
 import manImg from "../../../images/man.svg";
-import joystickImg from "../../../images/joystick.svg";
+import hobbyImg from "../../../images/coin.svg";
 
 function createSkill(label, fill) {
   return <FillBar label={label} fill={fill} />;
@@ -37,7 +37,7 @@ export default () => {
           <InfoCard
             title={"Hobbies"}
             secondary={true}
-            icon={joystickImg}
+            icon={hobbyImg}
             text={"Playing video games is one of my favourite hobbies. Some of my favourite \
         games are Kerbal Space Program, Halo, The Witcher 3, and The Outer Wilds."}
           />
