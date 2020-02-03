@@ -333,6 +333,10 @@ p {
     height: $margin-top;
     border-style: none none solid none;
     border-width: 1px;
+
+    .nav-item {
+      padding: 0.3rem;
+    }
   }
 
   &__menu-toggle {
@@ -342,6 +346,11 @@ p {
     font-size: 1.5rem;
     margin: auto;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
 
     @media screen and (max-width: $mobile-width) {
       display: initial;
@@ -350,10 +359,6 @@ p {
     @media screen and (max-width: $min-width) {
       display: initial;
       padding-left: $margin-top / 8;
-    }
-
-    &:focus {
-      outline: none;
     }
   }
 
@@ -477,6 +482,7 @@ p {
         display: flex;
         align-items: center;
         padding-left: 1.2rem;
+        -webkit-tap-highlight-color: transparent;
 
         &__text {
           font-size: 1.2rem;
@@ -1133,18 +1139,21 @@ p {
   left: $margin-left;
   right: 0;
   background-color: $primary-color-dark;
-  height: 10rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem 0;
 
   &__links {
-    padding: 2rem;
-
     .nav-item {
       font-size: 2rem;
     }
+  }
+
+  &__mail {
+    margin: 2rem 0;
   }
 
   @media screen and (max-width: $mobile-width) {

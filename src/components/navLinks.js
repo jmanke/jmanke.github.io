@@ -1,3 +1,5 @@
+import resume from "../resources/ResumeJeffManke.pdf";
+
 const navLinks = [
   {
     key: 0,
@@ -40,6 +42,12 @@ const navLinks = [
     title: "LinkedIn",
     icon: "fab fa-linkedin fa-fw",
     href: "https://www.linkedin.com/in/jeff-manke/",
+  },
+  {
+    key: 7,
+    title: "Resume",
+    icon: "fas fa-file-pdf fa-fw",
+    href: resume,
   }
 ];
 
