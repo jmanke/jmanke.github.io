@@ -286,7 +286,7 @@ p {
   }
 
   .nav-tooltip {
-    position: absolute;
+    position: fixed;
     text-align: center;
     top: 16%;
     left: $margin-left + 0.8rem;
@@ -324,6 +324,7 @@ p {
   border-style: none solid none none;
   border-width: 1px;
   border-color: lighten($secondary-color, 15%);
+  overflow: auto;
 
   @media screen and (max-width: $mobile-width) {
     flex-direction: row;
@@ -433,14 +434,14 @@ p {
     display: none;
     transition: all 0.25s ease-out;
     z-index: 3;
+    overflow-y: auto;
 
     border-style: none solid none none;
     border-width: 1px;
     border-color: lighten($secondary-color, 15%);
 
     @media screen and (max-width: $mobile-width) {
-      display: flex;
-      flex-direction: column;
+      display: block;
     }
 
     &__header {
