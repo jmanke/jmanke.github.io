@@ -264,7 +264,7 @@ p {
     left: 0;
     width: 0.25rem;
     height: 100%;
-    background-color: $accent-blue;
+    background-color: $highlight-blue;
     transition: all 150ms linear;
     transform: scale(1);
     will-change: transform;
@@ -725,32 +725,40 @@ p {
   }
 }
 
+.technologies {
+  margin: 8rem 0;
+  display: flex;
+}
+
 .skills {
   padding: 4rem 0;
-  display: flex;
 
   @media screen and (max-width: $mobile-width) {
     flex-direction: column;
   }
 
-  &__heading {
-    text-align: center;
-    color: $accent-blue;
-  }
+  &__technologies {
+    margin: 6rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
-  &__languages {
-    width: 47.5%;
-    margin-right: auto;
+    .fill-circle {
+      margin: 1rem;
+    }
 
     @media screen and (max-width: $mobile-width) {
-      width: 100%;
-      margin: auto;
+      margin: 4rem 0;
     }
   }
 
-  &__technologies {
-    width: 47.5%;
-    margin-left: auto;
+  &__languages {
+    display: flex;
+
+    .fade-in-section-container {
+      margin: 0 1rem;
+      flex: 1;
+    }
 
     @media screen and (max-width: $mobile-width) {
       width: 100%;
@@ -839,6 +847,7 @@ p {
     transition: all 0.2s ease-in-out;
     will-change: transform;
     box-shadow: 0 0 7px rgb(175, 207, 228);
+    overflow-x: hidden;
     // border-radius: 7px;
 
     &:hover {
@@ -1118,7 +1127,6 @@ p {
     left: 0;
   }
 }
-
 // SPINNER
 
 .lds-spinner {

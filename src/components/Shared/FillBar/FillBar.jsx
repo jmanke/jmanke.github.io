@@ -3,12 +3,7 @@ import "./FillBar.css";
 
 function fillStyle(width) {
   return {
-    display: "flex",
-    backgroundColor: "rgb(35, 94, 131)",
-    width: width ? width.toString() + "%" : "0%",
-    height: "100%",
-    alignSelf: "center",
-    borderRadius: "0 3px 3px 0"
+    width: width ? width.toString() + "%" : "0%"
   };
 }
 
@@ -28,8 +23,11 @@ export default props => {
     };
 
     const observer = new IntersectionObserver(entry => {
-      if (entry[0].isIntersecting) {
-        setShowFill(true);
+      for (let i = 0; i < entry.length; i++) {
+        if (entry[i].isIntersecting) {
+          setShowFill(true);
+          break;
+        }
       }
     }, options);
     observer.observe(domRef.current);
@@ -37,15 +35,13 @@ export default props => {
   }, [domRef]);
 
   return (
-    <div ref={domRef} className={"fill-bar " + props.className ?? ""}>
-      <div className="fill-bar__label-header">
-        <div className="fill-bar__label">{props.label}</div>
+    <div ref={domRef} className={"fill-bar " + (props.className ?? "")}>
+      <div className="fill-bar__heading">
+        <p className="fill-bar__heading-label">{props.label}</p>
+        <p className="fill-bar__heading-percent">{props.fill + "%"}</p>
       </div>
-      <div className={"fill-bar__background-container"}>
-        <div className={"fill-bar__background" + (showFill ? " fill-bar__background_is-visible" : "")}>
-          <div style={fillStyle(props.fill)} />
-        </div>
-        <div className="fill-bar__fill-percent">{props.fill + "%"}</div>
+      <div className="fill-bar__bar-container">
+        <div className={"fill-bar__bar " + (showFill ? "fill-bar__bar_isVisible" : "")} style={fillStyle(props.fill)} />
       </div>
     </div>
   );
