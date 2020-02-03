@@ -104,12 +104,17 @@ function drawLines(ctx, currParticleIndex, particles) {
   ctx.strokeStyle = particleColor;
 
   for (let i = currParticleIndex + 1; i < particles.length; i++) {
-    const dist = particles[currParticleIndex].position.sqrDistance(particles[i].position);
+    const dist = particles[currParticleIndex].position.sqrDistance(
+      particles[i].position
+    );
 
-    if (dist < maxLineDist) { 
+    if (dist < maxLineDist) {
       ctx.beginPath();
       ctx.lineWidth = 1 - maxLineWidth * (dist / maxLineDist);
-      ctx.moveTo(particles[currParticleIndex].position.x, particles[currParticleIndex].position.y);
+      ctx.moveTo(
+        particles[currParticleIndex].position.x,
+        particles[currParticleIndex].position.y
+      );
       ctx.lineTo(particles[i].position.x, particles[i].position.y);
       ctx.stroke();
     }
@@ -232,7 +237,10 @@ export default () => {
     let requestId;
     let containerRect = canvasContainerRef.current.getBoundingClientRect();
 
-    if (canvasDim.x !== containerRect.width || canvasDim.y !== containerRect.height) {
+    if (
+      canvasDim.x !== containerRect.width ||
+      canvasDim.y !== containerRect.height
+    ) {
       onWindowResize();
       return;
     }

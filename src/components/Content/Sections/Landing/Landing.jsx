@@ -13,11 +13,13 @@ export default () => {
   const showLogoThresh = 0.85;
 
   let imageStyle = {
-    backgroundImage: 'url(' + backgroundImage + ')'
-  }
+    backgroundImage: "url(" + backgroundImage + ")"
+  };
 
   function handleLogoDisplay(intersectionInfo) {
-    setLogoVisible(intersectionInfo[0].intersectionRatio < showLogoThresh ? true : false);
+    setLogoVisible(
+      intersectionInfo[0].intersectionRatio < showLogoThresh ? true : false
+    );
   }
 
   function onWindowLoad() {
@@ -31,26 +33,38 @@ export default () => {
 
     if (!React.windowIsLoaded && !subtitleVisible) {
       Events.eventEmitter.subscribe("onWindowLoad", onWindowLoad);
-    
-      return () => Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
+
+      return () =>
+        Events.eventEmitter.unsubscribe("onWindowLoad", onWindowLoad);
     }
   });
 
   return (
     <div className="landing-page" ref={landingRef}>
-      <IntersectionObserver 
-        onChange={handleLogoDisplay} 
-        threshold={[showLogoThresh]}
+      <div className="landing-page__content">
+        <IntersectionObserver
+          onChange={handleLogoDisplay}
+          threshold={[showLogoThresh]}
         />
-      <Canvas />
-      <div style={imageStyle} className="landing-page__container unselectable">
-        <h1 className="landing-page__container-title">
-          Jeff Manke
-        </h1>
-        {subtitleVisible ? <TypeWriter text={"// Software Developer "} /> : null}
+        <Canvas />
+        <div
+          style={imageStyle}
+          className="landing-page__container unselectable"
+        >
+          <h1 className="landing-page__container-title">Jeff Manke</h1>
+          {subtitleVisible ? (
+            <TypeWriter text={"// Software Developer "} />
+          ) : null}
+        </div>
+        <img
+          src={logo}
+          alt="Jeff Manke Logo"
+          className={
+            "landing-page__logo unselectable" +
+            (logoVisible ? " landing-page__logo_is-visible" : "")
+          }
+        />
       </div>
-      <img src={logo} alt="Jeff Manke Logo" 
-        className={"landing-page__logo unselectable" + (logoVisible ? " landing-page__logo_is-visible" : "")} />
     </div>
   );
-}
+};
