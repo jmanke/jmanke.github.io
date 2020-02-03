@@ -62,7 +62,7 @@ export default () => {
         {externalLinks.map(link =>
           <NavItem 
             {...link}
-            showTooltip={false}
+            showTooltip={true}
             displayTitle={false}
           />
         )}

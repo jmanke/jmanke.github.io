@@ -1,20 +1,13 @@
 import React from "react";
 import FadeSection from "../../Shared/FadeSection/FadeSection";
-import FillBar from "../../Shared/FillBar/FillBar";
-import FillCircle from "../../Shared/FillCircle/FillCircle";
 import InfoCard from "../../Shared/InfoCard/InfoCard";
 import developmentImg from "../../../images/monitor.svg";
 import manImg from "../../../images/man.svg";
 import hobbyImg from "../../../images/coin.svg";
-import { Fade } from "react-bootstrap";
-
-function createSkill(label, fill) {
-  return <FillBar label={label} fill={fill} />;
-}
 
 export default () => {
   return (
-    <div className="about">
+    <div className="about unselectable">
       <FadeSection>
         <div className="about__info">
           <InfoCard
@@ -51,24 +44,6 @@ export default () => {
           />
         </div>
       </FadeSection>
-      <FadeSection className="skills__technologies" delay={100}>
-        <FillCircle label={"Unity"} fill={90} />
-        <FillCircle label={".NET"} fill={80} />
-        <FillCircle label={"React.js"} fill={60} />
-      </FadeSection>
-      <div className="skills__languages">
-        <FadeSection delay={100}>
-          {createSkill("C#", 85)}
-          {createSkill("C++", 70)}
-          {createSkill("HTML5", 70)}
-        </FadeSection>
-
-        <FadeSection delay={100}>
-          {createSkill("CSS", 70)}
-          {createSkill("Java", 65)}
-          {createSkill("JavaScript", 60)}
-        </FadeSection>
-      </div>
     </div>
   );
 };

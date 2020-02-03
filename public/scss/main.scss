@@ -28,6 +28,10 @@ body {
     line-height: 1.25rem;
   }
 
+  &.no-scroll {
+    overflow: hidden;
+  }
+
   //-ms-touch-action: none;
   //touch-action: none;
   //overflow-x: hidden;
@@ -47,13 +51,16 @@ p {
   color: $text-color-light;
 }
 
-h1,
+h1 {
+  color: $heading-color;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: $heading-color;
+  color: $accent-blue;
 }
 
 h1 {
@@ -296,6 +303,10 @@ p {
     border-radius: 0.5rem;
     background: $secondary-color;
     padding: 0.5rem;
+
+    @media screen and (max-width: $mobile-width) {
+      visibility: hidden;
+    }
 
     &__arrow {
       content: "";
@@ -765,14 +776,13 @@ p {
 }
 
 .skills {
-  padding: 4rem 0;
 
   @media screen and (max-width: $mobile-width) {
     flex-direction: column;
   }
 
   &__technologies {
-    margin: 6rem 0;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -784,6 +794,11 @@ p {
     @media screen and (max-width: $mobile-width) {
       margin: 4rem 0;
     }
+  }
+
+  &__heading {
+    margin: 5rem 0 ;
+    text-align: center;
   }
 
   &__languages {
@@ -1149,6 +1164,7 @@ p {
   padding: 2rem 0;
 
   &__links {
+    display: flex;
     .nav-item {
       font-size: 2rem;
     }
@@ -1156,6 +1172,12 @@ p {
 
   &__mail {
     margin: 2rem 0;
+  }
+
+  &__mail-label {
+    align-self: center;
+    padding-right: 1rem;
+    color: whitesmoke;
   }
 
   @media screen and (max-width: $mobile-width) {

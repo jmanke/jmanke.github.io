@@ -8,40 +8,6 @@ import galaxyImg from "../../../../images/galaxy.jpg";
 const projectInfo = [
   {
     key: 0,
-    title: "MineLife",
-    image: mineLifeVRImg,
-    cardText: "3D visualization of proposed mining sites.",
-    achievements: [
-      "Designed and implemented a VR/PC menu system and interaction using Unity's UI",
-      "Built a Google Earth style camera for PC mode using a State Design Pattern",
-      "Developed a dynamic scene loading system"
-    ],
-    technologies: [
-      "Unity",
-      "C#",
-      "HTC Vive",
-      "Oculus Rift"
-    ]
-  },
-  {
-    key: 1,
-    title: "MineLife Hololens",
-    image: mineLifeHololensImg,
-    cardText:
-      "Visualization of mining sites for AR.",
-    achievements: [
-      "Designed and built gesture interaction system",
-      "Implemented hologram syncing (location and state) across multiple users",
-      "Wrote extremely optimized C# code to maintain framerate",
-    ],
-    technologies: [
-      "Unity",
-      "C#",
-      "Microsoft Hololens",
-    ]
-  },
-  {
-    key: 2,
     title: "TimberOps",
     image: forestOpsImg,
     cardText:
@@ -59,6 +25,40 @@ const projectInfo = [
       "HTC Vive",
       "Oculus Rift",
       "Windows Mixed Reality"
+    ]
+  },
+  {
+    key: 1,
+    title: "MineLife",
+    image: mineLifeVRImg,
+    cardText: "3D visualization of proposed mining sites.",
+    achievements: [
+      "Designed and implemented a VR/PC menu system and interaction using Unity's UI",
+      "Built a Google Earth style camera for PC mode using a State Design Pattern",
+      "Developed a dynamic scene loading system"
+    ],
+    technologies: [
+      "Unity",
+      "C#",
+      "HTC Vive",
+      "Oculus Rift"
+    ]
+  },
+  {
+    key: 2,
+    title: "MineLife Hololens",
+    image: mineLifeHololensImg,
+    cardText:
+      "Visualization of mining sites for AR.",
+    achievements: [
+      "Designed and built gesture interaction system",
+      "Implemented hologram syncing (location and state) across multiple users",
+      "Wrote extremely optimized C# code to maintain framerate",
+    ],
+    technologies: [
+      "Unity",
+      "C#",
+      "Microsoft Hololens",
     ]
   },
   {

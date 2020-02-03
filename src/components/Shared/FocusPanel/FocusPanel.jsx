@@ -6,8 +6,17 @@ import "./FocusPanel.css";
 // panelVisible: type(boolean), sets panel visible
 // onClose: type(callback), callback called when panel is closed 
 export default props => {
+
+  React.useEffect(() => {
+    if (props.panelVisible) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  });
+
   return (
-	<div className={"focus-panel " + (props.panelVisible ? " focus-panel_is-visible " : " ") + (props.className ?? "")}>
+	<div className={"focus-panel " + (props.panelVisible ? " focus-panel_is-visible no-scroll" : " ") + (props.className ?? "")}>
 		<div className="focus-panel__overlay" onClick={() => props.onClose()}>
 		</div>
 		<div className="focus-panel__container">

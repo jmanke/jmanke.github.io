@@ -44,7 +44,7 @@
   align-self: center;
   box-shadow: 0 0 7px rgb(175, 207, 228);
   transform: translateX(-100%);
-  transition: transform 3s ease-out;
+  transition: transform 2s ease-out;
 }
 
 .fill-bar__bar_isVisible {

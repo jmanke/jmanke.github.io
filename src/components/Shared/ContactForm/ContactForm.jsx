@@ -77,6 +77,13 @@ export default props => {
         onChange={change => {
           formProps.current.email.text = change.target.value;
         }}
+        onBlur={() => {
+          formProps.current.email.validate();
+          setFormValid([
+            formProps.current.email.isValid,
+            formProps.current.message.isValid
+          ]);
+        }}
       />
       {formProps.current.message.isValid ? (
         <p className="contact-form__input-title txt-md">Message</p>
@@ -92,7 +99,13 @@ export default props => {
         onChange={change => {
           formProps.current.message.text = change.target.value;
         }}
-        required
+        onBlur={() => {
+          formProps.current.message.validate();
+          setFormValid([
+            formProps.current.email.isValid,
+            formProps.current.message.isValid
+          ]);
+        }}
       />
       <input
         className={"contact-form__submit"}
