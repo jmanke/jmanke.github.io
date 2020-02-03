@@ -364,6 +364,10 @@ body {
   }
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 body.page-loading {
   position: fixed;
   top: 0;
@@ -377,13 +381,16 @@ p {
   color: #696969;
 }
 
-h1,
+h1 {
+  color: #3b3b3b;
+}
+
 h2,
 h3,
 h4,
 h5,
 h6 {
-  color: #3b3b3b;
+  color: #1C6FA2;
 }
 
 h1 {
@@ -630,6 +637,12 @@ p {
   border-radius: 0.5rem;
   background: #333333;
   padding: 0.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .nav-item .nav-tooltip {
+    visibility: hidden;
+  }
 }
 
 .nav-item .nav-tooltip__arrow {
@@ -1210,10 +1223,6 @@ p {
   display: flex;
 }
 
-.skills {
-  padding: 4rem 0;
-}
-
 @media screen and (max-width: 767px) {
   .skills {
     -webkit-box-orient: vertical;
@@ -1224,7 +1233,7 @@ p {
 }
 
 .skills__technologies {
-  margin: 6rem 0;
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1243,6 +1252,11 @@ p {
   .skills__technologies {
     margin: 4rem 0;
   }
+}
+
+.skills__heading {
+  margin: 5rem 0;
+  text-align: center;
 }
 
 .skills__languages {
@@ -1685,12 +1699,26 @@ p {
   padding: 2rem 0;
 }
 
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .footer__links .nav-item {
   font-size: 2rem;
 }
 
 .footer__mail {
   margin: 2rem 0;
+}
+
+.footer__mail-label {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-right: 1rem;
+  color: whitesmoke;
 }
 
 @media screen and (max-width: 767px) {
