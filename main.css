@@ -620,10 +620,10 @@ p {
 }
 
 .nav-item .nav-tooltip {
-  position: absolute;
+  position: fixed;
   text-align: center;
   top: 16%;
-  left: 4.8rem;
+  left: 4.925rem;
   color: #F3F3F3;
   pointer-events: none;
   font-size: 0.8rem;
@@ -656,12 +656,13 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 4rem;
+  width: 4.125rem;
   height: 100vh;
   background-color: #333333;
   border-style: none solid none none;
   border-width: 1px;
   border-color: #595959;
+  overflow: auto;
 }
 
 @media screen and (max-width: 767px) {
@@ -800,6 +801,7 @@ p {
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
   z-index: 3;
+  overflow-y: auto;
   border-style: none solid none none;
   border-width: 1px;
   border-color: #595959;
@@ -807,13 +809,7 @@ p {
 
 @media screen and (max-width: 767px) {
   .nav__sidebar {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: block;
   }
 }
 
@@ -1028,7 +1024,7 @@ p {
 
 .content {
   position: relative;
-  margin-left: 4rem;
+  margin-left: 4.125rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1658,7 +1654,7 @@ p {
 
 .footer {
   position: absolute;
-  left: 4rem;
+  left: 4.125rem;
   right: 0;
   background-color: #1E1E1E;
   height: 10rem;
@@ -1807,6 +1803,19 @@ p {
     opacity: 1;
   }
   100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
     opacity: 0;
   }
 }
