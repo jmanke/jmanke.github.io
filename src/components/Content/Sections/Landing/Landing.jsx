@@ -47,10 +47,8 @@ export default () => {
           threshold={[showLogoThresh]}
         />
         <Canvas />
-        <div
-          style={imageStyle}
-          className="landing-page__container unselectable"
-        >
+        <div className="landing-page__container unselectable">
+          <img className="landing-page__container-img" src={backgroundImage} alt="landing"></img>
           <h1 className="landing-page__container-title">Jeff Manke</h1>
           {subtitleVisible ? (
             <TypeWriter text={"// Software Developer "} />
