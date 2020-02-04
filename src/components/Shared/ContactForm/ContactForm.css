@@ -43,10 +43,15 @@
   border-color: red;
 }
 
+.contact-form__submit-container {
+  display: flex;
+}
+
 .contact-form__submit {
   display: inline-block;
   cursor: pointer;
-  margin-top: 1.5rem;
+  margin-top: auto;
+  margin-bottom: auto;
   margin-left: auto;
   padding: 0.5rem;
   width: 30%;
