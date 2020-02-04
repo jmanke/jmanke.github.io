@@ -493,25 +493,23 @@ ul li {
   height: -moz-fit-content;
   height: fit-content;
   background-color: white;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #696969;
+  outline: none;
+  border: none;
+  outline: 1px solid #696969;
   z-index: 2;
   /* create a small space when buttons wrap on 2 lines */
   margin: 2px 0;
-  /* invisible border (will be colored on hover/focus) */
-  border: solid 1px #bbbbbb;
   /* size comes from text & padding (no width/height) */
   padding: 0.5em 1em;
   /* make sure colors have enough contrast! */
   color: #1E1E1E;
   cursor: pointer;
-  -webkit-transition: color 0.25s ease, border-color 0s 0.25s ease;
-  transition: color 0.25s ease, border-color 0s 0.25s ease;
+  -webkit-transition: color 0.25s ease, outline-color 0s 0.25s ease;
+  transition: color 0.25s ease, outline-color 0s 0.25s ease;
 }
 
 .btn:hover {
-  border-color: #1C6FA2;
+  outline-color: #1C6FA2;
   color: white;
   -webkit-transition: border-color 0s ease;
   transition: border-color 0s ease;
@@ -519,7 +517,7 @@ ul li {
 
 .btn::after {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   left: 0;
   width: 0;
@@ -537,20 +535,14 @@ ul li {
 }
 
 .btn:active {
-  border: solid 1px #bbbbbb;
-  border-color: #1C6FA2;
+  outline-color: #1C6FA2;
   -webkit-transform: translateY(1px);
           transform: translateY(1px);
-  -webkit-filter: saturate(150%);
-          filter: saturate(150%);
-  outline: none;
 }
 
 .btn:focus {
-  border: solid 1px #bbbbbb;
-  border-color: #1C6FA2;
-  outline: none;
   background-color: #1C6FA2;
+  outline-color: #1C6FA2;
   color: white;
 }
 
@@ -630,7 +622,7 @@ p {
   left: 0;
   width: 0.25rem;
   height: 100%;
-  background-color: #8CDCFE;
+  background-color: #64abf7;
   -webkit-transition: all 150ms linear;
   transition: all 150ms linear;
   -webkit-transform: scale(1);
@@ -1244,7 +1236,7 @@ p {
 }
 
 .technologies {
-  margin: 8rem 0;
+  margin: 5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1368,8 +1360,8 @@ p {
 
 @media screen and (max-width: 1024px) {
   .projects-grid__column {
-    width: 37.5vw;
-    height: 45.75vw;
+    width: 35vw;
+    height: 42.7vw;
     max-width: initial;
     max-height: initial;
     margin: 1vw;
@@ -1601,6 +1593,12 @@ p {
   margin: 5rem 0 8rem 0;
 }
 
+@media screen and (max-width: 767px) {
+  .heading {
+    margin: 5rem 0 3rem 0;
+  }
+}
+
 .shadow-screen {
   position: fixed;
   z-index: 2;
@@ -1769,7 +1767,7 @@ p {
 }
 
 .footer__mail:hover {
-  color: #89b2df;
+  color: #94c5fa;
 }
 
 .footer__mail:active {
