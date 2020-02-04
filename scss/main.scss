@@ -171,17 +171,14 @@ ul {
   width: fit-content;
   height: fit-content;
   background-color: white;
+  outline: none;
+  border: none;
 
-  border-style: solid;
-  border-width: 1px;
-  border-color: $text-color-light;
+  outline: 1px solid $text-color-light;
   z-index: 2;
 
   /* create a small space when buttons wrap on 2 lines */
   margin: 2px 0;
-
-  /* invisible border (will be colored on hover/focus) */
-  border: solid 1px $accent-color;
 
   /* size comes from text & padding (no width/height) */
   padding: 0.5em 1em;
@@ -189,26 +186,28 @@ ul {
   /* make sure colors have enough contrast! */
   color: $text-color-dark;
   cursor: pointer;
-  transition:color 0.25s ease, border-color 0s 0.25s ease;
+
+  transition: color 0.25s ease, outline-color 0s 0.25s ease;
 
   &:hover {
     // background-color: $accent-blue;
-    border-color: $accent-blue;
+    outline-color: $accent-blue;
     color: white;
+
     transition: border-color 0s ease;
   }
 
   &::after {
     position: absolute;
-    content: '';
-    top:0;
+    content: "";
+    top: 0;
     left: 0;
     width: 0;
     height: 100%;
     background-color: $accent-blue;
-    transform-origin:left;
-    transition:width 0.25s ease;
-    z-index:-1;
+    transform-origin: left;
+    transition: width 0.25s ease;
+    z-index: -1;
   }
 
   &:hover::after {
@@ -216,18 +215,13 @@ ul {
   }
 
   &:active {
-    border: solid 1px $accent-color;
-    border-color: $accent-blue;
+    outline-color: $accent-blue;
     transform: translateY(1px);
-    filter: saturate(150%);
-    outline: none;
   }
 
   &:focus {
-    border: solid 1px $accent-color;
-    border-color: $accent-blue;
-    outline: none;
     background-color: $accent-blue;
+    outline-color: $accent-blue;
     color: white;
   }
 }
@@ -596,7 +590,7 @@ p {
       font-size: 2vw;
     }
 
-    @media screen and (max-width: $tablet-width) and (orientation:landscape) {
+    @media screen and (max-width: $tablet-width) and (orientation: landscape) {
       font-size: 2vh;
     }
 
@@ -604,7 +598,7 @@ p {
       font-size: 3vw;
     }
 
-    @media screen and (max-width: $mobile-width) and (orientation:landscape) {
+    @media screen and (max-width: $mobile-width) and (orientation: landscape) {
       font-size: 2.5vh;
     }
 
@@ -705,7 +699,6 @@ p {
 
     //TODO: test across screens
     @media screen and (max-width: $tablet-width) {
-
       .info-card:hover {
         transform: translateY(0);
       }
@@ -735,7 +728,6 @@ p {
     }
 
     @media screen and (max-width: 72rem) {
-
       .info-card__icon-container {
         height: 8rem;
       }
@@ -797,12 +789,11 @@ p {
 }
 
 .technologies {
-  margin: 8rem 0;
+  margin: 5rem 0;
   display: flex;
 }
 
 .skills {
-
   @media screen and (max-width: $mobile-width) {
     flex-direction: column;
   }
@@ -823,7 +814,7 @@ p {
   }
 
   &__heading {
-    margin: 5rem 0 ;
+    margin: 5rem 0;
     text-align: center;
   }
 
@@ -886,11 +877,10 @@ p {
     max-height: 25rem;
 
     @media screen and (max-width: $tablet-width) {
-      width: 37.5vw;
-      height: 45.75vw;
+      width: 35vw;
+      height: 42.7vw;
       max-width: initial;
       max-height: initial;
-
       margin: 1vw;
     }
 
@@ -1077,6 +1067,10 @@ p {
   text-align: center;
   padding: 0;
   margin: 5rem 0 8rem 0;
+
+  @media screen and (max-width: $mobile-width) {
+    margin: 5rem 0 3rem 0;
+  }
 }
 
 .shadow-screen {
@@ -1221,14 +1215,14 @@ p {
 
   &__mail {
     align-self: center;
-    color: #64abf7;
+    color: $highlight-blue;
 
     &:hover {
-      color: #89b2df;
+      color: lighten($highlight-blue, 10%);
     }
 
     &:active {
-      color: #64abf7;
+      color: $highlight-blue;
     }
   }
 
