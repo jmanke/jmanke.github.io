@@ -29,7 +29,7 @@ export default () => {
         />
       </div>
       <div className="footer__links">
-        <p className="footer__mail-label">Email me at: </p>
+        <p className="footer__mail-label">Email: </p>
         <a className="footer__mail" href={"mailto:jeffman879@gmail.com"} alt="Resume">jeffman879@gmail.com</a>
       </div>
       <i className="far fa-copyright txt-sm txt-light"> 2020 Jeff Manke</i>
