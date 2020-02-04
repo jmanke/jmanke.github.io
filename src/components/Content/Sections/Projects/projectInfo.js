@@ -25,7 +25,11 @@ const projectInfo = [
       "HTC Vive",
       "Oculus Rift",
       "Windows Mixed Reality"
-    ]
+    ], 
+    projectLink: {
+      faIcon: "fas fa-link fa-fw",
+      href: "https://www.llamazoo.com/timberops/"
+    }
   },
   {
     key: 1,
@@ -42,7 +46,11 @@ const projectInfo = [
       "C#",
       "HTC Vive",
       "Oculus Rift"
-    ]
+    ],
+    projectLink: {
+      faIcon: "fas fa-link fa-fw",
+      href: "https://www.llamazoo.com/minelife/"
+    }
   },
   {
     key: 2,
@@ -59,7 +67,11 @@ const projectInfo = [
       "Unity",
       "C#",
       "Microsoft Hololens",
-    ]
+    ],
+    projectLink: {
+      faIcon: "fas fa-link fa-fw",
+      href: "https://www.llamazoo.com/minelife/"
+    }
   },
   {
     key: 3,
@@ -77,7 +89,11 @@ const projectInfo = [
       "Unity",
       "C++",
       "C#",
-    ]
+    ],
+    projectLink: {
+      faIcon: "fab fa-github fa-fw",
+      href: "https://github.com/jmanke/VoxelEngine"
+    }
   },
   {
     key: 4,
@@ -92,14 +108,18 @@ const projectInfo = [
     ],
     technologies: [
       "C++",
-    ]
+    ],
+    projectLink: {
+      faIcon: "fab fa-github fa-fw",
+      href: "https://github.com/jmanke/Sudoku"
+    }
   },
   {
     key: 5,
     title: "Galactic Map",
     image: galaxyImg,
     cardText:
-      "Visualition of the nearest 100,000 stars in VR.",
+      "Visualization of the nearest 100,000 stars in VR.",
     achievements: [
       "Dynamic generation of stars based on the HYG database",
       "Built a 3D interactive map to travel to different stars",

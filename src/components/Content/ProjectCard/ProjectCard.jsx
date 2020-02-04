@@ -1,5 +1,6 @@
 import React from "react";
 import FocusPanel from "../../Shared/FocusPanel/FocusPanel";
+import NavItem from "../../Nav/NavItem";
 
 export default props => {
   const [panelVisible, setPanelVisible] = React.useState(false);
@@ -12,7 +13,13 @@ export default props => {
         <div className="project-card__txt-area">
           <h4 className="project-card__title">{props.title}</h4>
           <p className="project-card__text">{props.cardText}</p>
-          <button className="btn" onClick={() => setPanelVisible(true)}> Learn More</button>
+        </div>
+        <div className="project-card__footer">
+          <button className="project-card__learn-more btn" onClick={() => setPanelVisible(true)}> Learn More</button>
+          {props.projectLink ? <NavItem 
+            icon={props.projectLink.faIcon}
+            href={props.projectLink.href}
+          /> : null}
         </div>
       </div>
       <FocusPanel heading={props.title} panelVisible={panelVisible} onClose={() => setPanelVisible(false)}>

@@ -1414,13 +1414,35 @@ p {
   -ms-flex-item-align: center;
       align-self: center;
   width: 80%;
-  height: 100%;
 }
 
 .project-card__img {
   position: relative;
   max-width: 100%;
   max-height: 50%;
+}
+
+.project-card__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 4em;
+}
+
+.project-card .nav-item {
+  color: #3b3b3b;
+  font-size: 1.75rem;
+}
+
+.project-card__learn-more {
+  margin-top: auto;
+  margin-bottom: 1em;
+  margin-right: auto;
+  margin-left: 1em;
 }
 
 .project-card__title {
@@ -1430,14 +1452,9 @@ p {
 
 .project-card__text {
   margin: 0;
-  height: 60%;
+  height: 100%;
   overflow-y: hidden;
   color: #9b9b9b;
-}
-
-.project-card .btn {
-  margin-top: auto;
-  margin-bottom: 1rem;
 }
 
 .project-card__list {
