@@ -15,7 +15,7 @@ export default props => {
     email: {
       text: "",
       isValid: true,
-      validate: function () {
+      validate: function() {
         // eslint-disable-next-line no-useless-escape
         const pattern = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
         this.isValid = this.text.match(pattern) !== null;
@@ -24,7 +24,7 @@ export default props => {
     message: {
       text: "",
       isValid: true,
-      validate: function () {
+      validate: function() {
         this.isValid = this.text.length > 0;
       }
     }
@@ -62,15 +62,13 @@ export default props => {
           formProps.current.name = change.target.value;
         }}
       />
-      {formProps.current.email.isValid ? (
-        <p className="contact-form__input-title txt-md">Email</p>
-      ) : (
-          <p className="contact-form__input-title_invalid txt-md">Please Enter a Valid Email</p>
-        )}
+      <p className="contact-form__input-title txt-md">Email</p>
       <input
         className={
           "contact-form__text-input" +
-          (formProps.current.email.isValid ? "" : " contact-form__text-input_invalid")
+          (formProps.current.email.isValid
+            ? ""
+            : " contact-form__text-input_invalid")
         }
         type="text"
         placeholder="Enter Email"
@@ -85,15 +83,18 @@ export default props => {
           ]);
         }}
       />
-      {formProps.current.message.isValid ? (
-        <p className="contact-form__input-title txt-md">Message</p>
-      ) : (
-          <p className="contact-form__input-title_invalid txt-md">Please Enter a Message</p>
-        )}
+      {!formProps.current.email.isValid ? (
+        <p className="contact-form__input-title_invalid txt-md">
+          * Please Enter a Valid Email
+        </p>
+      ) : null}
+      <p className="contact-form__input-title txt-md">Message</p>
       <textarea
         className={
           "contact-form__text-input form-message" +
-          (formProps.current.message.isValid ? "" : " contact-form__text-input_invalid")
+          (formProps.current.message.isValid
+            ? ""
+            : " contact-form__text-input_invalid")
         }
         placeholder="Enter Message"
         onChange={change => {
@@ -107,22 +108,28 @@ export default props => {
           ]);
         }}
       />
+      {!formProps.current.message.isValid ? (
+        <p className="contact-form__input-title_invalid txt-md">
+          * Please Enter a Message
+        </p>
+      ) : null}
       <div className="contact-form__submit-container">
-      {messageStatus === messageStatusState.none ? null : (
+        {messageStatus === messageStatusState.none ? null : (
           <p className="contact-form__input-title txt-md txt-light form-message-status ">
             {messageStatus === messageStatusState.sending
               ? "Sending..."
               : messageStatus === messageStatusState.sent
-                ? "Message Sent!"
-                : "Send Failed..."}
+              ? "Message Sent!"
+              : "Send Failed..."}
           </p>
         )}
-        <input
-          className={"contact-form__submit"}
-          type="submit"
-          value="Send"
+        <button
+          className={"contact-form__submit btn"}
           onClick={() => {
-            if (messageStatus === messageStatusState.sent || messageStatus === messageStatusState.sending) {
+            if (
+              messageStatus === messageStatusState.sent ||
+              messageStatus === messageStatusState.sending
+            ) {
               return;
             }
 
@@ -154,7 +161,9 @@ export default props => {
               });
             }
           }}
-        />
+        >
+          Send
+        </button>
       </div>
     </div>
   );

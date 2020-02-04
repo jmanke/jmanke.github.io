@@ -14,13 +14,11 @@ export default props => {
           <h4 className="project-card__title">{props.title}</h4>
           <p className="project-card__text">{props.cardText}</p>
         </div>
-        <div className="project-card__footer">
-          <button className="project-card__learn-more btn" onClick={() => setPanelVisible(true)}> Learn More</button>
-          {props.projectLink ? <NavItem 
-            icon={props.projectLink.faIcon}
-            href={props.projectLink.href}
-          /> : null}
-        </div>
+        <button className="project-card__learn-more btn" onClick={() => setPanelVisible(true)}> Learn More</button>
+        {props.projectLink ? <NavItem 
+          icon={props.projectLink.faIcon}
+          href={props.projectLink.href}
+        /> : null}
       </div>
       <FocusPanel heading={props.title} panelVisible={panelVisible} onClose={() => setPanelVisible(false)}>
         <div className="project-card__panel">

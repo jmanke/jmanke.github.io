@@ -27,7 +27,7 @@ const projectInfo = [
       "Windows Mixed Reality"
     ], 
     projectLink: {
-      faIcon: "fas fa-link fa-fw",
+      faIcon: "fas fa-external-link-alt fa-fw",
       href: "https://www.llamazoo.com/timberops/"
     }
   },
@@ -48,7 +48,7 @@ const projectInfo = [
       "Oculus Rift"
     ],
     projectLink: {
-      faIcon: "fas fa-link fa-fw",
+      faIcon: "fas fa-external-link-alt fa-fw",
       href: "https://www.llamazoo.com/minelife/"
     }
   },
@@ -69,7 +69,7 @@ const projectInfo = [
       "Microsoft Hololens",
     ],
     projectLink: {
-      faIcon: "fas fa-link fa-fw",
+      faIcon: "fas fa-external-link-alt fa-fw",
       href: "https://www.llamazoo.com/minelife/"
     }
   },
