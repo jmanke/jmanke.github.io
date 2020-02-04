@@ -1758,7 +1758,7 @@ p {
 }
 
 .footer__links .nav-item {
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .footer__mail {
@@ -1780,11 +1780,14 @@ p {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  padding-right: 1rem;
+  padding-right: 0.5rem;
   color: #bbbbbb;
 }
 
 .footer__copyright {
+  font-size: 0.8em;
+  opacity: 0.75;
+  margin-top: 0.5rem;
   color: #bbbbbb;
 }
 
