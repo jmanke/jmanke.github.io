@@ -377,6 +377,10 @@ body.page-loading {
   overflow-y: hidden;
 }
 
+button {
+  border-radius: 0;
+}
+
 p {
   color: #696969;
 }
@@ -478,6 +482,7 @@ ul li {
 
 .btn {
   /* default for <button>, but useful for <a> */
+  position: relative;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -491,6 +496,7 @@ ul li {
   border-style: solid;
   border-width: 1px;
   border-color: #696969;
+  z-index: 2;
   /* create a small space when buttons wrap on 2 lines */
   margin: 2px 0;
   /* invisible border (will be colored on hover/focus) */
@@ -500,12 +506,34 @@ ul li {
   /* make sure colors have enough contrast! */
   color: #1E1E1E;
   cursor: pointer;
+  -webkit-transition: color 0.25s ease, border-color 0s 0.25s ease;
+  transition: color 0.25s ease, border-color 0s 0.25s ease;
 }
 
 .btn:hover {
-  background-color: #1C6FA2;
   border-color: #1C6FA2;
   color: white;
+  -webkit-transition: border-color 0s ease;
+  transition: border-color 0s ease;
+}
+
+.btn::after {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #1C6FA2;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: width 0.25s ease;
+  transition: width 0.25s ease;
+  z-index: -1;
+}
+
+.btn:hover::after {
+  width: 100%;
 }
 
 .btn:active {
@@ -1074,12 +1102,11 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 3rem 0;
+  padding-bottom: 10rem;
 }
 
 .section__container {
   width: 90%;
-  padding: 2rem 0;
   max-width: 1104px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1434,15 +1461,22 @@ p {
 }
 
 .project-card .nav-item {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
   color: #3b3b3b;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
+  opacity: 0.75;
+}
+
+.project-card .nav-item:hover {
+  opacity: 1;
 }
 
 .project-card__learn-more {
-  margin-top: auto;
-  margin-bottom: 1em;
-  margin-right: auto;
-  margin-left: 1em;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 }
 
 .project-card__title {
@@ -1563,7 +1597,8 @@ p {
   position: relative;
   color: #3b3b3b;
   text-align: center;
-  padding: 3rem 0;
+  padding: 0;
+  margin: 5rem 0 8rem 0;
 }
 
 .shadow-screen {
@@ -1727,7 +1762,18 @@ p {
 }
 
 .footer__mail {
-  margin: 2rem 0;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #64abf7;
+}
+
+.footer__mail:hover {
+  color: #89b2df;
+}
+
+.footer__mail:active {
+  color: #64abf7;
 }
 
 .footer__mail-label {
@@ -1735,7 +1781,11 @@ p {
       -ms-grid-row-align: center;
       align-self: center;
   padding-right: 1rem;
-  color: whitesmoke;
+  color: #bbbbbb;
+}
+
+.footer__copyright {
+  color: #bbbbbb;
 }
 
 @media screen and (max-width: 767px) {

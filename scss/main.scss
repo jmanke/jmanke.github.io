@@ -45,6 +45,10 @@ body {
   }
 }
 
+button {
+  border-radius: 0;
+}
+
 // Desktop Typography
 
 p {
@@ -160,6 +164,7 @@ ul {
 
 .btn {
   /* default for <button>, but useful for <a> */
+  position: relative;
   display: inline-block;
   text-align: center;
   text-decoration: none;
@@ -170,6 +175,7 @@ ul {
   border-style: solid;
   border-width: 1px;
   border-color: $text-color-light;
+  z-index: 2;
 
   /* create a small space when buttons wrap on 2 lines */
   margin: 2px 0;
@@ -183,11 +189,30 @@ ul {
   /* make sure colors have enough contrast! */
   color: $text-color-dark;
   cursor: pointer;
+  transition:color 0.25s ease, border-color 0s 0.25s ease;
 
   &:hover {
-    background-color: $accent-blue;
+    // background-color: $accent-blue;
     border-color: $accent-blue;
     color: white;
+    transition: border-color 0s ease;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $accent-blue;
+    transform-origin:left;
+    transition:width 0.25s ease;
+    z-index:-1;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 
   &:active {
@@ -657,11 +682,10 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 0;
+  padding-bottom: 10rem;
 
   &__container {
     width: 90%;
-    padding: 2rem 0;
     // margin: $margin-vertical $margin-horizontal;
     max-width: $max-width;
     display: flex;
@@ -681,6 +705,7 @@ p {
 
     //TODO: test across screens
     @media screen and (max-width: $tablet-width) {
+
       .info-card:hover {
         transform: translateY(0);
       }
@@ -710,6 +735,7 @@ p {
     }
 
     @media screen and (max-width: 72rem) {
+
       .info-card__icon-container {
         height: 8rem;
       }
@@ -933,15 +959,22 @@ p {
   }
 
   .nav-item {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
     color: $heading-color;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    opacity: 0.75;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__learn-more {
-    margin-top: auto;
-    margin-bottom: 1em;
-    margin-right: auto;
-    margin-left: 1em;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
   }
 
   &__title {
@@ -1042,7 +1075,8 @@ p {
   position: relative;
   color: $heading-color;
   text-align: center;
-  padding: 3rem 0;
+  padding: 0;
+  margin: 5rem 0 8rem 0;
 }
 
 .shadow-screen {
@@ -1186,13 +1220,26 @@ p {
   }
 
   &__mail {
-    margin: 2rem 0;
+    align-self: center;
+    color: #64abf7;
+
+    &:hover {
+      color: #89b2df;
+    }
+
+    &:active {
+      color: #64abf7;
+    }
   }
 
   &__mail-label {
     align-self: center;
     padding-right: 1rem;
-    color: whitesmoke;
+    color: $accent-color;
+  }
+
+  &__copyright {
+    color: $accent-color;
   }
 
   @media screen and (max-width: $mobile-width) {
