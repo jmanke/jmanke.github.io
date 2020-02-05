@@ -1770,10 +1770,12 @@ p {
       -ms-grid-row-align: center;
       align-self: center;
   color: #64abf7;
+  text-decoration: none;
 }
 
 .footer__mail:hover {
   color: #94c5fa;
+  text-decoration: underline;
 }
 
 .footer__mail:active {
