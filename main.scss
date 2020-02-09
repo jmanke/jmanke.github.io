@@ -332,7 +332,8 @@ p {
   border-style: none solid none none;
   border-width: 1px;
   border-color: lighten($secondary-color, 15%);
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: visible;
 
   @media screen and (max-width: $mobile-width) {
     flex-direction: row;
@@ -341,6 +342,7 @@ p {
     height: $margin-top;
     border-style: none none solid none;
     border-width: 1px;
+    overflow: initial;
 
     .nav-item {
       padding: 0.3rem;
