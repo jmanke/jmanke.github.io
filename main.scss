@@ -440,7 +440,8 @@ p {
   &__sidebar {
     background-color: inherit;
     position: fixed;
-    display: flex;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 15rem;
     transform: translateX(-100%);
@@ -784,7 +785,7 @@ p {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .fill-circle {
       margin: 1rem;
@@ -883,7 +884,6 @@ p {
   position: relative;
   box-sizing: inherit;
   overflow: hidden;
-  // border-radius: 15px;
 
   &__page {
     position: relative;
@@ -956,7 +956,6 @@ p {
 
   &__text {
     margin: 0;
-    height: 100%;
     overflow-y: hidden;
     color: #9b9b9b;
   }

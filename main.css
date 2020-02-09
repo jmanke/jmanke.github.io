@@ -800,9 +800,8 @@ p {
 .nav__sidebar {
   background-color: inherit;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  top: 0;
+  left: 0;
   height: 100vh;
   width: 15rem;
   -webkit-transform: translateX(-100%);
@@ -1222,9 +1221,8 @@ p {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .skills__technologies .fill-circle {
@@ -1442,7 +1440,6 @@ p {
 
 .project-card__text {
   margin: 0;
-  height: 100%;
   overflow-y: hidden;
   color: #9b9b9b;
 }
