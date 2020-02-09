@@ -558,23 +558,34 @@ p {
     width: 30vw;
     height: 30vw;
     margin: auto;
+    border-radius: 100%;
+    background: linear-gradient(to left, #3F9CD6, #49DEDE);
+    z-index: 1;
 
-    &-img {
+    &::before {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: -1;
+      content: "";
+      top: 2.5%;
+      left: 2.5%;
+      width: 90%;
+      height: 90%;
+      border-radius: 100%;
+
+      z-index: 0;
+
+      background-color: $primary-color-dark;
     }
 
     &-title {
+      position: relative;
       margin: 0;
-      padding-top: 2.5em;
+      margin-top: 2.5em;
       font-size: 4vw;
       color: #f5f5f5;
     }
 
     .type-writer {
+      position: relative;
       font-size: 1.8vw;
       color: #6a9955;
     }
