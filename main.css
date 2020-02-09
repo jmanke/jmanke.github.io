@@ -495,6 +495,7 @@ ul li {
   background-color: white;
   outline: none;
   border: none;
+  white-space: nowrap;
   outline: 1px solid #696969;
   /* create a small space when buttons wrap on 2 lines */
   /* size comes from text & padding (no width/height) */
