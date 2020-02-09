@@ -916,13 +916,8 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -ms-grid;
+  display: grid;
 }
 
 @media screen and (max-width: 767px) {
@@ -941,13 +936,38 @@ p {
 
 .landing-page__container {
   position: relative;
-  width: 30vw;
-  height: 30vw;
+  width: 35vw;
+  height: 35vw;
+  font-size: 1vw;
   margin: auto;
   border-radius: 100%;
   background: -webkit-gradient(linear, right top, left top, from(#3F9CD6), to(#49DEDE));
   background: linear-gradient(to left, #3F9CD6, #49DEDE);
   z-index: 1;
+}
+
+@media screen and (min-width: 1104px) {
+  .landing-page__container {
+    width: 25rem;
+    height: 25rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .landing-page__container {
+    width: 60vw;
+    height: 60vw;
+    font-size: 2vw;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .landing-page__container {
+    width: 50vh;
+    height: 50vh;
+    font-size: 1.55vh;
+  }
 }
 
 .landing-page__container::before {
@@ -966,14 +986,21 @@ p {
   position: relative;
   margin: 0;
   margin-top: 2.5em;
-  font-size: 4vw;
+  font-size: 4em;
   color: #f5f5f5;
 }
 
 .landing-page__container .type-writer {
   position: relative;
-  font-size: 1.8vw;
+  font-size: 2em;
   color: #6a9955;
+}
+
+.landing-page__logo-anchor {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0;
 }
 
 .landing-page__logo {
@@ -982,7 +1009,7 @@ p {
   height: 10rem;
   border-radius: 100%;
   position: relative;
-  bottom: -5rem;
+  bottom: 5rem;
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
@@ -990,13 +1017,14 @@ p {
           transform: scale(0);
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+  z-index: 1;
 }
 
 @media screen and (max-width: 767px) {
   .landing-page__logo {
     width: 5rem;
     height: 5rem;
-    bottom: -2.5rem;
+    bottom: 2.5rem;
   }
 }
 
