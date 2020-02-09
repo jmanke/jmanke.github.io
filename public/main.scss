@@ -1199,9 +1199,11 @@ p {
   &__mail {
     align-self: center;
     color: $highlight-blue;
+    text-decoration: none;
 
     &:hover {
       color: lighten($highlight-blue, 10%);
+      text-decoration: underline;
     }
 
     &:active {
