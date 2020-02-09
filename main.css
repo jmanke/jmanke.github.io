@@ -1241,13 +1241,6 @@ p {
   }
 }
 
-.technologies {
-  margin: 5rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 @media screen and (max-width: 767px) {
   .skills {
     -webkit-box-orient: vertical;
@@ -1258,15 +1251,16 @@ p {
 }
 
 .skills__technologies {
+  position: relative;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .skills__technologies .fill-circle {
@@ -1770,12 +1764,10 @@ p {
       -ms-grid-row-align: center;
       align-self: center;
   color: #64abf7;
-  text-decoration: none;
 }
 
 .footer__mail:hover {
   color: #94c5fa;
-  text-decoration: underline;
 }
 
 .footer__mail:active {

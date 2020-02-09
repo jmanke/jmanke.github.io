@@ -11,7 +11,6 @@
 }
 
 html {
-  //scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -790,21 +789,17 @@ p {
   }
 }
 
-.technologies {
-  margin: 5rem 0;
-  display: flex;
-}
-
 .skills {
   @media screen and (max-width: $mobile-width) {
     flex-direction: column;
   }
 
   &__technologies {
+    position: relative;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     .fill-circle {
       margin: 1rem;
@@ -1218,11 +1213,9 @@ p {
   &__mail {
     align-self: center;
     color: $highlight-blue;
-    text-decoration: none;
 
     &:hover {
       color: lighten($highlight-blue, 10%);
-      text-decoration: underline;
     }
 
     &:active {
