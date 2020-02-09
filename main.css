@@ -486,12 +486,6 @@ ul li {
   display: inline-block;
   text-align: center;
   text-decoration: none;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   background-color: white;
   outline: none;
   border: none;
