@@ -55,6 +55,12 @@
   /* border-radius: 0 0 7px 7px; */
 }
 
+@media screen and (max-width: 767px) {
+  .info-card__text-container {
+    height: initial;
+  }
+}
+
 .info-card_secondary .info-card__text-container {
   background-color: #1C6FA2;
 }

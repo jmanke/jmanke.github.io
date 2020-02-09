@@ -1,5 +1,4 @@
 import React from "react";
-import backgroundImage from "../../../../images/landing_background.png";
 import logo from "../../../../images/logo_circle.png";
 import Canvas from "./LandingCanvas";
 import IntersectionObserver from "../../../Shared/IntersectionObserver";
@@ -11,10 +10,6 @@ export default () => {
   const [logoVisible, setLogoVisible] = React.useState(false);
   const [subtitleVisible, setSubtitleVisible] = React.useState(false);
   const showLogoThresh = 0.85;
-
-  let imageStyle = {
-    backgroundImage: "url(" + backgroundImage + ")"
-  };
 
   function handleLogoDisplay(intersectionInfo) {
     setLogoVisible(
@@ -48,20 +43,21 @@ export default () => {
         />
         <Canvas />
         <div className="landing-page__container unselectable">
-          <img className="landing-page__container-img" src={backgroundImage} alt="landing"></img>
           <h1 className="landing-page__container-title">Jeff Manke</h1>
           {subtitleVisible ? (
             <TypeWriter text={"// Software Developer "} />
           ) : null}
         </div>
-        <img
-          src={logo}
-          alt="Jeff Manke Logo"
-          className={
-            "landing-page__logo unselectable" +
-            (logoVisible ? " landing-page__logo_is-visible" : "")
-          }
-        />
+        <div className="landing-page__logo-anchor">
+          <img
+            src={logo}
+            alt="Jeff Manke Logo"
+            className={
+              "landing-page__logo unselectable" +
+              (logoVisible ? " landing-page__logo_is-visible" : "")
+            }
+          />
+        </div>
       </div>
     </div>
   );

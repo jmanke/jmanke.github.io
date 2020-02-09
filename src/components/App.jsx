@@ -13,6 +13,8 @@ window.onload = function() {
 };
 
 export default () => {
+  require('intersection-observer');
+
   return (
   <div className="app">
     <LoadingScreen />

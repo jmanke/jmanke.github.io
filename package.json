@@ -10,6 +10,7 @@
     "babel-plugin-root-import": "^6.4.1",
     "bootstrap": "^4.4.1",
     "gh-pages": "^2.2.0",
+    "intersection-observer": "^0.7.0",
     "react": "^16.12.0",
     "react-app-rewired": "^2.1.5",
     "react-bootstrap": "^1.0.0-beta.16",
