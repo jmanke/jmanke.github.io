@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "./Nav/Nav";
 import Content from "./Content/Content";
-import Footer from "./Footer/Footer";
+import Footer from "./Footer";
 import LoadingScreen from "./LoadingScreen";
 import Events from "./Shared/Events";
 

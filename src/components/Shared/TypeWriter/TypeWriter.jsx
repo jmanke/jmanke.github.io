@@ -1,5 +1,35 @@
 import React from "react";
-import "./TypeWriter.css";
+import styled from "styled-components";
+
+const TypeWriter = styled.p`
+  position: relative;
+  font-size: 2em;
+  color: #6a9955;
+`
+
+const TypeWriterLine = styled.span`
+  color: white;
+  font-size: 120%;
+	animation: ${props => props.blink ? `blinking 1s infinite` : `none`};
+
+  @keyframes blinking {
+	0% {
+		opacity: 0;
+	}
+	
+	49% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+`
 
 export default props => {
   const waitingOnUpdate = React.useRef(false);
@@ -19,9 +49,9 @@ export default props => {
   }
 
   return (
-    <p className={"type-writer"}>
+    <TypeWriter>
       {props.text.slice(0, currTextIndex)}
-      <span className={"type-writer__type-line" + (textComplete ? " type-writer__type-line_blink" : "")}>{"|"}</span>
-    </p>
+      <TypeWriterLine blink={textComplete}>{"|"}</TypeWriterLine>
+    </TypeWriter>
   );
 };

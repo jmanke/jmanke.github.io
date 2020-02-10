@@ -1,62 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from 'styled-components';
+import StyleVars from "styleVars";
+import FainkIcon from "components/Shared/FaLinkIcon";
 
-// const tooltipStyle = height => {
-//   top: height.toString() + "px";
-// };
+const NavItem = styled.a`
+  color: ${StyleVars.accentColor};
+  text-decoration: none;
+  text-align: center;
+  font-size: 1em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: lighten(${StyleVars.accentColor}, 80%);
+  }
+
+  &.active {
+    color: lighten(${StyleVars.accentColor}, 80%);
+  }
+`
 
 export default props => {
-  const [isHovering, setIsHovering] = useState(false);
-  const [top, setTop] = React.useState(0);
-  const domRef = React.useRef(null);
-
-  function onMouseEnter() {
-    const rect = domRef.current.getBoundingClientRect();
-    const currTop = rect.top - rect.height / 2;
-
-    setTop(currTop);
-    setIsHovering(true);
-  }
-
-  function onMouseLeave() {
-    setIsHovering(false);
-  }
+  const [mouseHovering, setMouseHovering] = React.useState(false);
 
   return (
-    <a
-      className={"nav-item" + (props.sectionActive ? " active" : "")}
-      href={props.href}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      <div
-        className={
-          "nav-item__active-bar" +
-          (props.sectionActive
-            ? " nav-item__active-bar_show"
-            : " nav-item__active-bar_hidden")
-        }
-      />
-      <i
-        ref={domRef}
-        className={
-          props.icon +
-          ((isHovering || props.sectionActive) && props.showTooltip
-            ? " scale-expand"
-            : " scale-original")
-        }
-      />
-      {props.displayTitle ? (
-        <span className="nav-item__text">{" " + props.title}</span>
-      ) : null}
-      {props.showTooltip ? (
-        <div
-          className={"nav-tooltip " + (isHovering ? "fade-in" : "fade-out")}
-          style={{ top: top + "px" }}
-        >
-          <span className="nav-tooltip__arrow"></span>
-          <strong>{props.title}</strong>
-        </div>
-      ) : null}
-    </a>
+    <NavItem href={props.href} onMouseEnter={() => setMouseHovering(true)} onMouseLeave={() => setMouseHovering(false)}>
+      <FainkIcon active={mouseHovering} icon={props.icon} />
+    </NavItem>
   );
 };

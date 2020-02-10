@@ -42,5 +42,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://jmanke.github.io"
+  "homepage": "http://jmanke.github.io",
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "eslint-plugin-styled-components": "0.0.0"
+  }
 }

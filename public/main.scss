@@ -208,314 +208,83 @@ p {
   color: $text-color-dark;
 }
 
-.logo {
-  cursor: pointer;
-  width: 3rem;
-  height: 3rem;
-  margin: auto;
-}
+// .nav-item {
+//   position: relative;
+//   margin: 0;
+//   padding: 1rem 0.625rem;
+//   color: $accent-color;
+//   text-decoration: none;
+//   text-align: center;
+//   font-size: 1.3rem;
 
-.loading-screen {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: $primary-color-dark;
-  z-index: 1000;
-  opacity: 1;
-  transition: opacity 1s ease-in-out, height 0s linear 1s;
+//   @media screen and (max-width: $mobile-width) {
+//     display: initial;
+//   }
 
-  &_disable {
-    opacity: 0;
-    height: 0;
-  }
+//   &:hover {
+//     color: lighten($accent-color, 80%);
+//   }
 
-  &__loader {
-    width: 5rem;
-    height: 5rem;
-  }
-}
+//   &.active {
+//     color: lighten($accent-color, 80%);
+//   }
 
-.nav-item {
-  position: relative;
-  margin: 0;
-  padding: 1rem 0.625rem;
-  color: $accent-color;
-  text-decoration: none;
-  text-align: center;
-  font-size: 1.3rem;
+//   &__active-bar {
+//     position: absolute;
+//     margin-top: auto;
+//     margin-bottom: auto;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     width: 0.25rem;
+//     height: 100%;
+//     background-color: $highlight-blue;
+//     transition: all 150ms linear;
+//     transform: scale(1);
+//     will-change: transform;
 
-  @media screen and (max-width: $mobile-width) {
-    display: initial;
-  }
+//     &_hidden {
+//       transform: scale(0);
+//     }
+//   }
 
-  &:hover {
-    color: lighten($accent-color, 80%);
-  }
+//   &__text {
+//     display: none;
+//     padding-left: 0.5rem;
 
-  &.active {
-    color: lighten($accent-color, 80%);
-  }
+//     @media screen and (max-width: $mobile-width) {
+//       display: initial;
+//     }
+//   }
 
-  &__active-bar {
-    position: absolute;
-    margin-top: auto;
-    margin-bottom: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 0.25rem;
-    height: 100%;
-    background-color: $highlight-blue;
-    transition: all 150ms linear;
-    transform: scale(1);
-    will-change: transform;
+//   .nav-tooltip {
+//     position: fixed;
+//     text-align: center;
+//     top: 16%;
+//     left: $margin-left + 0.8rem;
+//     color: $heading-color-light;
+//     pointer-events: none;
+//     font-size: 0.8rem;
+//     border-radius: 0.5rem;
+//     background: $secondary-color;
+//     padding: 0.5rem;
 
-    &_hidden {
-      transform: scale(0);
-    }
-  }
+//     @media screen and (max-width: $mobile-width) {
+//       visibility: hidden;
+//     }
 
-  &__text {
-    display: none;
-    padding-left: 0.5rem;
-
-    @media screen and (max-width: $mobile-width) {
-      display: initial;
-    }
-  }
-
-  .nav-tooltip {
-    position: fixed;
-    text-align: center;
-    top: 16%;
-    left: $margin-left + 0.8rem;
-    color: $heading-color-light;
-    pointer-events: none;
-    font-size: 0.8rem;
-    border-radius: 0.5rem;
-    background: $secondary-color;
-    padding: 0.5rem;
-
-    @media screen and (max-width: $mobile-width) {
-      visibility: hidden;
-    }
-
-    &__arrow {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 98%;
-      margin-top: -0.375rem;
-      border-width: 0.375rem;
-      border-style: solid;
-      border-color: transparent $secondary-color transparent transparent;
-    }
-  }
-}
-
-.nav {
-  position: fixed;
-  display: flex;
-  left: 0;
-  top: 0;
-  font-size: 1.25em;
-  z-index: 10;
-  flex-direction: column;
-  width: $margin-left;
-  height: 100vh;
-  background-color: $secondary-color;
-  border-style: none solid none none;
-  border-width: 1px;
-  border-color: lighten($secondary-color, 15%);
-  overflow-y: auto;
-  overflow-x: visible;
-
-  @media screen and (max-width: $mobile-width) {
-    flex-direction: row;
-    min-width: $min-width;
-    width: 100%;
-    height: $margin-top;
-    border-style: none none solid none;
-    border-width: 1px;
-    overflow: initial;
-
-    .nav-item {
-      padding: 0.3rem;
-    }
-  }
-
-  &__menu-toggle {
-    color: lighten($accent-color, $amount: 80%);
-    padding-left: $margin-top / 2;
-    display: none;
-    font-size: 1.5rem;
-    margin: auto;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-
-    &:focus {
-      outline: none;
-    }
-
-    @media screen and (max-width: $mobile-width) {
-      display: initial;
-    }
-
-    @media screen and (max-width: $min-width) {
-      display: initial;
-      padding-left: $margin-top / 8;
-    }
-  }
-
-  &__start {
-    padding-top: 1rem;
-    display: inherit;
-    flex-direction: inherit;
-    background-color: inherit;
-
-    @media screen and (max-width: $mobile-width) {
-      padding-top: initial;
-
-      .nav-item {
-        display: none;
-      }
-    }
-
-    .logo {
-      margin: auto;
-      margin-bottom: 1rem;
-
-      @media screen and (max-width: $mobile-width) {
-        display: none;
-      }
-    }
-  }
-
-  &__middle {
-    margin: auto;
-    flex: 1;
-    text-align: center;
-
-    .logo {
-      display: none;
-      vertical-align: middle;
-      position: fixed;
-      top: $margin-top / 2;
-      left: 50%;
-      margin-top: -1.5rem;
-      margin-left: -1.5rem;
-
-      @media screen and (max-width: $mobile-width) {
-        padding: 0;
-        display: initial;
-      }
-    }
-  }
-
-  &__end {
-    background-color: inherit;
-    display: inherit;
-    flex-direction: inherit;
-    margin-bottom: 0.5rem;
-
-    @media screen and (max-width: $mobile-width) {
-      margin-left: auto;
-      margin-top: initial;
-      margin-right: 1rem;
-      margin-bottom: initial;
-    }
-
-    .nav-item {
-      margin: auto;
-    }
-
-    .nav-item__text {
-      display: none;
-    }
-  }
-
-  &__sidebar {
-    background-color: inherit;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 15rem;
-    transform: translateX(-100%);
-    display: none;
-    transition: all 0.25s ease-out;
-    z-index: 3;
-    overflow-y: auto;
-
-    border-style: none solid none none;
-    border-width: 1px;
-    border-color: lighten($secondary-color, 15%);
-
-    @media screen and (max-width: $mobile-width) {
-      display: block;
-    }
-
-    &__header {
-      height: $margin-top;
-      display: flex;
-      margin-bottom: 1.5rem;
-
-      .logo {
-        margin-left: auto;
-        margin-right: 1rem;
-      }
-
-      .nav__menu-toggle {
-        margin-right: auto;
-        margin-left: 1.5rem;
-        padding: 0;
-      }
-    }
-
-    &__item {
-      position: relative;
-      display: flex;
-      margin: 0 0;
-      height: 4rem;
-      border: solid;
-      border-width: 0 0 1px 0;
-      border-color: rgba(white, 0.25);
-
-      .nav-item {
-        margin-top: auto;
-        margin-bottom: auto;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        padding: 0;
-        padding-left: 1.2rem;
-        -webkit-tap-highlight-color: transparent;
-
-        &__text {
-          font-size: 1.2rem;
-        }
-
-        .fas {
-          vertical-align: middle;
-        }
-      }
-
-      hr {
-        margin-top: 1.5rem;
-      }
-    }
-
-    &_active {
-      transform: translateX(0);
-    }
-  }
-}
+//     &__arrow {
+//       content: "";
+//       position: absolute;
+//       top: 50%;
+//       right: 98%;
+//       margin-top: -0.375rem;
+//       border-width: 0.375rem;
+//       border-style: solid;
+//       border-color: transparent $secondary-color transparent transparent;
+//     }
+//   }
+// }
 
 .canvas-container {
   position: absolute;
@@ -1177,134 +946,4 @@ p {
   }
 }
 
-.footer {
-  position: absolute;
-  left: $margin-left;
-  right: 0;
-  background-color: $primary-color-dark;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-
-  &__links {
-    display: flex;
-    .nav-item {
-      font-size: 1.75rem;
-    }
-  }
-
-  &__mail {
-    align-self: center;
-    color: $highlight-blue;
-    text-decoration: none;
-
-    &:hover {
-      color: lighten($highlight-blue, 10%);
-      text-decoration: underline;
-    }
-
-    &:active {
-      color: $highlight-blue;
-    }
-  }
-
-  &__mail-label {
-    align-self: center;
-    padding-right: 0.5rem;
-    color: $accent-color;
-  }
-
-  &__copyright {
-    font-size: 0.8em;
-    opacity: 0.75;
-    margin-top: 0.5rem;
-    color: $accent-color;
-  }
-
-  @media screen and (max-width: $mobile-width) {
-    left: 0;
-  }
-}
 // SPINNER
-
-.lds-spinner {
-  color: official;
-  display: inline-block;
-  position: relative;
-  width: 5rem;
-  height: 5rem;
-}
-.lds-spinner div {
-  transform-origin: 40px 40px;
-  animation: lds-spinner 1.2s linear infinite;
-}
-.lds-spinner div:after {
-  content: " ";
-  display: block;
-  position: absolute;
-  top: 3px;
-  left: 37px;
-  width: 6px;
-  height: 18px;
-  border-radius: 20%;
-  background: $accent-blue;
-}
-.lds-spinner div:nth-child(1) {
-  transform: rotate(0deg);
-  animation-delay: -1.1s;
-}
-.lds-spinner div:nth-child(2) {
-  transform: rotate(30deg);
-  animation-delay: -1s;
-}
-.lds-spinner div:nth-child(3) {
-  transform: rotate(60deg);
-  animation-delay: -0.9s;
-}
-.lds-spinner div:nth-child(4) {
-  transform: rotate(90deg);
-  animation-delay: -0.8s;
-}
-.lds-spinner div:nth-child(5) {
-  transform: rotate(120deg);
-  animation-delay: -0.7s;
-}
-.lds-spinner div:nth-child(6) {
-  transform: rotate(150deg);
-  animation-delay: -0.6s;
-}
-.lds-spinner div:nth-child(7) {
-  transform: rotate(180deg);
-  animation-delay: -0.5s;
-}
-.lds-spinner div:nth-child(8) {
-  transform: rotate(210deg);
-  animation-delay: -0.4s;
-}
-.lds-spinner div:nth-child(9) {
-  transform: rotate(240deg);
-  animation-delay: -0.3s;
-}
-.lds-spinner div:nth-child(10) {
-  transform: rotate(270deg);
-  animation-delay: -0.2s;
-}
-.lds-spinner div:nth-child(11) {
-  transform: rotate(300deg);
-  animation-delay: -0.1s;
-}
-.lds-spinner div:nth-child(12) {
-  transform: rotate(330deg);
-  animation-delay: 0s;
-}
-@keyframes lds-spinner {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}

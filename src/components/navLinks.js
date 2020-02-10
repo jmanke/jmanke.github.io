@@ -1,4 +1,4 @@
-import resume from "../resources/ResumeJeffManke.pdf";
+import resume from "resources/ResumeJeffManke.pdf";
 
 const navLinks = [
   {
