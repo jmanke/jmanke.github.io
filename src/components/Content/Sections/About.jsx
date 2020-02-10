@@ -17,7 +17,6 @@ const InfoCardsContainer = styled.div`
     
     .info-card__development{
       order: 2;
-      margin-right: auto;
       width: 45%;
     }
 
@@ -28,7 +27,6 @@ const InfoCardsContainer = styled.div`
 
     .info-card__hobbies {
       order: 3;
-      margin-left: auto;
       width: 45%;
     }
   }
@@ -37,7 +35,6 @@ const InfoCardsContainer = styled.div`
     flex-wrap: wrap;
     
     .info-card__development{
-      margin-right: initial;
       width: 100%;
     }
 
@@ -46,7 +43,6 @@ const InfoCardsContainer = styled.div`
     }
 
     .info-card__hobbies {
-      margin-left: initial;
       width: 100%;
     }
   }
@@ -54,46 +50,44 @@ const InfoCardsContainer = styled.div`
 
 export default () => {
   return (
-    <div className="about unselectable">
-      <FadeSection>
-        <InfoCardsContainer>
-          <InfoCard
-            className="info-card__development"
-            title={"Development"}
-            secondary={true}
-            icon={developmentImg}
-            text={
-              "Whether its writing efficient, multi-threaded \
-              C# or C++ code, or front-end with JavaScript and React, \
-              I love taking on new challenges and solving problems."
-            }
-          />
-          <InfoCard
-            className="info-card__about-me"
-            title={"About Me"}
-            icon={manImg}
-            text={
-              "My name is Jeff Manke and I'm a Software Developer \
-            living in Victoria, BC. I have a BSc, Double Major \
-            in Computer Science and Economics from the Univeristy of Victoria. \
-            Since taking Computer Science as a second major, I \
-            spend most of my time programming and learning new \
-            technologies."
-            }
-            primary
-          />
-          <InfoCard
-            className="info-card__hobbies"
-            title={"Hobbies"}
-            secondary={true}
-            icon={hobbyImg}
-            text={
-              "Playing video games is one of my favourite hobbies. Some of my favourite \
-        games are Kerbal Space Program, Halo, The Witcher 3, and The Outer Wilds."
-            }
-          />
-        </InfoCardsContainer>
-      </FadeSection>
-    </div>
+    <FadeSection>
+      <InfoCardsContainer>
+        <InfoCard
+          className="info-card__development"
+          title={"Development"}
+          secondary={true}
+          icon={developmentImg}
+          text={
+            "Whether its writing efficient, multi-threaded \
+            C# or C++ code, or front-end with JavaScript and React, \
+            I love taking on new challenges and solving problems."
+          }
+        />
+        <InfoCard
+          className="info-card__about-me"
+          title={"About Me"}
+          icon={manImg}
+          text={
+            "My name is Jeff Manke and I'm a Software Developer \
+          living in Victoria, BC. I have a BSc, Double Major \
+          in Computer Science and Economics from the Univeristy of Victoria. \
+          Since taking Computer Science as a second major, I \
+          spend most of my time programming and learning new \
+          technologies."
+          }
+          primary
+        />
+        <InfoCard
+          className="info-card__hobbies"
+          title={"Hobbies"}
+          secondary={true}
+          icon={hobbyImg}
+          text={
+            "Playing video games is one of my favourite hobbies. Some of my favourite \
+      games are Kerbal Space Program, Halo, The Witcher 3, and The Outer Wilds."
+          }
+        />
+      </InfoCardsContainer>
+    </FadeSection>
   );
 };

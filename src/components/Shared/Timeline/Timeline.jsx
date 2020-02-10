@@ -33,6 +33,7 @@ const LineContainer = styled.div`
   bottom: 0;
   left: 0;
   grid-template-columns: 1fr 0.15fr 1fr;
+  pointer-events: none;
 
   @media screen and (max-width: ${styleVars.mobileWidth}) {
     grid-template-columns: 0.2fr 0.2fr 1fr;
