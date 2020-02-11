@@ -1,5 +1,5 @@
 import React from "react";
-import FocusPanel from "../../Shared/FocusPanel/FocusPanel";
+import FocusPanel from "../../Shared/FocusPanel";
 import NavItem from "../../Nav/NavItem";
 
 export default props => {

@@ -1,9 +1,9 @@
 import React from "react";
-import logo from "../../../../images/logo_circle.png";
+import logo from "images/logo_circle.png";
 import Canvas from "./LandingCanvas";
-import IntersectionObserver from "../../../Shared/IntersectionObserver";
-import TypeWriter from "../../../Shared/TypeWriter/TypeWriter";
-import Events from "../../../Shared/Events";
+import IntersectionObserver from "components/Shared/IntersectionObserver";
+import TypeWriter from "components/Shared/TypeWriter";
+import Events from "components/Shared/Events";
 
 export default () => {
   const landingRef = React.useRef();

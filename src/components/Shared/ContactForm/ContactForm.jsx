@@ -1,6 +1,8 @@
 import React from "react";
+import styled from "styled-components";
 import Email from "../smtp.js";
-import "./ContactForm.css";
+
+//TODO: Move logic to another component and clean this up.
 
 const messageStatusState = {
   none: "none",
@@ -9,13 +11,91 @@ const messageStatusState = {
   failed: "failed"
 };
 
+const ContactForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 35em;
+  margin: auto;
+`
+
+const TextInput = styled.input`
+  border-radius: 0;
+  border: solid;
+  border-style: solid;
+  border-width: 1px;
+  border-color: ${props => props.invalid ? `#ff0000` : `#c5c5c5`};
+
+  min-width: 12rem;
+
+  padding: 0.5rem;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    border-color: #257AFD;
+    box-shadow: 0 0 5px #257AFD;
+  }
+`
+
+const TextArea = styled.textarea`
+  border-radius: 0;
+  border: solid;
+  border-style: solid;
+  border-width: 1px;
+  border-color: ${props => props.invalid ? `#ff0000` : `#c5c5c5`};
+  height: 20rem;
+  resize: none;
+  min-width: 12rem;
+  padding: 0.5rem;
+  background-color: white;
+
+  &:focus {
+    outline: none;
+    border-color: #257AFD;
+    box-shadow: 0 0 5px #257AFD;
+  }
+`
+
+const Title = styled.p`
+  font-size: 1.1em;
+  color: #bbbbbb;
+`
+
+const InvalidText = styled.p`
+  display: initial;
+  font-size: 0.9em;
+  margin: 0.5rem 0 -0.2rem 0;
+  color: #e43333;
+`
+
+const SubmitButtonContainer = styled.div`
+  height: 5rem;
+  display: flex;
+`
+
+const SubmitButton = styled.button`
+  display: inline-block;
+  cursor: pointer;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding: 0.5rem 2rem;
+`
+
+const SubmitStatus = styled.p`
+  display: inline-block;
+  padding-left: 1rem;
+  color: white;
+`
+
 export default props => {
   const formProps = React.useRef({
     name: "",
     email: {
       text: "",
       isValid: true,
-      validate: function() {
+      validate: function () {
         // eslint-disable-next-line no-useless-escape
         const pattern = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
         this.isValid = this.text.match(pattern) !== null;
@@ -24,7 +104,7 @@ export default props => {
     message: {
       text: "",
       isValid: true,
-      validate: function() {
+      validate: function () {
         this.isValid = this.text.length > 0;
       }
     }
@@ -52,24 +132,18 @@ export default props => {
   }
 
   return (
-    <div className={"contact-form " + (props.className ?? "")}>
-      <p className="contact-form__input-title txt-md">Name</p>
-      <input
-        className="contact-form__text-input"
+    <ContactForm>
+      <Title>Name</Title>
+      <TextInput
         type="text"
         placeholder="Enter Name"
         onChange={change => {
           formProps.current.name = change.target.value;
         }}
       />
-      <p className="contact-form__input-title txt-md">Email</p>
-      <input
-        className={
-          "contact-form__text-input" +
-          (formProps.current.email.isValid
-            ? ""
-            : " contact-form__text-input_invalid")
-        }
+      <Title>Email</Title>
+      <TextInput
+        invalid={!formProps.current.email.isValid}
         type="text"
         placeholder="Enter Email"
         onChange={change => {
@@ -84,18 +158,13 @@ export default props => {
         }}
       />
       {!formProps.current.email.isValid ? (
-        <p className="contact-form__input-title_invalid txt-md">
+        <InvalidText>
           * Please Enter a Valid Email
-        </p>
+        </InvalidText>
       ) : null}
-      <p className="contact-form__input-title txt-md">Message</p>
-      <textarea
-        className={
-          "contact-form__text-input form-message" +
-          (formProps.current.message.isValid
-            ? ""
-            : " contact-form__text-input_invalid")
-        }
+      <Title>Message</Title>
+      <TextArea
+        invalid={!formProps.current.message.isValid}
         placeholder="Enter Message"
         onChange={change => {
           formProps.current.message.text = change.target.value;
@@ -109,22 +178,22 @@ export default props => {
         }}
       />
       {!formProps.current.message.isValid ? (
-        <p className="contact-form__input-title_invalid txt-md">
+        <InvalidText>
           * Please Enter a Message
-        </p>
+        </InvalidText>
       ) : null}
-      <div className="contact-form__submit-container">
+      <SubmitButtonContainer>
         {messageStatus === messageStatusState.none ? null : (
-          <p className="contact-form__input-title txt-md txt-light form-message-status ">
+          <SubmitStatus>
             {messageStatus === messageStatusState.sending
               ? "Sending..."
               : messageStatus === messageStatusState.sent
-              ? "Message Sent!"
-              : "Send Failed..."}
-          </p>
+                ? "Message Sent!"
+                : "Send Failed..."}
+          </SubmitStatus>
         )}
-        <button
-          className={"contact-form__submit btn"}
+        <SubmitButton
+          className={"btn"}
           onClick={() => {
             if (
               messageStatus === messageStatusState.sent ||
@@ -163,8 +232,8 @@ export default props => {
           }}
         >
           Send
-        </button>
-      </div>
-    </div>
+        </SubmitButton>
+      </SubmitButtonContainer>
+    </ContactForm>
   );
 };

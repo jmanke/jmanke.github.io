@@ -23,11 +23,13 @@ const Footer = styled.footer`
 
 const FooterLinks = styled.div`
   display: flex;
-
-  .nav-item {
-    font-size: 1.75rem;
-  }
+  font-size: 1.5em;
 `
+
+const FlexContainer = styled.div`
+  display: flex;
+`
+
 const Email = styled.a`
   align-self: center;
   color: ${styleVars.highlightBlue};
@@ -56,7 +58,6 @@ const Copyright = styled.i`
   color: $accent-color;
 `
 
-
 export default () => {
   return (
     <Footer>
@@ -83,10 +84,10 @@ export default () => {
           showTooltip={false}
         />
       </FooterLinks>
-      <FooterLinks>
+      <FlexContainer>
         <EmailLabel>Email: </EmailLabel>
         <Email href={"mailto:jeffman879@gmail.com"} alt="Resume">jeffman879@gmail.com</Email>
-      </FooterLinks>
+      </FlexContainer>
       <Copyright className="far fa-copyright txt-sm txt-light"> 2020 Jeff Manke</Copyright>
     </Footer>
   )

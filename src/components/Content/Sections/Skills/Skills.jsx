@@ -1,18 +1,20 @@
 import React from "react";
-import FadeSection from "../../../Shared/FadeSection/FadeSection";
-import FillCircle from "../../../Shared/FillCircle/FillCircle";
-import FillBar from "../../../Shared/FillBar/FillBar";
+import styled from "styled-components";
+import styleVars from "styleVars";
+import FadeSection from "components/Shared/FadeSection/FadeSection";
+import FillCircle from "components/Shared/FillCircle/FillCircle";
+import FillBar from "components/Shared/FillBar/FillBar";
 
-function createSkill(label, fill) {
-  return <FillBar label={label} fill={fill} />;
-}
+const Skills = styled.div``
+
+const SkillsHeading = styled.h3`
+  margin: 5rem 0;
+  text-align: center;
+`
 
 export default () => {
   return (
-    <div className="skills">
-      {/* <FadeSection>
-        <h3 className="skills__heading">Technologies</h3>
-      </FadeSection> */}
+    <Skills>
       <FadeSection className="skills__technologies" delay={100}>
         <FillCircle label={"Unity"} fill={90} />
         <FillCircle label={".NET"} fill={80} />
@@ -20,21 +22,20 @@ export default () => {
         <FillCircle label={"React.js"} fill={60} />
       </FadeSection>
       <FadeSection>
-        <h3 className="skills__heading">Languages</h3>
+        <SkillsHeading className="skills__heading">Languages</SkillsHeading>
       </FadeSection>
       <div className="skills__languages">
         <FadeSection delay={100}>
-          {createSkill("C#", 85)}
-          {createSkill("C++", 70)}
-          {createSkill("HTML5", 70)}
+          <FillBar label={"C#"} fill={85} />
+          <FillBar label={"C++"} fill={70} />
+          <FillBar label={"HTML5"} fill={70} />
         </FadeSection>
-
         <FadeSection delay={100}>
-          {createSkill("CSS", 70)}
-          {createSkill("Java", 65)}
-          {createSkill("JavaScript", 60)}
+          <FillBar label={"CSS"} fill={70} />
+          <FillBar label={"Java"} fill={65} />
+          <FillBar label={"JavaScript"} fill={60} />
         </FadeSection>
       </div>
-    </div>
+    </Skills>
   );
 };

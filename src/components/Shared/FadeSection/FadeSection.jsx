@@ -1,7 +1,23 @@
 import React from "react";
-import "./FadeSection.css";
+import styled from "styled-components";
+import styleVars from "styleVars";
 
-function FadeSection(props) {
+const Container = styled.div``
+
+const FadeSection = styled.div`
+  opacity: ${props => props.visible ? 1 : 0};
+  transform: ${props => props.visible ? `none` : `translateY(10vh)`};
+  visibility: ${props => props.visible ? `visible` : `hidden`};
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+
+  @media screen and (max-width: ${styleVars.mobileWidth}) {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+`
+
+export default props => {
   const [isVisible, setVisible] = React.useState(false);
   const [numVisible, setNumVisible] = React.useState(1);
   const triggered = React.useRef(false);
@@ -38,15 +54,12 @@ function FadeSection(props) {
   let i = 0;
 
   return (
-    <div className={"fade-in-section-container " + (props.className ?? "")} ref={domRef}>
+    <Container className={props.className ?? ""} ref={domRef}>
       {React.Children.map(props.children, child => (
-        // <div className={"fade-in-section" + ((isVisible && i++ < numVisible) ? " fade-in-section_is-visible" : "")}>
-        <div className={`fade-in-section${isVisible && i++ < numVisible ? "_is-visible" : ""}`}>
+        <FadeSection visible={isVisible && i++ < numVisible}>
           {child}
-        </div>
+        </FadeSection>
       ))}
-    </div>
+    </Container>
   );
 }
-
-export default FadeSection;

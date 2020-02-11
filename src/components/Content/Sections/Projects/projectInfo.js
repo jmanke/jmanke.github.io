@@ -1,9 +1,9 @@
-import mineLifeVRImg from "../../../../images/MineLife-VR.jpg";
-import mineLifeHololensImg from "../../../../images/MineLife-Hololens.jpg";
-import forestOpsImg from "../../../../images/Forest-Ops.png";
-import voxelImg from "../../../../images/voxel-engine.png";
-import sudokuImg from "../../../../images/sudoku.jpg";
-import galaxyImg from "../../../../images/galaxy.jpg";
+import mineLifeVRImg from "images/MineLife-VR.jpg";
+import mineLifeHololensImg from "images/MineLife-Hololens.jpg";
+import forestOpsImg from "images/Forest-Ops.png";
+import voxelImg from "images/voxel-engine.png";
+import sudokuImg from "images/sudoku.jpg";
+import galaxyImg from "images/galaxy.jpg";
 
 const projectInfo = [
   {

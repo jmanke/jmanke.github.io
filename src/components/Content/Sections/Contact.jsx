@@ -1,13 +1,11 @@
 import React from "react";
-import ContactForm from "../../Shared/ContactForm/ContactForm";
-import FadeSection from "../../Shared/FadeSection/FadeSection";
+import ContactForm from "components/Shared/ContactForm/ContactForm";
+import FadeSection from "components/Shared/FadeSection/FadeSection";
 
 export default () => {
   return (
-    <div className="contact">
-      <FadeSection>
-        <ContactForm />
-      </FadeSection>
-    </div>
+    <FadeSection>
+      <ContactForm />
+    </FadeSection>
   );
 };
