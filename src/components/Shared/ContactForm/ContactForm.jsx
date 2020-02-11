@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Email from "../smtp.js";
+import Button from "components/Shared/Button/Button";
 
 //TODO: Move logic to another component and clean this up.
 
@@ -72,15 +73,8 @@ const InvalidText = styled.p`
 const SubmitButtonContainer = styled.div`
   height: 5rem;
   display: flex;
-`
-
-const SubmitButton = styled.button`
-  display: inline-block;
-  cursor: pointer;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  padding: 0.5rem 2rem;
+  padding-top: 1em;
+  justify-content: flex-end;
 `
 
 const SubmitStatus = styled.p`
@@ -159,7 +153,7 @@ export default props => {
       />
       {!formProps.current.email.isValid ? (
         <InvalidText>
-          * Please Enter a Valid Email
+          * Please enter a valid email
         </InvalidText>
       ) : null}
       <Title>Message</Title>
@@ -179,7 +173,7 @@ export default props => {
       />
       {!formProps.current.message.isValid ? (
         <InvalidText>
-          * Please Enter a Message
+          * Please enter a message
         </InvalidText>
       ) : null}
       <SubmitButtonContainer>
@@ -192,8 +186,7 @@ export default props => {
                 : "Send Failed..."}
           </SubmitStatus>
         )}
-        <SubmitButton
-          className={"btn"}
+        <Button
           onClick={() => {
             if (
               messageStatus === messageStatusState.sent ||
@@ -232,7 +225,7 @@ export default props => {
           }}
         >
           Send
-        </SubmitButton>
+        </Button>
       </SubmitButtonContainer>
     </ContactForm>
   );

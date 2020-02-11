@@ -3,7 +3,6 @@ import styled from "styled-components";
 import StyleVars from "styleVars";
 
 const ToolTip = styled.div`
-  visibility: ${props => props.visible ? `initial` : `hidden`};
   position: fixed;
   text-align: center;
   top: ${props => props.position.top + "px"};

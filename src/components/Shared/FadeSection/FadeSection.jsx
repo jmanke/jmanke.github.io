@@ -30,6 +30,7 @@ export default props => {
 
   React.useEffect(() => {
     if (triggered.current) return;
+
     triggered.current = true;
 
     const effectDomRef = domRef.current;

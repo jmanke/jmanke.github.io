@@ -41,6 +41,10 @@ const Time = styled.div`
 const DateText = styled.h4`
   font-size: 1em;
   color: #696969;
+
+  @media screen and (max-width: ${styleVars.mobileWidth}) {
+    text-align: right;
+  }
 `
 
 const Node = styled.div`

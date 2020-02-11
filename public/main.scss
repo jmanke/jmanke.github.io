@@ -208,84 +208,6 @@ p {
   color: $text-color-dark;
 }
 
-// .nav-item {
-//   position: relative;
-//   margin: 0;
-//   padding: 1rem 0.625rem;
-//   color: $accent-color;
-//   text-decoration: none;
-//   text-align: center;
-//   font-size: 1.3rem;
-
-//   @media screen and (max-width: $mobile-width) {
-//     display: initial;
-//   }
-
-//   &:hover {
-//     color: lighten($accent-color, 80%);
-//   }
-
-//   &.active {
-//     color: lighten($accent-color, 80%);
-//   }
-
-//   &__active-bar {
-//     position: absolute;
-//     margin-top: auto;
-//     margin-bottom: auto;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     width: 0.25rem;
-//     height: 100%;
-//     background-color: $highlight-blue;
-//     transition: all 150ms linear;
-//     transform: scale(1);
-//     will-change: transform;
-
-//     &_hidden {
-//       transform: scale(0);
-//     }
-//   }
-
-//   &__text {
-//     display: none;
-//     padding-left: 0.5rem;
-
-//     @media screen and (max-width: $mobile-width) {
-//       display: initial;
-//     }
-//   }
-
-//   .nav-tooltip {
-//     position: fixed;
-//     text-align: center;
-//     top: 16%;
-//     left: $margin-left + 0.8rem;
-//     color: $heading-color-light;
-//     pointer-events: none;
-//     font-size: 0.8rem;
-//     border-radius: 0.5rem;
-//     background: $secondary-color;
-//     padding: 0.5rem;
-
-//     @media screen and (max-width: $mobile-width) {
-//       visibility: hidden;
-//     }
-
-//     &__arrow {
-//       content: "";
-//       position: absolute;
-//       top: 50%;
-//       right: 98%;
-//       margin-top: -0.375rem;
-//       border-width: 0.375rem;
-//       border-style: solid;
-//       border-color: transparent $secondary-color transparent transparent;
-//     }
-//   }
-// }
-
 .canvas-container {
   position: absolute;
   top: 0;
@@ -436,36 +358,6 @@ p {
   }
 }
 
-.skills {
-  &__technologies {
-    position: relative;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    .fill-circle {
-      margin: 1rem;
-    }
-
-    @media screen and (max-width: $mobile-width) {
-      margin: 4rem 0;
-    }
-  }
-
-  &__languages {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2em;
-
-    @media screen and (max-width: $mobile-width) {
-      grid-template-columns: 1fr;
-      width: 100%;
-      margin: auto;
-    }
-  }
-}
-
 .text-img-box {
   display: grid;
   grid-template-columns: 0.7fr 0.3fr;
@@ -524,46 +416,6 @@ p {
 }
 
 .project-card {
-  position: relative;
-  box-sizing: inherit;
-  overflow: hidden;
-
-  &__page {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    background-color: white;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 0 7px rgb(175, 207, 228);
-    overflow-x: clip;
-
-    &:hover {
-      transform: translateY(-0.5rem);
-      box-shadow: 0 0 10px rgb(175, 207, 228);
-
-      @media screen and (max-width: $mobile-width) {
-        transform: none;
-      }
-    }
-  }
-
-  &__txt-area {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    width: 80%;
-  }
-
-  &__img {
-    // border-radius: 7px 7px 0 0;
-    position: relative;
-    max-width: 100%;
-    max-height: 50%;
-  }
-
   &__footer {
     position: absolute;
     bottom: 0;
@@ -590,17 +442,6 @@ p {
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-  }
-
-  &__title {
-    color: $accent-blue;
-    margin: 1rem 0 0.5rem;
-  }
-
-  &__text {
-    margin: 0;
-    overflow-y: hidden;
-    color: #9b9b9b;
   }
 
   &__list {
