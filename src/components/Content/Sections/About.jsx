@@ -39,7 +39,7 @@ export default () => {
             icon={hobbyImg}
             text={
               "Playing video games is one of my favourite hobbies. Some of my favourite \
-        games are Kerbal Space Program, Halo, The Witcher 3, and The Outer Wilds."
+        games are Kerbal Space Program, Halo, The Witcher 3, Minecraft and The Outer Wilds."
             }
           />
         </div>
