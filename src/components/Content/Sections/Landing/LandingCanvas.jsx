@@ -1,9 +1,18 @@
 import React, { useRef, useState } from "react";
+import styled from "styled-components";
 import { Vector2 } from "../../../Shared/Vector2";
 
+const CanvasContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
+
+const Canvas = styled.canvas``
+
 // TODO: Convert this into a generic module
-// TODO: Make asynchronous to prevent blocking the main thread
-// TODO: Currently rendering lines twice... need to fix that
 
 const density = 3;
 const hardMaxParticles = 150;
@@ -21,17 +30,6 @@ const pingTimeout = 100;
 const pingSpeed = 3;
 const pingLineWidth = 3;
 const particleColor = "#71D5FF";
-
-// function floatToInt(num) {
-//   // With a bitwise or.
-//   let rounded = (0.5 + num) | 0;
-//   // A double bitwise not.
-//   rounded = ~~ (0.5 + num);
-//   // Finally, a left bitwise shift.
-//   rounded = (0.5 + num) << 0;
-
-//   return rounded;
-// }
 
 function createParticle(canvas, createOnBorder) {
   let position = new Vector2(
@@ -348,20 +346,18 @@ export default () => {
   });
 
   return (
-    <div
-      className="canvas-container"
+    <CanvasContainer
       onMouseMove={onMouseMove}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onClick={onClick}
       ref={canvasContainerRef}
     >
-      <canvas
-        className="landing-page__canvas"
+      <Canvas
         width={canvasDim.x}
         height={canvasDim.y}
         ref={canvasRef}
       />
-    </div>
+    </CanvasContainer>
   );
 };

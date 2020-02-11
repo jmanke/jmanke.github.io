@@ -5,7 +5,7 @@ const InfoCard = styled.div`
   width: ${props => props.primary ? `22em` : `18em`};
   height: ${props => props.primary ? '26.84em' : `21.96em`};
   background-color: white;
-  box-shadow: 0 0 7px rgb(175, 207, 228);
+  box-shadow: 0 0 12px rgb(175, 207, 228);
   display: flex;
   flex-direction: column;
   transition: all 0.2s ease-in-out;
@@ -55,6 +55,7 @@ const TextContainer = styled.div`
 const Description = styled.p`
   margin: auto;
   text-align: center;
+  font-size: 0.9em;
   padding: 5%;
   height: 85%;
   color: ${props => props.primary ? `#1C6FA2` : `#FFFFFF`};
