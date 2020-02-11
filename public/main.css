@@ -917,8 +917,9 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  display: -ms-grid;
-  display: grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media screen and (max-width: 767px) {
