@@ -1,6 +1,9 @@
 import React from "react";
-import FadeSection from "../../../Shared/FadeSection/FadeSection";
-import Timeline from "../../../Shared/Timeline/Timeline";
+import styled from "styled-components";
+import FadeSection from "components/Shared/FadeSection/FadeSection";
+import Timeline from "components/Shared/Timeline/Timeline";
+
+const Education = styled.div``
 
 function createTimelineEvent(title, year, month, description) {
   return {
@@ -13,7 +16,7 @@ function createTimelineEvent(title, year, month, description) {
 
 export default () => {
   return (
-    <div className="education">
+    <Education>
       <FadeSection>
         <Timeline
           range={[2012, 2020]}
@@ -57,6 +60,6 @@ export default () => {
           ]}
         />
       </FadeSection>
-    </div>
+    </Education>
   );
 };

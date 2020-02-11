@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import styleVars from "styleVars";
 
 const InfoCard = styled.div`
   width: ${props => props.primary ? `22em` : `18em`};
@@ -16,7 +15,7 @@ const InfoCard = styled.div`
     box-shadow: 0 0 10px rgb(175, 207, 228);
   }
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     height: fit-content;
   }
 `
@@ -48,7 +47,7 @@ const TextContainer = styled.div`
   background-color: ${props => props.primary ? `#FFFFFF` : `#1C6FA2`};
   display: flex;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     height: fit-content;
   }
 `

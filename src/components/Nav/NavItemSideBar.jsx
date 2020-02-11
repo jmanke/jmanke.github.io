@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import StyleVars from "styleVars";
 import Tooltip from "components/Shared/Tooltip";
 import FaLinkIcon from "components/Shared/FaLinkIcon";
 
@@ -11,7 +10,7 @@ const NavItem = styled.a`
   font-size: 1em;
   padding: 0.5em;
 
-  @media screen and (max-width: ${StyleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 `
@@ -25,7 +24,7 @@ const ActiveBar = styled.div`
   width: 0.15em;
   height: 100%;
   transform: ${props => props.sectionActive ? "none" : "scale(0)"};
-  background-color: ${StyleVars.highlightBlue};
+  background-color: var(--highlight-blue);
   transition: all 0.25s ease-out;
 `
 

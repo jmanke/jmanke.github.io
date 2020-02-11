@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import navLinks from "../navLinks";
 import NavItem from "./NavItem";
 import NavItemSideBar from "./NavItemSideBar";
 import NavItemSideMenu from "./NavItemSideMenu";
-import styled from "styled-components";
-import styleVars from "styleVars";
-import logo from "../../images/logo.png";
-import Events from "../Shared/Events";
+import logo from "images/logo.png";
+import Events from "components/Shared/Events";
 
 // TODO: Revisit this and break it into smaller components. This is a relic of when I 
 // first started learning React. 
@@ -32,20 +31,20 @@ const Nav = styled.nav`
   font-size: 1.25em;
   z-index: 10;
   flex-direction: column;
-  width: ${styleVars.marginLeft};
+  width: var(--margin-left);
   height: 100vh;
-  background-color: ${styleVars.secondaryColor};
+  background-color: var(--secondary-color);
   border-style: none solid none none;
   border-width: 1px;
-  border-color: ${styleVars.textColorLight};
+  border-color: var(--secondary-color);
   overflow-y: auto;
   overflow-x: visible;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     flex-direction: row;
-    min-width: ${styleVars.minwidth};
+    min-width: 200px;
     width: 100%;
-    height: ${styleVars.marginTop};
+    height: var(--margin-top);
     border-style: none none solid none;
     border-width: 1px;
     overflow: initial;
@@ -53,7 +52,7 @@ const Nav = styled.nav`
 `
 
 const MenuToggle = styled.div`
-  color: ${styleVars.accentColor};
+  color: var(--accent-color);
   margin-right: auto;
   filter: brightness(120%);
   padding-left: 0.5em;
@@ -66,11 +65,11 @@ const MenuToggle = styled.div`
     outline: none;
   }
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     display: initial;
   }
 
-  @media screen and (max-width: ${styleVars.minwidth}) {
+  @media screen and (max-width: 200px) {
     display: initial;
     padding-left: 0.1em;
   }
@@ -82,7 +81,7 @@ const NavStart = styled.div`
   flex-direction: inherit;
   background-color: inherit;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     padding-top: initial;
     justify-content: center;
     align-items: center;
@@ -92,7 +91,7 @@ const NavStart = styled.div`
     margin: auto;
     margin-bottom: 1em;
 
-    @media screen and (max-width: ${styleVars.mobileWidth}) {
+    @media screen and (max-width: 767px) {
       display: none;
     }
   }
@@ -112,7 +111,7 @@ const NavMiddle = styled.div`
     display: none;
     pointer-events: initial;
 
-    @media screen and (max-width: ${styleVars.mobileWidth}) {
+    @media screen and (max-width: 767px) {
       padding: 0;
       display: initial;
     }
@@ -131,7 +130,7 @@ const NavEnd = styled.div`
   margin-top: auto;
   margin-bottom: 0.75em;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     margin-left: auto;
     margin-top: initial;
     margin-right: 1em;
@@ -154,15 +153,15 @@ const NavSideBar = styled.div`
 
   border-style: none solid none none;
   border-width: 1px;
-  border-color: ${styleVars.textColorLight};
+  border-color: var(--text-color);
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     display: block;
   }
 `
 
 const NavSideBarHeader = styled.div`
-  height: ${styleVars.marginTop};
+  height: var(--margin-top);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,14 +1,13 @@
 import React from "react";
 import styled from 'styled-components';
-import styleVars from "styleVars";
 import NavItem from "components/Nav/NavItem";
 import resume from "resources/ResumeJeffManke.pdf"
 
 const Footer = styled.footer`
   position: absolute;
-  left: ${styleVars.marginLeft}; 
+  left: var(--margin-left); 
   right: 0;
-  background-color: ${styleVars.primaryColorDark};
+  background-color: var(--primary-color-dark);
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -16,7 +15,7 @@ const Footer = styled.footer`
   justify-content: center;
   padding: 2rem 0;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     left: 0;
   }
 `
@@ -32,30 +31,30 @@ const FlexContainer = styled.div`
 
 const Email = styled.a`
   align-self: center;
-  color: ${styleVars.highlightBlue};
+  color: var(--highlight-blue);
   text-decoration: none;
 
   &:hover {
-    color: lighten(${styleVars.highlightBlue}, 10%);
+    color: lighten(var(--highlight-blue), 10%);
     text-decoration: underline;
   }
 
   &:active {
-    color: ${styleVars.highlightBlue};
+    color: var(--highlight-blue);
   }
 `
 
 const EmailLabel = styled.p`
   align-self: center;
   padding-right: 0.5rem;
-  color: ${styleVars.accentColor};
+  color: var(--accent-color);
 `
 
 const Copyright = styled.i`
   font-size: 0.8em;
   opacity: 0.75;
   margin-top: 0.5rem;
-  color: $accent-color;
+  color: var(--accent-color);
 `
 
 export default () => {

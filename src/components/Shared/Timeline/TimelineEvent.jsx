@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import styleVars from "styleVars";
 import TimelineEventInfoBox from "./TimelineEventInfoBox";
 
 const TimelineEvent = styled.div`
@@ -19,7 +18,7 @@ const TimelineEvent = styled.div`
     transform: translateY(-5px);
   }
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: 0.2fr 0.2fr 1fr;
     direction: ltr;
     text-align: right;
@@ -42,7 +41,7 @@ const DateText = styled.h4`
   font-size: 1em;
   color: #696969;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     text-align: right;
   }
 `

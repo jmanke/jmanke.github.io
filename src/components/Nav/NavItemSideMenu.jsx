@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import StyleVars from "styleVars";
 import FaLinkIcon from "components/Shared/FaLinkIcon";
 
 const NavItem = styled.a`
@@ -15,7 +14,7 @@ const NavItem = styled.a`
   padding-left: 0.75em;
   
   border-bottom-style: solid;
-  border-bottom-color: ${StyleVars.textColorLight};
+  border-bottom-color: var(--text-color);
   border-bottom-width: 1px;
 
   &:hover {
@@ -24,7 +23,7 @@ const NavItem = styled.a`
 `
 
 const Label = styled.p `
-  color: ${StyleVars.accentColor};
+  color: var(--accent-color);
   padding: 0.5em;
 `
 
@@ -36,7 +35,7 @@ const ActiveBar = styled.div`
   width: 0.15em;
   height: 100%;
   transform: ${props => props.sectionActive ? "none" : "scale(0)"};
-  background-color: ${StyleVars.highlightBlue};
+  background-color: var(--highlight-blue);
   transition: all 0.25s ease-out;
 `
 

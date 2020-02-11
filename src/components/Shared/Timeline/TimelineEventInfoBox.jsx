@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import styleVars from "styleVars";
 
 const TimelineEventInfoBox = styled.div`
   background-color: white;

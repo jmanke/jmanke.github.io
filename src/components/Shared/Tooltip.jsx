@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import StyleVars from "styleVars";
 
 const ToolTip = styled.div`
   position: fixed;
@@ -11,7 +10,7 @@ const ToolTip = styled.div`
   pointer-events: none;
   font-size: 0.8em;
   border-radius: 0.5em;
-  background: ${StyleVars.secondaryColor};
+  background: var(--secondary-color);
   padding: 0.5em;
   transition: opacity 0.15s ease;
   opacity: ${props => props.visible ? `1` : `0`};
@@ -25,7 +24,7 @@ const ToolTipArrow = styled.div`
   margin-top: -0.375em;
   border-width: 0.375em;
   border-style: solid;
-  border-color: transparent ${StyleVars.secondaryColor} transparent transparent;
+  border-color: transparent var(--secondary-color) transparent transparent;
 `
 
 export default props => {

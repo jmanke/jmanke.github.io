@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import styleVars from "styleVars";
 import FadeSection from "components/Shared/FadeSection/FadeSection";
 import TimelineEvent from "./TimelineEvent";
 
@@ -20,7 +19,7 @@ const Timeline = styled.div`
   -ms-user-select: none;
   user-select: none;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     width: 100%;
   }
 `
@@ -35,7 +34,7 @@ const LineContainer = styled.div`
   grid-template-columns: 1fr 0.15fr 1fr;
   pointer-events: none;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     grid-template-columns: 0.2fr 0.2fr 1fr;
   }
 `

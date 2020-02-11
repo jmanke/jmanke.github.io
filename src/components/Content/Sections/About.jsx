@@ -5,14 +5,13 @@ import InfoCard from "components/Shared/InfoCard/InfoCard";
 import developmentImg from "images/monitor.svg";
 import manImg from "images/man.svg";
 import hobbyImg from "images/coin.svg";
-import styleVars from "styleVars";
 
 const InfoCardsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: ${styleVars.tabletWidth}) {
+  @media screen and (max-width: 1024px) {
     flex-wrap: wrap;
     
     .info-card__development{
@@ -31,7 +30,7 @@ const InfoCardsContainer = styled.div`
     }
   }
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     flex-wrap: wrap;
     
     .info-card__development{

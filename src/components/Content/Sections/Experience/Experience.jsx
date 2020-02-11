@@ -1,18 +1,21 @@
 import React from "react";
-import ResumeItem from "../../ResumeItem";
+import styled from "styled-components";
+import ResumeItem from "components/Content/ResumeItem";
 import experienceInfo from "./experienceInfo";
-import FadeSection from "../../../Shared/FadeSection/FadeSection";
+import FadeSection from "components/Shared/FadeSection/FadeSection";
+
+const Experience = styled.div``
 
 export default () => {
   let i = 0;
 
   return (
-    <div className="experience">
+    <Experience>
         {experienceInfo.map(info => (
           <FadeSection key={i++}>
             <ResumeItem {...info} />
           </FadeSection>
         ))}
-    </div>
+    </Experience>
   );
 };

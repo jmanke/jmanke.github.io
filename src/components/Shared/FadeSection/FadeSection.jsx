@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import styleVars from "styleVars";
 
 const Container = styled.div``
 
@@ -10,7 +9,7 @@ const FadeSection = styled.div`
   visibility: ${props => props.visible ? `visible` : `hidden`};
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 
-  @media screen and (max-width: ${styleVars.mobileWidth}) {
+  @media screen and (max-width: 767px) {
     opacity: 1;
     transform: none;
     visibility: visible;

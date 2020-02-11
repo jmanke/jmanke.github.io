@@ -1,26 +1,58 @@
 import React from "react";
-import Events from "../Shared/Events";
-import Heading from "./Heading";
-import FadeSection from "../Shared/FadeSection/FadeSection";
+import styled from "styled-components";
+import Events from "components/Shared/Events";
+import FadeSection from "components/Shared/FadeSection/FadeSection";
 
-function buildThresholdList() {
-  let thresholds = [];
-  let numSteps = 20;
+const Section = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10rem;
+  background-color: ${props => props.bgColor ? props.bgColor : `#FFFFFF`}
+`
 
-  for (let i = 1.0; i <= numSteps; i++) {
-    let ratio = i / numSteps;
-    thresholds.push(ratio);
+const SectionContainer = styled.div`
+  width: 90%;
+  max-width: 1104px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 767px) {
+    padding: var(--margin-vertical-mobile) 0;
   }
+`
 
-  thresholds.push(0);
-  return thresholds;
-}
+const Heading = styled.h1`
+  position: relative;
+  color: ${props => props.color ? props.color : `#3b3b3b`};
+  text-align: center;
+  padding: 0;
+  margin: 5rem 0 8rem 0;
+
+  @media screen and (max-width: 767px) {
+    margin: 5rem 0 3rem 0;
+  }
+`
 
 export default (props) => {
   const sectionRef = React.useRef();
 
-  React.useEffect( () => {
+  React.useEffect(() => {
     const effectSectionRef = sectionRef.current;
+
+    function buildThresholdList() {
+      let thresholds = [];
+      let numSteps = 20;
+
+      for (let i = 1.0; i <= numSteps; i++) {
+        let ratio = i / numSteps;
+        thresholds.push(ratio);
+      }
+
+      thresholds.push(0);
+      return thresholds;
+    }
 
     let options = {
       root: null,
@@ -28,7 +60,7 @@ export default (props) => {
       threshold: buildThresholdList()
     }
 
-    const observer = new IntersectionObserver( entries => {
+    const observer = new IntersectionObserver(entries => {
       Events.eventEmitter.dispatch("section_update", [props.title, entries[0]]);
     }, options);
     observer.observe(sectionRef.current);
@@ -36,14 +68,16 @@ export default (props) => {
   }, [props.title]);
 
   return (
-    <section className={"section " + props.bgColor + " " + (props.className ?? "")} ref={sectionRef}>
-      <div className="link-id" id={props.title} />
+    <Section bgColor={props.bgColor} className={props.className ?? ""} ref={sectionRef}>
+      <div id={props.title} />
       <FadeSection>
-        <Heading title={props.title} />
+        <Heading color={props.headingColor}>
+          {props.title}
+        </Heading>
       </FadeSection>
-      <div className="section__container">
+      <SectionContainer>
         {props.children}
-      </div>
-    </section>
+      </SectionContainer>
+    </Section>
   )
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import StyleVars from "styleVars";
 import FaLinkIcon from "components/Shared/FaLinkIcon";
 
 const NavItem = styled.a`

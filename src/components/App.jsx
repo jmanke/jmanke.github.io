@@ -4,6 +4,7 @@ import Content from "./Content/Content";
 import Footer from "./Footer";
 import LoadingScreen from "./LoadingScreen";
 import Events from "./Shared/Events";
+import GlobalStyles from "./GlobalStyles";
 
 React.windowIsLoaded = React.windowIsLoaded ?? false;
 
@@ -17,6 +18,7 @@ export default () => {
 
   return (
   <div className="app">
+    <GlobalStyles />
     <LoadingScreen />
     <Nav />
     <Content />
