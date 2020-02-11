@@ -105,7 +105,7 @@ export default props => {
           icon={props.projectLink.faIcon}
           href={props.projectLink.href}
           size={`1.5em`}
-          color={`#3b3b3b`}
+          color={`#696969`}
         /> : null}
       </Footer>
       <FocusPanel heading={props.title} panelVisible={panelVisible} onClose={() => setPanelVisible(false)}>

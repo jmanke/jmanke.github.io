@@ -60,7 +60,7 @@ export default props => {
         <div></div>
       </LineContainer>
       <FadeSection delay={200}>
-        {props.timelineEvents.reverse().map( timelineEventInfo => <TimelineEvent id={i++} {...timelineEventInfo} />)}
+        {props.timelineEvents.reverse().map( timelineEventInfo => <TimelineEvent key={i} id={i++} {...timelineEventInfo} />)}
       </FadeSection>
     </Timeline>
   );

@@ -44,12 +44,14 @@ const Column = styled.div`
 `
 
 export default () => {
+  let i = 0;
+
   return (
     <Projects>
       <Grid>
         <Columns delay={200}>
           {projectInfo.map(info => (
-            <Column>
+            <Column key={i++}>
               <Card {...info} />
             </Column>
           ))}

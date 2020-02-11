@@ -8,7 +8,7 @@ const NavItem = styled.a`
   text-decoration: none;
   text-align: center;
   font-size: 1em;
-  padding: 0.5em;
+  padding: 0.75em;
 
   @media screen and (max-width: 767px) {
     display: none;
