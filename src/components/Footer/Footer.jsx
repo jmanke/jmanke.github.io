@@ -35,7 +35,7 @@ const Email = styled.a`
   text-decoration: none;
 
   &:hover {
-    color: lighten(var(--highlight-blue), 10%);
+    filter: brightness(130%);
     text-decoration: underline;
   }
 

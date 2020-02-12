@@ -23,6 +23,12 @@ const Column = styled.div`
   max-width: 20.5rem;
   max-height: 25rem;
 
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-7px);
+  }
+
   @media screen and (max-width: 1024px) {
     width: 35vw;
     height: 42.7vw;
@@ -40,6 +46,10 @@ const Column = styled.div`
     min-height: 21.96rem;
     max-width: 20.5rem;
     max-height: 25rem;
+
+    &:hover {
+      transform: none;
+    }
   }
 `
 

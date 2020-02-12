@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ResumeItem from "components/Content/ResumeItem";
+import ResumeItem from "components/Shared/ResumeItem/ResumeItem";
 import experienceInfo from "./experienceInfo";
 import FadeSection from "components/Shared/FadeSection/FadeSection";
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import navLinks from "../navLinks";
+import navLinks from "./navLinks";
 import NavItem from "./NavItem";
 import NavItemSideBar from "./NavItemSideBar";
 import NavItemSideMenu from "./NavItemSideMenu";
