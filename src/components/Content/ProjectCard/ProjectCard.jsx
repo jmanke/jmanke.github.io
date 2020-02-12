@@ -69,9 +69,9 @@ const PanelTitle = styled.h4`
   text-align: left;
   color: var(--accent-blue);
 
-  @media screen and (max-width: 767px) {
+  /* @media screen and (max-width: 767px) {
     text-align: center;
-  }
+  } */
 `
 
 const AchievementsList = styled.ul`

@@ -12,11 +12,15 @@ const NavItem = styled.a`
   display: flex;
   align-items: center;
   padding-left: 0.75em;
-  filter: ${props => props.active ? `brightness(150%)` : `none`};
+  background-color: ${props => props.active ? `#444444` : `var(--secondary-color)`};
   
   border-bottom-style: solid;
   border-bottom-color: var(--text-color);
   border-bottom-width: 1px;
+
+  &:hover {
+    background-color: #444444;
+  }
 `
 
 const Label = styled.p `
