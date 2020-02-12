@@ -1,46 +1,67 @@
 import React from "react";
-import FadeSection from "../FadeSection/FadeSection"
-import "./Timeline.css";
+import styled from "styled-components";
+import FadeSection from "components/Shared/FadeSection/FadeSection";
+import TimelineEvent from "./TimelineEvent";
 
-const eventInfoBox = (title, description) => (
-  <div className="timeline__event-info-box">
-    <h4 className="timeline__event-info-box-title">
-      {title}
-    </h4>
-    <p className="timeline__event-info-box-description">
-      {description}
-    </p>
-  </div>
-);
+const Timeline = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: auto;
+  width: 70%;
+  height: fit-content;
+  z-index: 1;
 
-const timelineEvent = (timelineEventInfo) => (
-  <div key={timelineEventInfo.key} className={"timeline__event" + (timelineEventInfo.key % 2 === 0 ? "" : " timeline__event_reverse")}>
-    <div className="timeline__event-item">
-      <div className="timeline__event-time">
-        <h4 className="timeline__txt-date">{timelineEventInfo.month + " " + timelineEventInfo.year}</h4>
-      </div>
-    </div>
-    <div className="timeline__event-item">
-      <div className="timeline__event-node" />
-    </div>
-    <div className="timeline__event-item">
-      {eventInfoBox(timelineEventInfo.title, timelineEventInfo.description)}
-    </div>
-  </div>
-);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+`
+
+const LineContainer = styled.div`
+  display: grid;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  grid-template-columns: 1fr 0.15fr 1fr;
+  pointer-events: none;
+
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 0.2fr 0.2fr 1fr;
+  }
+`
+
+const Line = styled.div`
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: 0.15em;
+  background-color: #1C6FA2;
+  z-index: -1;
+`
 
 export default props => {
+  let i = 0;
+
   return (
-    <div className="timeline">
-      <div className="timeline__line-container">
+    <Timeline>
+      <LineContainer>
         {/* mimic the behaviour of the timeline grid to correctly place the line */}
         <div></div> 
-        <div className="timeline__line" />
+        <Line />
         <div></div>
-      </div>
+      </LineContainer>
       <FadeSection delay={200}>
-        {props.timelineEvents.reverse().map( timelineEventInfo => timelineEvent(timelineEventInfo))}
+        {props.timelineEvents.reverse().map( timelineEventInfo => <TimelineEvent key={i} id={i++} {...timelineEventInfo} />)}
       </FadeSection>
-    </div>
+    </Timeline>
   );
 };
