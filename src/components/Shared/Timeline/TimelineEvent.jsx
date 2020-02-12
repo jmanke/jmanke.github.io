@@ -18,7 +18,7 @@ const TimelineEvent = styled.div`
     transform: translateY(-5px);
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: var(--mobile-width)) {
     grid-template-columns: 0.2fr 0.2fr 1fr;
     direction: ltr;
     text-align: right;
@@ -41,7 +41,7 @@ const DateText = styled.h4`
   font-size: 1em;
   color: #696969;
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: var(--mobile-width)) {
     text-align: right;
   }
 `
@@ -50,7 +50,7 @@ const Node = styled.div`
   margin: auto;
   width: 1rem;
   height: 1rem;
-  background-color: #49dede;
+  background-color: ${props => props.hovering ? `var(--highlight-blue)` : `#49dede`}; ;
 
   border-radius: 100%;
   border-color: white;
@@ -62,16 +62,17 @@ const Node = styled.div`
 
 export default props => {
   const reverse = props.id % 2 === 0;
+  const [hovering, setHovering] = React.useState(false);
 
   return (
-    <TimelineEvent key={props.id} reverse={reverse}>
+    <TimelineEvent key={props.id} reverse={reverse} onMouseEnter={() => setHovering(true)} onMouseLeave={() => setHovering(false)}>
       <Item>
         <Time reverse={reverse}>
           <DateText>{props.month + " " + props.year}</DateText>
         </Time>
       </Item>
       <Item>
-        <Node />
+        <Node hovering={hovering} />
       </Item>
       <Item>
         {<TimelineEventInfoBox title={props.title} description={props.description} />}
