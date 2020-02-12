@@ -160,6 +160,19 @@ const NavSideBar = styled.div`
   }
 `
 
+const ShadowScreen = styled.div`
+  position: fixed;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: initial;
+  }
+`
+
 const NavSideBarHeader = styled.div`
   height: var(--margin-top);
   display: flex;
@@ -230,12 +243,12 @@ export default () => {
           {navLogo()}
         </NavSideBarHeader>
         {internalLinks.map(link =>
-          <NavItemSideMenu
+          <NavItemSideMenu onClick={onMenuHide}
             {...link}
           />
         )}
       </NavSideBar>
-      {sidebarActive ? <div className="shadow-screen" onClick={onMenuHide}></div> : null}
+      {sidebarActive ? <ShadowScreen onClick={onMenuHide} /> : null}
     </Nav>
   );
 }

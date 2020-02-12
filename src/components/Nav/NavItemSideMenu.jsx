@@ -12,14 +12,11 @@ const NavItem = styled.a`
   display: flex;
   align-items: center;
   padding-left: 0.75em;
+  filter: ${props => props.active ? `brightness(150%)` : `none`};
   
   border-bottom-style: solid;
   border-bottom-color: var(--text-color);
   border-bottom-width: 1px;
-
-  &:hover {
-    color: white;
-  }
 `
 
 const Label = styled.p `
@@ -41,7 +38,7 @@ const ActiveBar = styled.div`
 
 export default props => {
   return (
-    <NavItem href={props.href}>
+    <NavItem onClick={props.onClick} active={props.sectionActive} href={props.href}>
       <FaLinkIcon active={props.sectionActive} icon={props.icon} />
       <Label>{props.title}</Label>
       <ActiveBar sectionActive={props.sectionActive} />
