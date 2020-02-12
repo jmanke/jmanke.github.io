@@ -6,7 +6,7 @@ import developmentImg from "images/monitor.svg";
 import manImg from "images/man.svg";
 import hobbyImg from "images/coin.svg";
 
-const InfoCardsContainer = styled(FadeSection)`
+const InfoCardsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,42 +49,44 @@ const InfoCardsContainer = styled(FadeSection)`
 
 export default () => {
   return (
-    <InfoCardsContainer delay={200}>
-      <InfoCard
-        className="info-card__development"
-        title={"Development"}
-        secondary={true}
-        icon={developmentImg}
-        text={
-          "Whether its writing efficient, multi-threaded \
+    <FadeSection>
+      <InfoCardsContainer>
+        <InfoCard
+          className="info-card__development"
+          title={"Development"}
+          secondary={true}
+          icon={developmentImg}
+          text={
+            "Whether its writing efficient, multi-threaded \
             C# or C++ code, or front-end with JavaScript and React, \
             I love taking on new challenges and solving problems."
-        }
-      />
-      <InfoCard
-        className="info-card__about-me"
-        title={"About Me"}
-        icon={manImg}
-        text={
-          "My name is Jeff Manke and I'm a Software Developer \
+          }
+        />
+        <InfoCard
+          className="info-card__about-me"
+          title={"About Me"}
+          icon={manImg}
+          text={
+            "My name is Jeff Manke and I'm a Software Developer \
           living in Victoria, BC. I have a BSc, Double Major \
           in Computer Science and Economics from the Univeristy of Victoria. \
           Since taking Computer Science as a second major, I \
           spend most of my time programming and learning new \
           technologies."
-        }
-        primary
-      />
-      <InfoCard
-        className="info-card__hobbies"
-        title={"Hobbies"}
-        secondary={true}
-        icon={hobbyImg}
-        text={
-          "Playing video games is one of my favourite hobbies. Some of my favourite \
+          }
+          primary
+        />
+        <InfoCard
+          className="info-card__hobbies"
+          title={"Hobbies"}
+          secondary={true}
+          icon={hobbyImg}
+          text={
+            "Playing video games is one of my favourite hobbies. Some of my favourite \
       games are Kerbal Space Program, Halo, The Witcher 3, and The Outer Wilds."
-        }
-      />
-    </InfoCardsContainer>
+          }
+        />
+      </InfoCardsContainer>
+    </FadeSection>
   );
 };
