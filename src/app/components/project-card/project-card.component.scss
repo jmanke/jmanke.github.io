@@ -1,0 +1,15 @@
+.card {
+  transition: all 0.2s ease-in-out;
+
+  @media screen and (min-width: 767px) {
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.card-footer {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem;
+}

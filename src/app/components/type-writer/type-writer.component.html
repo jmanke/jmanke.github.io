@@ -1,0 +1,10 @@
+<div class="type-writer">
+  <p>
+    {{ displayText }}
+    <span
+      class="type-writer_line"
+      [class]="index >= text.length - 1 ? 'blinking' : ''"
+      >|</span
+    >
+  </p>
+</div>

@@ -1,0 +1,87 @@
+.landing {
+  position: relative;
+
+  &.animated-particles-container {
+    width: 100vw;
+    height: 100vh;
+
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &_logo-container {
+    position: absolute;
+    display: flex;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  &_logo {
+    margin: auto;
+    text-align: center;
+
+    &-background {
+      pointer-events: all;
+      position: relative;
+      width: 35vw;
+      height: 35vw;
+      font-size: 1vw;
+      border-radius: 100%;
+      background: linear-gradient(to left, #3f9cd6, #49dede);
+
+      @media screen and (min-width: 1104px) {
+        width: 25rem;
+        height: 25rem;
+        font-size: 0.75rem;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 60vw;
+        height: 60vw;
+        font-size: 2vw;
+      }
+
+      @media screen and (orientation: landscape) {
+        width: 50vh;
+        height: 50vh;
+        font-size: 1.55vh;
+      }
+
+      &-circle {
+        position: absolute;
+        top: 2.5%;
+        left: 2.5%;
+        width: 90%;
+        height: 90%;
+        border-radius: 100%;
+        background-color: #1e1e1e;
+      }
+    }
+
+    &-text-container {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 0em;
+      right: 0em;
+      left: 0em;
+      bottom: 0em;
+      z-index: 10;
+    }
+
+    &-title {
+      margin-top: 35%;
+      font-size: 4em;
+      color: white;
+      margin-bottom: 0;
+    }
+
+    &-subtitle {
+      font-size: 1.75em;
+      color: rgb(83, 190, 68);
+    }
+  }
+}

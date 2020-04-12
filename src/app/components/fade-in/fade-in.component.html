@@ -1,0 +1,7 @@
+<div
+  class="fade-in"
+  [ngClass]="[fadeDir, fadeInShow ? 'fade-in_show' : 'fade-in_hide']"
+  #fadeInElement
+>
+  <ng-content #fadeInContent></ng-content>
+</div>

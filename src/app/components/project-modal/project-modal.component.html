@@ -1,0 +1,42 @@
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">{{ project && project.title }}</h5>
+    <button
+      type="button"
+      class="close"
+      data-dismiss="modal"
+      aria-label="Close"
+      (click)="close()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="card mb-3">
+      <div class="card-header">
+        <h6>Achievements</h6>
+      </div>
+      <ul *ngIf="project">
+        <li *ngFor="let achievement of project.achievements">
+          {{ achievement }}
+        </li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <h6>Technologies</h6>
+      </div>
+      <ul *ngIf="project">
+        <li *ngFor="let technology of project.technologies">
+          {{ technology }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div class="modal-footer">
+    <button type="button" class="btn btn-primary">Save changes</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+      Close
+    </button>
+  </div> -->
+</div>

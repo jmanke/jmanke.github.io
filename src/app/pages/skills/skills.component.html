@@ -1,0 +1,119 @@
+<app-section name="Software Skills" href="Skills">
+  <div class="container">
+    <div class="row">
+      <div class="col d-none d-lg-flex ml-auto">
+        <!-- TODO: Make into a component -->
+        <app-fade-in class="w-100 h-100" fadeLeft="true">
+          <app-element-pusher force="0.25">
+            <div
+              class="circle cs bg-dark rounded-circle d-flex border border-gray"
+            >
+              <h1 class="text-light text-center align-middle m-auto">C#</h1>
+            </div>
+          </app-element-pusher>
+
+          <app-element-pusher force="1">
+            <div
+              class="circle cpp bg-dark rounded-circle d-flex border border-gray"
+            >
+              <h2 class="text-light text-center align-middle m-auto">C++</h2>
+            </div>
+          </app-element-pusher>
+
+          <app-element-pusher force="0.75">
+            <div
+              class="circle js bg-dark rounded-circle d-flex border border-gray"
+            >
+              <h5 class="text-light text-center align-middle m-auto">
+                JavaScript
+              </h5>
+            </div>
+          </app-element-pusher>
+
+          <app-element-pusher force="0.75">
+            <div
+              class="circle html5 bg-dark rounded-circle d-flex border border-gray"
+            >
+              <h4 class="text-light text-center align-middle m-auto">
+                HTML5
+              </h4>
+            </div>
+          </app-element-pusher>
+
+          <app-element-pusher force="2">
+            <div
+              class="circle java bg-dark rounded-circle d-flex border border-gray"
+            >
+              <h5 class="text-light text-center align-middle m-auto">
+                Java
+              </h5>
+            </div>
+          </app-element-pusher>
+
+          <app-element-pusher force="0.5">
+            <div
+              class="circle css bg-dark rounded-circle d-flex border border-gray"
+            >
+              <h6 class="text-light text-center align-middle m-auto">
+                CSS3
+              </h6>
+            </div>
+          </app-element-pusher>
+        </app-fade-in>
+      </div>
+      <div class="col-lg-8">
+        <app-fade-in fadeRight="true">
+          <h1
+            class="section-title mt-0 mb-1 py-0 text-center text-md-left text-lg-right"
+          >
+            Software Skills
+          </h1>
+          <hr />
+          <p class="px-0">
+            I started my programming career as an AR/VR developer building data
+            visualization apps using Unity 3D and C#. In my spare time, I would
+            often build Unity plugins and components for fun. My interests then
+            shifted into web development where I learned React, Angular and .NET
+            Core.
+          </p>
+        </app-fade-in>
+      </div>
+    </div>
+    <div class="skill-stack-container">
+      <app-fade-in
+        *ngFor="let skillGroup of skillGroups; let i = index"
+        [attr.data-index]="i"
+        [fadeLeft]="i % 2 === 0"
+        [fadeRight]="i % 2 === 1"
+      >
+        <div class="card my-3">
+          <div class="card-header">
+            {{ skillGroup.name }}
+          </div>
+          <div class="card-body container">
+            <div class="row">
+              <div
+                class="col-sm-3 col-md-2 col-lg-1 d-flex"
+                *ngFor="let skill of skillGroup.skills"
+              >
+                <img
+                  class="d-none d-sm-block m-auto py-2 w-100"
+                  [src]="skill.src"
+                />
+                <div class="card w-100 d-block d-sm-none my-1">
+                  <div class="card-body">
+                    <p class="my-0">
+                      <span
+                        ><img [src]="skill.src" class="mr-3" width="30" /></span
+                      >{{ skill.name }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </app-fade-in>
+    </div>
+  </div>
+</app-section>

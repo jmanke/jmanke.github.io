@@ -1,0 +1,9 @@
+<div class="fill-bar">
+  <div class="d-flex">
+    <p class="fill-bar_label">{{ label }}</p>
+    <p class="fill-bar_percent">{{ fill + '%' }}</p>
+  </div>
+  <div class="fill-bar_bar-container">
+    <div *ngIf="showFill" class="fill-bar_bar" [style]="'width: ' + fill + '%'"></div>
+  </div>
+</div>

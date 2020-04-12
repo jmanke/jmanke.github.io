@@ -1,0 +1,31 @@
+<app-section name="My Journey" href="Journey">
+  <div class="container">
+    <div class="row">
+      <div class="col d-none d-lg-flex ml-auto">
+        <app-fade-in fadeLeft="true">
+          <img class="mr-auto w-75" src="assets/images/career.svg" />
+        </app-fade-in>
+      </div>
+      <div class="col-lg-8">
+        <app-fade-in fadeRight="true">
+          <h1 class="section-title mt-0 mb-1 py-0 text-center text-md-right">
+            My Journey
+          </h1>
+          <hr />
+          <p>
+            My journey through university started at UVic where I took on a BA
+            in Economics. Eventually, I found myself taking Computer Science
+            courses as electives, and found what I truly wanted to pursue. This
+            is the turning point where I pursued a BSc in Computer Science,
+            along side Economics. I graduated UVic in 2019, and continue my
+            passion for software development.
+          </p>
+        </app-fade-in>
+      </div>
+    </div>
+  </div>
+
+  <app-fade-in fadeLeft=true>
+    <app-timeline [timelineEvents]="timelineEvents"></app-timeline>
+  </app-fade-in>
+</app-section>

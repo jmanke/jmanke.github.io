@@ -1,0 +1,31 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-7 mx-auto">
+      <!-- Timeline -->
+      <ul class="timeline">
+        <li
+        *ngFor="let timelineEvent of timelineEvents; let i = index"
+        class="timeline-item bg-white rounded ml-3 p-4 shadow"
+        [ngClass]="hoveringIndex === i ? 'hover' : ''"
+        (mouseenter)="onTimelineItemMouseEnter(i)" (mouseleave)="onTimelineItemMouseLeave()"
+        [attr.data-index]="i"
+        >
+          <div class="timeline-arrow"></div>
+          <h2 class="h5 mb-0">{{ timelineEvent.title }}</h2>
+          <span class="small text-gray"
+            ><i class="fa fa-clock-o mr-1"></i
+            >{{
+              timelineEvent.date.toLocaleString('default', { month: 'long' }) +
+                ' ' +
+                timelineEvent.date.getUTCFullYear()
+            }}</span
+          >
+          <p class="text-small mt-2 font-weight-light">
+            {{ timelineEvent.description }}
+          </p>
+        </li>
+      </ul>
+      <!-- End -->
+    </div>
+  </div>
+</div>

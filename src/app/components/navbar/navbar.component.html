@@ -1,0 +1,38 @@
+<nav
+  class="navbar navbar-expand-lg navbar-dark bg-dark"
+  [class]="navbarVisible ? 'show' : 'hide'"
+>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    aria-controls="navbarTogglerDemo01"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="toggle()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [class]="toggleActive ? 'show' : ''" class="collapse navbar-collapse">
+    <a class="navbar-brand" href="#" (click)="refresh()"
+      ><img class="logo-img" src="assets/images/logo.png" alt="Home"
+    /></a>
+    <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+      <li
+        class="nav-item"
+        *ngFor="let navItem of navItems; let i = index"
+        [attr.data-index]="i"
+      >
+        <a
+          class="nav-link hover-underline text-light"
+          (click)="toggleOff()"
+          [href]="navItem.href"
+          >{{ navItem.title }} <span class="sr-only">(current)</span></a
+        >
+      </li>
+    </ul>
+  </div>
+  <a class="navbar-brand mobile" href="#"
+    ><img class="logo-img" src="assets/images/logo.png" alt="Home"
+  /></a>
+</nav>

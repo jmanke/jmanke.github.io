@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="overlay">
+    <img
+      [src]="project && project.img"
+      class="card-img-top"
+      [alt]="project && project.title"
+    />
+    <a class="mask">
+      <div class="mask"></div>
+    </a>
+  </div>
+
+  <div class="card-body">
+    <div class="card-header-alt d-flex">
+      <h5 class="card-title">{{ project && project.title }}</h5>
+      <a *ngIf="project && project.href" class="ml-auto mr-3" [href]="project && project.href">
+        <fa-icon class="fa-lg" [icon]="project.href.includes('github') ? faGithub : faLink"></fa-icon>
+      </a>
+    </div>
+    <hr />
+    <p class="card-text description">
+      {{ project && project.description }}
+    </p>
+    <div class="card-footer">
+      <button (click)="openModal()" class="btn btn-primary">Learn More</button>
+    </div>
+  </div>
+</div>

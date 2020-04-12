@@ -1,0 +1,71 @@
+nav {
+  &.navbar {
+    position: sticky;
+    z-index: 100;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.16), 0 0 10px 0 rgba(0, 0, 0, 0.12);
+
+    @media screen and (max-width: 767px) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+  }
+
+  &.hide {
+    top: -4rem;
+    transition: 0.15s;
+  }
+
+  &.show {
+    top: 0;
+    transition: 0.15s;
+  }
+
+  .logo-img {
+    width: 2.75rem;
+  }
+
+  .navbar-brand {
+    position: absolute;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+
+    &.mobile {
+      position: absolute;
+      display: initial;
+      width: fit-content;
+      height: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+
+      @media screen and (min-width: 992px) {
+        display: none;
+      }
+    }
+  }
+
+  .nav-link {
+    &.hover-underline {
+      @media screen and (max-width: 992px) {
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      &:hover {
+        &::before,
+        &::after {
+          left: 10%;
+          right: 10%;
+        }
+      }
+    }
+  }
+}

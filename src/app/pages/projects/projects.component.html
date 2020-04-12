@@ -1,0 +1,27 @@
+<app-section name="Projects" href="Projects">
+  <div class="project-header container">
+    <div class="row">
+      <div class="col-lg-8">
+        <app-fade-in fadeLeft="true">
+          <h1 class="section-title mt-0 mb-1 py-0 text-center text-md-left">
+            Projects
+          </h1>
+          <hr />
+          <p>
+            I've worked on a variety of projects at work and in my spare time.
+            The following is a collection of projects that I had fun working on.
+          </p>
+        </app-fade-in>
+      </div>
+      <div class="col d-none d-lg-flex ml-auto">
+        <app-fade-in fadeRight="true">
+          <img class="w-75 ml-auto" src="assets/images/settings-gears.svg" />
+        </app-fade-in>
+      </div>
+    </div>
+  </div>
+
+  <app-fade-in fadeLeft=true>
+    <app-project-card-layout [projects]="projects"></app-project-card-layout>
+  </app-fade-in>
+</app-section>

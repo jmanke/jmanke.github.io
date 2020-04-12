@@ -1,0 +1,14 @@
+<footer class="footer text-center bg-dark">
+  <div class="link-container container p-3">
+    <a class="px-3" *ngFor="let link of navLinks" [href]="link.href">
+      <fa-icon class="fa-2x text-light" [icon]="link.icon"></fa-icon
+    ></a>
+  </div>
+  <div class="pt-3 pb-4">
+    <a href="mailto:jeffman879@gmail.com">jeffman879@gmail.com</a>
+    <p class="text-light small pt-4">
+      <fa-icon [icon]="faCopyright"></fa-icon>
+      Jeff Manke
+    </p>
+  </div>
+</footer>
