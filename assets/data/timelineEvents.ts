@@ -14,18 +14,18 @@ export const timelineEvents: ITimelineEvent[] = [
     date: new Date(2016, 8)
   },
   {
-    title: 'Job at the Canada Revenue Agency',
+    title: 'Junior IT Analyst at the Canada Revenue Agency',
     description:
       'Started work at the Canada Revenue Agency as a Junior I Analyst',
     date: new Date(2016, 3)
   },
   {
-    title: 'Job at LlamaZOO',
+    title: 'Software Developer at LlamaZOO',
     description: 'Started work at LlamaZOO as a Software Developer',
     date: new Date(2017, 8)
   },
   {
-    title: 'Job at Alayacare',
+    title: 'Funior Full-Stack at Alayacare',
     description: 'Started work at Alayacare as a Junior Full-Stack Developer',
     date: new Date(2020, 4)
   },
