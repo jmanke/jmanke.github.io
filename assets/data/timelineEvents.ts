@@ -25,8 +25,8 @@ export const timelineEvents: ITimelineEvent[] = [
     date: new Date(2017, 8)
   },
   {
-    title: 'Junior Full-Stack Developer at AlayaCare',
-    description: 'Started work at Alayacare as a Junior Full-Stack Developer',
+    title: 'Full-Stack Developer at AlayaCare',
+    description: 'Started work at Alayacare as a Full-Stack Developer',
     date: new Date(2020, 4)
   },
   {
