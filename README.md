@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
+## Publishing to GH Pages
+
+1. Build a production version of the app using 'ng serve --prod' on 'source' branch
+2. copy dist contents over to 'master' branch and push
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
